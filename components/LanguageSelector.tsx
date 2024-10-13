@@ -1,38 +1,40 @@
 "use client"
 
-import {useCallback, useEffect, useState} from "react"
-import {usePathname, useRouter} from "next/navigation"
+import {useEffect, useState} from "react"
 import {Button} from "@/components/ui/button"
 import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger,} from "@/components/ui/dropdown-menu"
 import {Globe} from "lucide-react"
+import {usePathname} from "next/navigation";
 
-const LANGUAGES = [
+const languages = [
   { code: "en", name: "English", flag: "🇬🇧" },
   { code: "fr", name: "Français", flag: "🇫🇷" },
   { code: "es", name: "Español", flag: "🇪🇸" },
   { code: "de", name: "Deutsch", flag: "🇩🇪" },
-] as const
-
-type LanguageCode = typeof LANGUAGES[number]["code"]
+]
 
 export function LanguageSelector() {
-  const router = useRouter()
-  const pathname = usePathname()
-  const [currentLanguage, setCurrentLanguage] = useState<LanguageCode>("en")
+  const [currentLanguage, setCurrentLanguage] = useState("en")
+  const pathName = usePathname()
 
-  const handleLanguageChange = useCallback((langCode: LanguageCode) => {
-    const segments = pathname.split('/')
-    segments[1] = langCode
-    const newPath = segments.join('/')
-    router.push(newPath)
-  }, [pathname, router])
+  const handleLanguageChange = (langCode: string) => {
+    setCurrentLanguage(langCode)
+
+    const segments = pathName.split('/')
+    segments[1] = langCode;
+    const newPath = segments.join('/');
+    window.location.pathname = newPath;
+  }
 
   useEffect(() => {
-    const pathLang = pathname.split('/')[1] as LanguageCode
-    if (LANGUAGES.some(lang => lang.code === pathLang)) {
-      setCurrentLanguage(pathLang)
+    const path = window.location.pathname.split("/")[1]
+    if (path) {
+      const langCode = languages.find((lang) => lang.code === path)?.code
+      if (langCode) {
+        setCurrentLanguage(langCode)
+      }
     }
-  }, [pathname])
+  }, []);
 
   return (
     <DropdownMenu>
@@ -43,7 +45,7 @@ export function LanguageSelector() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        {LANGUAGES.map((lang) => (
+        {languages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}
             onClick={() => handleLanguageChange(lang.code)}
