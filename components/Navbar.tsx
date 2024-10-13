@@ -4,7 +4,8 @@ import {cn} from "@/lib/utils";
 import {Headphones} from "lucide-react";
 import {usePathname} from "next/navigation";
 import Link from "next/link";
-import {useScopedI18n} from "@/locales/client"; // Import Link from Next.js
+import {useScopedI18n} from "@/locales/client";
+import {LanguageSelector} from "@/components/LanguageSelector"; // Import Link from Next.js
 
 export function Navbar() {
   const scopedT = useScopedI18n("navbar")
@@ -24,10 +25,11 @@ export function Navbar() {
         <span className="block sm:hidden ml-2 text-lg font-semibold">SDPM</span>
         <span className="hidden sm:inline ml-2 text-lg font-semibold">SoundCloud DJ Playlist Manager</span>
       </Link>
-      <nav className="ml-auto flex gap-4 sm:gap-6">
+      <nav className="flex items-center ml-auto flex gap-4 sm:gap-6">
         <Link className={className("/")} href="/">
           {scopedT("home")}
         </Link>
+        <LanguageSelector />
       </nav>
     </header>
   );
