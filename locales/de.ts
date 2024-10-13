@@ -22,7 +22,8 @@ export default {
     privacy: "Datenschutz",
   },
   navbar: {
-    home: "Startseite"
+    home: "Startseite",
+    dashboard: "Dashboard",
   },
   notFound: {
     title: "404 - Seite Nicht Gefunden",

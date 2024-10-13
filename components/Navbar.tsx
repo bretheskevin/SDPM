@@ -5,13 +5,40 @@ import {Headphones} from "lucide-react";
 import {usePathname} from "next/navigation";
 import Link from "next/link";
 import {useScopedI18n} from "@/locales/client";
-import {LanguageSelector} from "@/components/LanguageSelector"; // Import Link from Next.js
+import {LanguageSelector} from "@/components/LanguageSelector";
 
-export function Navbar() {
+export interface NavbarProps {
+  isApiUp: boolean;
+}
+
+interface Link {
+  href: string;
+  label: string;
+  needToken?: boolean;
+}
+
+export function Navbar({isApiUp}: NavbarProps) {
   const scopedT = useScopedI18n("navbar")
-
   const pathName = usePathname();
-  const isActive = (path: string) => pathName === path;
+
+  const links: Link[] = [
+    {
+      href: "/",
+      label: scopedT("home"),
+    },
+    {
+      href: "/dashboard",
+      label: scopedT("dashboard"),
+      needToken: true
+    },
+  ];
+
+  const isActive = (path: string) => {
+    const parsedPath = pathName.split("/").slice(2).join("/");
+    path = path.slice(1);
+
+    return parsedPath === path;
+  }
 
   const className = (path: string) =>
     cn("text-sm font-medium hover:underline underline-offset-4", {
@@ -25,10 +52,13 @@ export function Navbar() {
         <span className="block sm:hidden ml-2 text-lg font-semibold">SDPM</span>
         <span className="hidden sm:inline ml-2 text-lg font-semibold">SoundCloud DJ Playlist Manager</span>
       </Link>
-      <nav className="flex items-center ml-auto flex gap-4 sm:gap-6">
-        <Link className={className("/")} href="/">
-          {scopedT("home")}
-        </Link>
+      <nav className={"flex items-center ml-auto flex gap-4 sm:gap-6"}>
+
+        {isApiUp && links.map((link) => (
+          <Link key={link.href} className={className(link.href)} href={link.href}>
+            {link.label}
+          </Link>
+        ))}
         <LanguageSelector />
       </nav>
     </header>

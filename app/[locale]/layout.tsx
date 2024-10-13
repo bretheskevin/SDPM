@@ -6,6 +6,8 @@ import {Footer} from "@/components/Footer"
 import {Providers} from "@/app/[locale]/providers";
 import Favicon from "/public/favicon.ico"
 import {Toaster} from "@/components/ui/toaster";
+import {ApiService} from "@/services/api.service";
+import {useApiHealthStore} from "@/stores/api-health.store";
 
 const inter = Inter({subsets: ['latin']})
 
@@ -15,7 +17,16 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: Favicon.src }],
 }
 
-export default function RootLayout({
+const isApiUp = async(): Promise<boolean> => {
+  try {
+    const response = await ApiService.get("health");
+    return response.status === "healthy";
+  } catch (error) {
+    console.error("Error checking API status:", error);
+    return false;
+  }
+}
+export default async function RootLayout({
                                      children,
                                      params,
                                    }: Readonly<{
@@ -24,12 +35,14 @@ export default function RootLayout({
     locale: string
   }
 }>) {
+  useApiHealthStore.getState().isApiUp = await isApiUp();
+
   return (
     <html lang="en">
     <body className={inter.className}>
     <Providers locale={params.locale}>
       <div className="flex flex-col min-h-screen bg-background pt-14">
-        <Navbar/>
+        <Navbar isApiUp={useApiHealthStore.getState().isApiUp}/>
         <div className={"h-full flex flex-col flex-1"}>
           {children}
         </div>

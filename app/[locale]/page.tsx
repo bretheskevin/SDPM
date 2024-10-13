@@ -1,20 +1,10 @@
 import {TokenForm} from "./TokenForm";
 import {getScopedI18n} from "@/locales/server";
-import {ApiService} from "@/services/api.service";
 import ServiceUnavailable from "./ServiceUnavailable";
+import {useApiHealthStore} from "@/stores/api-health.store";
 
 export default async function Home() {
   const scopedT = await getScopedI18n('landing')
-
-  const isApiUp = async(): Promise<boolean> => {
-    try {
-      const response = await ApiService.get("health");
-      return response.status === "healthy";
-    } catch (error) {
-      console.error("Error checking API status:", error);
-      return false;
-    }
-  }
 
   return (
     <main className={"flex flex-1 flex-col lg:flex-row"}>
@@ -35,7 +25,7 @@ export default async function Home() {
       </section>
       <section className="flex justify-center items-center w-full flex-1 px-4 py-12 bg-gray-100 dark:bg-gray-800">
 
-        {await isApiUp() ? (
+        {useApiHealthStore.getState().isApiUp ? (
           <TokenForm/>
           ) : (
           <ServiceUnavailable />

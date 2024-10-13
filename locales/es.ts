@@ -23,6 +23,7 @@ export default {
   },
   navbar: {
     home: "Inicio",
+    dashboard: "Panel de Control",
   },
   notFound: {
     title: "404 - Página No Encontrada",
