@@ -49,7 +49,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "actions.on.save",
+    "settings.editor.selected.configurable": "ml.llm.LLMConfigurable",
     "ts.external.directory.path": "/Applications/IntelliJ IDEA.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   }
@@ -133,7 +133,7 @@
       <workItem from="1726854629233" duration="1174000" />
       <workItem from="1727294604148" duration="4223000" />
       <workItem from="1728378250708" duration="23000" />
-      <workItem from="1728741532098" duration="2522000" />
+      <workItem from="1728741532098" duration="8389000" />
     </task>
     <servers />
   </component>
