@@ -5,30 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c754fde2-5c04-4533-90cc-ad3588342fef" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/[locale]/providers.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locales/client.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locales/de.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locales/en.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locales/es.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locales/fr.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locales/server.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/middleware.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/TokenForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/TokenForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/fonts/GeistMonoVF.woff" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/fonts/GeistMonoVF.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/fonts/GeistVF.woff" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/fonts/GeistVF.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/not-found.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/[...not-found]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/privacy/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/privacy/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/settings/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/[locale]/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/[locale]/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/layout.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,8 +65,9 @@
       <recent name="$PROJECT_DIR$/locales" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/[locale]" />
+      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/app/[locale]" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -106,7 +86,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1728816464864</updated>
-      <workItem from="1728816467112" duration="3877000" />
+      <workItem from="1728816467112" duration="4175000" />
     </task>
     <servers />
   </component>

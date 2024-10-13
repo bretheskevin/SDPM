@@ -4,12 +4,14 @@ import "./globals.css"
 import {Navbar} from "@/components/Navbar"
 import {Footer} from "@/components/Footer"
 import {Providers} from "@/app/[locale]/providers";
+import Favicon from "/public/favicon.ico"
 
 const inter = Inter({subsets: ['latin']})
 
 export const metadata: Metadata = {
   title: "SDPM",
   description: "Manage and create SoundCloud playlists effortlessly",
+  icons: [{ rel: "icon", url: Favicon.src }],
 }
 
 export default function RootLayout({
