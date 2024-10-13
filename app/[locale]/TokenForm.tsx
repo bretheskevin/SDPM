@@ -7,6 +7,7 @@ import {Input} from "@/components/ui/input"
 import {Label} from "@/components/ui/label"
 import {AlertCircle, Loader2, Music2} from "lucide-react"
 import {useScopedI18n} from "@/locales/client";
+import Link from "next/link"; // Import Link for navigation
 
 export function TokenForm() {
   const scopedT = useScopedI18n('tokenForm')
@@ -80,6 +81,11 @@ export function TokenForm() {
           </Button>
         </div>
       </form>
+      <div className="mt-4 text-center">
+        <Link href="/soundcloud-token-tutorial" className="text-primary underline text-sm">
+          {scopedT("howToGetTokenLink")}
+        </Link>
+      </div>
     </div>
   )
 }

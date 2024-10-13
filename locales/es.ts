@@ -14,7 +14,8 @@ export default {
     placeholder: "Ingresa tu token de SoundCloud",
     buttonLabel: "Conectar a SoundCloud",
     buttonLabelLoading: "Conectando...",
-    tokenInvalid: "Token inválido. Por favor verifica e intenta de nuevo."
+    tokenInvalid: "Token inválido. Por favor verifica e intenta de nuevo.",
+    howToGetTokenLink: "¿Cómo obtener tu token de SoundCloud?",
   },
   footer: {
     rights: "© 2024 SoundCloud DJ. Todos los derechos reservados.",
@@ -40,4 +41,27 @@ export default {
     tokenNeeded: "Tu token de SoundCloud, que es necesario para gestionar tus listas de reproducción, solo se utiliza para interactuar con la API de SoundCloud y nunca se almacena en nuestros servidores.",
     lastUpdated: "Última actualización: {date}",
   },
+  tutorial: {
+    title: "Cómo recuperar tu token de SoundCloud",
+    step1: {
+      title: "Paso 1: Acceder a SoundCloud",
+      description: "Ve a {link} y haz clic derecho en cualquier parte de la página, luego selecciona {code}.",
+      inspectElement: "Inspeccionar elemento",
+      imageAlt: "Captura de pantalla del clic derecho en la página de inicio de SoundCloud"
+    },
+    step2: {
+      title: "Paso 2: Navegar a la sección de Aplicación",
+      description: "En las herramientas de desarrollo que aparecen, localiza y haz clic en la pestaña {code}. Aquí es donde encontrarás tus cookies.",
+      imageAlt: "Captura de pantalla de la pestaña Aplicación en las herramientas de desarrollo"
+    },
+    step3: {
+      title: "Paso 3: Localizar tu token OAuth",
+      description: "En la pestaña Aplicación, busca la sección {cookies}. Encuentra la cookie llamada {key}. El valor de esta cookie es tu token de SoundCloud.",
+      imageAlt: "Captura de pantalla mostrando la cookie oauth_token"
+    },
+    note: {
+      title: "Nota importante",
+      description: "Mantén tu token OAuth privado y seguro. Compartir tu token es lo mismo que compartir tu contraseña, ya que otorga acceso a los datos y funcionalidades de tu cuenta. No lo compartas con otros."
+    }
+  }
 } as const;

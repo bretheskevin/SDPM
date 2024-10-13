@@ -2,7 +2,7 @@ export default {
   global: {
     button: {
       backToHome: "Back to Home",
-    }
+    },
   },
   landing: {
     title: "Connect your SoundCloud account to start managing your playlists effortlessly."
@@ -14,7 +14,8 @@ export default {
     placeholder: "Enter your SoundCloud token",
     buttonLabel: "Connect to SoundCloud",
     buttonLabelLoading: "Connecting...",
-    tokenInvalid: "Invalid token. Please check and try again."
+    tokenInvalid: "Invalid token. Please check and try again.",
+    howToGetTokenLink: "How to get your SoundCloud token ?",
   },
   footer: {
     rights: "© 2024 SoundCloud DJ. All rights reserved.",
@@ -40,4 +41,27 @@ export default {
     tokenNeeded: "Your SoundCloud token, which is required to manage your playlists, is only used to interact with the SoundCloud API and is never stored on our servers.",
     lastUpdated: "Last updated: {date}",
   },
+  tutorial: {
+    title: "How to Retrieve Your SoundCloud Token",
+    step1: {
+      title: "Step 1: Access SoundCloud",
+      description: "Go to {link} and right-click anywhere on the page, then select {code}.",
+      inspectElement: "Inspect Element",
+      imageAlt: "Screenshot of right-clicking on SoundCloud homepage"
+    },
+    step2: {
+      title: "Step 2: Navigate to the Application Section",
+      description: "In the developer tools that appear, locate and click on the {code} tab. This is where you'll find your cookies.",
+      imageAlt: "Screenshot of the Application tab in developer tools"
+    },
+    step3: {
+      title: "Step 3: Locate Your OAuth Token",
+      description: "In the Application tab, look for the {cookies} section. Find the cookie named {key}. The value of this cookie is your SoundCloud token.",
+      imageAlt: "Screenshot showing the oauth_token cookie"
+    },
+    note: {
+      title: "Important Note",
+      description: "Keep your OAuth token private and secure. Sharing your token is the same as sharing your password, as it grants access to your account's data and functionality. Do not share it with others."
+    }
+  }
 } as const

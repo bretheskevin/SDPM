@@ -27,7 +27,7 @@ export default function RootLayout({
     <html lang="en">
     <body className={inter.className}>
     <Providers locale={params.locale}>
-      <div className="flex flex-col min-h-screen bg-background">
+      <div className="flex flex-col min-h-screen bg-background pt-14">
         <Navbar/>
         <div className={"h-full flex flex-col flex-1"}>
           {children}

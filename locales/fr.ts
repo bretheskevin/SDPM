@@ -14,7 +14,8 @@ export default {
     placeholder: "Entrez votre token SoundCloud",
     buttonLabel: "Connecter à SoundCloud",
     buttonLabelLoading: "Connexion en cours...",
-    tokenInvalid: "Token invalide. Veuillez vérifier et réessayer."
+    tokenInvalid: "Token invalide. Veuillez vérifier et réessayer.",
+    howToGetTokenLink: "Comment obtenir votre token SoundCloud ?",
   },
   footer: {
     rights: "© 2024 SoundCloud DJ. Tous droits réservés.",
@@ -40,4 +41,27 @@ export default {
     tokenNeeded: "Votre token SoundCloud, requis pour gérer vos playlists, est uniquement utilisé pour interagir avec l'API SoundCloud et n'est jamais stocké sur nos serveurs.",
     lastUpdated: "Dernière mise à jour : {date}",
   },
+  tutorial: {
+    title: "Comment récupérer votre token SoundCloud",
+    step1: {
+      title: "Étape 1 : Accéder à SoundCloud",
+      description: "Allez sur {link} et faites un clic droit n'importe où sur la page, puis sélectionnez {code}.",
+      inspectElement: "Inspecter l'élément",
+      imageAlt: "Capture d'écran du clic droit sur la page d'accueil de SoundCloud"
+    },
+    step2: {
+      title: "Étape 2 : Naviguer vers la section Application",
+      description: "Dans les outils de développement qui s'affichent, localisez et cliquez sur l'onglet {code}. C'est ici que vous trouverez vos cookies.",
+      imageAlt: "Capture d'écran de l'onglet Application dans les outils de développement"
+    },
+    step3: {
+      title: "Étape 3 : Localiser votre token OAuth",
+      description: "Dans l'onglet Application, cherchez la section {cookies}. Trouvez le cookie nommé {key}. La valeur de ce cookie est votre token SoundCloud.",
+      imageAlt: "Capture d'écran montrant le cookie oauth_token"
+    },
+    note: {
+      title: "Remarque importante",
+      description: "Gardez votre token OAuth privé et sécurisé. Partager votre token équivaut à partager votre mot de passe, car cela donne accès aux données et fonctionnalités de votre compte. Ne le partagez pas avec d'autres."
+    }
+  }
 } as const;
