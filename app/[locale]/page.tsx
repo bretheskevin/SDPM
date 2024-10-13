@@ -1,6 +1,9 @@
 import {TokenForm} from "./TokenForm";
+import {getScopedI18n} from "@/locales/server";
 
-export default function Home() {
+export default async function Home() {
+  const scopedT = await getScopedI18n('landing')
+
   return (
     <main className={"flex flex-1 flex-col lg:flex-row"}>
       <section className="flex justify-center items-center flex-1 w-full py-12 md:py-24">
@@ -12,7 +15,7 @@ export default function Home() {
                 DJ Playlist Manager
               </h1>
               <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-                Connect your SoundCloud account to start managing your playlists effortlessly.
+                {scopedT("title")}
               </p>
             </div>
           </div>

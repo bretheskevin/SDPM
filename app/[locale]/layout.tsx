@@ -3,29 +3,36 @@ import {Inter} from 'next/font/google'
 import "./globals.css"
 import {Navbar} from "@/components/Navbar"
 import {Footer} from "@/components/Footer"
+import {Providers} from "@/app/[locale]/providers";
 
 const inter = Inter({subsets: ['latin']})
 
 export const metadata: Metadata = {
-  title: "SCDJ Playlist Manager",
+  title: "SDPM",
   description: "Manage and create SoundCloud playlists effortlessly",
 }
 
 export default function RootLayout({
                                      children,
+                                     params,
                                    }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode,
+  params: {
+    locale: string
+  }
 }>) {
   return (
     <html lang="en">
     <body className={inter.className}>
-    <div className="flex flex-col min-h-screen bg-background">
-      <Navbar/>
-      <div className={"h-full flex flex-col flex-1"}>
-        {children}
+    <Providers locale={params.locale}>
+      <div className="flex flex-col min-h-screen bg-background">
+        <Navbar/>
+        <div className={"h-full flex flex-col flex-1"}>
+          {children}
+        </div>
+        <Footer/>
       </div>
-      <Footer/>
-    </div>
+    </Providers>
     </body>
     </html>
   )

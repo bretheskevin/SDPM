@@ -1,13 +1,16 @@
 "use client"
 
-import { useState } from "react"
-import { Alert, AlertDescription } from "@/components/ui/alert"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { AlertCircle, Loader2, Music2 } from "lucide-react"
+import {useState} from "react"
+import {Alert, AlertDescription} from "@/components/ui/alert"
+import {Button} from "@/components/ui/button"
+import {Input} from "@/components/ui/input"
+import {Label} from "@/components/ui/label"
+import {AlertCircle, Loader2, Music2} from "lucide-react"
+import {useScopedI18n} from "@/locales/client";
 
 export function TokenForm() {
+  const scopedT = useScopedI18n('tokenForm')
+
   const [token, setToken] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
@@ -19,7 +22,7 @@ export function TokenForm() {
 
     setTimeout(() => {
       if (token.length < 10) {
-        setError('Invalid token. Please check and try again.')
+        setError(scopedT("tokenInvalid"))
       } else {
         console.log('Token submitted:', token)
       }
@@ -33,19 +36,19 @@ export function TokenForm() {
         <div className="inline-block p-3 rounded-full bg-primary/10 mb-4">
           <Music2 className="h-10 w-10 text-primary" />
         </div>
-        <h2 className="text-2xl font-bold mb-2">Connect Your Account</h2>
+        <h2 className="text-2xl font-bold mb-2">{scopedT("title")}</h2>
         <p className="text-gray-500 dark:text-gray-400">
-          Enter your SoundCloud token to start managing your playlists.
+          {scopedT("description")}
         </p>
       </div>
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="token-wrapper">
           <Label htmlFor="token" className="text-sm font-medium block mb-1">
-            SoundCloud Token
+            {scopedT("label")}
           </Label>
           <Input
             id="token"
-            placeholder="Enter your SoundCloud token"
+            placeholder={scopedT("placeholder")}
             value={token}
             onChange={(e) => setToken(e.target.value)}
             required
@@ -69,10 +72,10 @@ export function TokenForm() {
             {isLoading ? (
               <>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Connecting...
+                {scopedT("buttonLabelLoading")}
               </>
             ) : (
-              'Connect to SoundCloud'
+              scopedT("buttonLabel")
             )}
           </Button>
         </div>
