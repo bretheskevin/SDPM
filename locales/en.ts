@@ -63,5 +63,17 @@ export default {
       title: "Important Note",
       description: "Keep your OAuth token private and secure. Sharing your token is the same as sharing your password, as it grants access to your account's data and functionality. Do not share it with others."
     }
+  },
+  serviceUnavailable: {
+    title: "Oops! Our service is taking a break",
+    description: "We're experiencing some technical difficulties. Our team is working on getting things back to normal.",
+    alertTitle: "What's happening?",
+    alertDescription: "The app is currently unavailable due to some issues with our server. We apologize for any inconvenience this may cause.",
+    needAppBackUp: "Need the app back up quickly? Let me know!",
+    contactInfo: "Contact info :",
+    toast: {
+      copiedToClipboard: "Copied to clipboard",
+      discordDescription: "Discord username copied to clipboard",
+    }
   }
 } as const

@@ -63,5 +63,17 @@ export default {
       title: "Remarque importante",
       description: "Gardez votre token OAuth privé et sécurisé. Partager votre token équivaut à partager votre mot de passe, car cela donne accès aux données et fonctionnalités de votre compte. Ne le partagez pas avec d'autres."
     }
+  },
+  serviceUnavailable: {
+    title: "Oups ! Notre service fait une pause",
+    description: "Nous rencontrons des difficultés techniques. Notre équipe travaille à rétablir la situation.",
+    alertTitle: "Que se passe-t-il ?",
+    alertDescription: "L'application est actuellement indisponible en raison de problèmes avec notre serveur. Nous nous excusons pour le désagrément.",
+    needAppBackUp: "Besoin que l'application soit rapidement rétablie ? Faites-le moi savoir !",
+    contactInfo: "Infos de contact :",
+    toast: {
+      copiedToClipboard: "Copié dans le presse-papier",
+      discordDescription: "Nom d'utilisateur Discord copié dans le presse-papier",
+    }
   }
 } as const;

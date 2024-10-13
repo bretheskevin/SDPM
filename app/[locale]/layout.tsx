@@ -5,6 +5,7 @@ import {Navbar} from "@/components/Navbar"
 import {Footer} from "@/components/Footer"
 import {Providers} from "@/app/[locale]/providers";
 import Favicon from "/public/favicon.ico"
+import {Toaster} from "@/components/ui/toaster";
 
 const inter = Inter({subsets: ['latin']})
 
@@ -34,6 +35,7 @@ export default function RootLayout({
         </div>
         <Footer/>
       </div>
+      <Toaster />
     </Providers>
     </body>
     </html>
