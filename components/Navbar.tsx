@@ -20,15 +20,13 @@ export function Navbar() {
   return (
     <header className="px-4 lg:px-6 h-14 flex items-center border-b">
       <Link className="flex items-center justify-center" href="/">
-        <Headphones className="h-6 w-6" />
-        <span className="ml-2 text-lg font-semibold">SoundCloud DJ Playlist Manager</span>
+        <Headphones className="h-6 w-6"/>
+        <span className="block sm:hidden ml-2 text-lg font-semibold">SDPM</span>
+        <span className="hidden sm:inline ml-2 text-lg font-semibold">SoundCloud DJ Playlist Manager</span>
       </Link>
       <nav className="ml-auto flex gap-4 sm:gap-6">
         <Link className={className("/")} href="/">
           {scopedT("home")}
-        </Link>
-        <Link className={className("/settings")} href="/settings">
-          Settings
         </Link>
       </nav>
     </header>
