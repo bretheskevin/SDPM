@@ -17,7 +17,7 @@ interface Link {
   needToken?: boolean;
 }
 
-export function Navbar({isApiUp}: NavbarProps) {
+export function Navbar({isApiUp}: NavbarProps = {isApiUp: true}) { // @TODO: use data from state
   const scopedT = useScopedI18n("navbar")
   const pathName = usePathname();
 
