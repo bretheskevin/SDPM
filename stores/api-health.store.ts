@@ -1,4 +1,4 @@
-import { create } from "zustand";
+import {create} from "zustand";
 import {ApiService} from "@/services/api.service";
 
 interface ApiHealthStore {
@@ -14,12 +14,14 @@ export const useApiHealthStore = create<ApiHealthStore>((set) => ({
     try {
       const data = await ApiService.get("health")
       set({ health: data.status === 'healthy' });
-    } catch (error) {
-      console.error("====================================")
-      console.error('Failed to fetch API health:', error);
-      console.error("====================================")
+    } catch (e) {
+      // console.log("==============================")
+      // console.log("| Failed to fetch API health |")
+      // console.log("==============================")
+      console.log(`==============================
+| Failed to fetch API health |
+==============================`);
       set({ health: false });
     }
   }
 }));
-
