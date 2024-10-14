@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react';
 import {useApiHealthStore} from "@/stores/api-health.store";
 
 export const ApiHealthManager: React.FC = () => {

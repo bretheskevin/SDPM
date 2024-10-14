@@ -1,11 +1,11 @@
 import {create} from "zustand";
 
 interface UserStore {
-  token: string,
-  setToken: (token: string) => void,
+  authenticated: boolean,
+  setAuthenticated: (authenticated: boolean) => void,
 }
 
 export const useUserStore = create<UserStore>((set) => ({
-  token: "",
-  setToken: (token: string) => set({token}),
+  authenticated: false,
+  setAuthenticated: (authenticated: boolean) => set({authenticated}),
 }))

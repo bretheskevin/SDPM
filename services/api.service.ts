@@ -1,7 +1,7 @@
 import nodeFetch from 'node-fetch';
 
 export class ApiService {
-  static BASE_URL = "https://ideological-flor-hikudo-790c3543.koyeb.app/";
+  static BASE_URL = "";
 
   static async get(endpoint: string, options: RequestInit = {}): Promise<any> {
     const response = await this.fetch(endpoint, { ...options, method: 'GET' });
