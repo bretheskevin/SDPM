@@ -2,6 +2,7 @@ export default {
   global: {
     button: {
       backToHome: "Volver a Inicio",
+      logout: "Cerrar sesión",
     },
   },
   landing: {
@@ -91,5 +92,11 @@ export default {
       discordDescription:
         "Nombre de usuario de Discord copiado al portapapeles",
     },
+  },
+  authenticatedUser: {
+    title: "¡Bienvenido de nuevo!",
+    description:
+      "Has iniciado sesión correctamente. ¿Listo para gestionar tus listas de reproducción?",
+    dashboardButton: "Ir al Dashboard",
   },
 } as const;

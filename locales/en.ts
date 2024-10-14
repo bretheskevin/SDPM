@@ -2,6 +2,7 @@ export default {
   global: {
     button: {
       backToHome: "Back to Home",
+      logout: "Log out",
     },
   },
   landing: {
@@ -88,5 +89,11 @@ export default {
       copiedToClipboard: "Copied to clipboard",
       discordDescription: "Discord username copied to clipboard",
     },
+  },
+  authenticatedUser: {
+    title: "Welcome Back!",
+    description:
+      "You're successfully logged in. Ready to manage your playlists?",
+    dashboardButton: "Go to Dashboard",
   },
 } as const;

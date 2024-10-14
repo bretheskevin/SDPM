@@ -9,14 +9,14 @@ import { useApiHealthStore } from "@/stores/api-health.store";
 interface Link {
   href: string;
   label: string;
-  needToken?: boolean;
+  needAuth?: boolean;
 }
 
 export function Links() {
   const scopedT = useScopedI18n("navbar");
   const pathName = usePathname();
 
-  const token = useUserStore((state) => state.token);
+  const authenticated = useUserStore((state) => state.authenticated);
   const isApiUp = useApiHealthStore((state) => state.health);
 
   const links: Link[] = [
@@ -27,14 +27,14 @@ export function Links() {
     {
       href: "/dashboard",
       label: scopedT("dashboard"),
-      needToken: true,
+      needAuth: true,
     },
   ];
 
   return (
     <>
       {links
-        .filter((link) => !link.needToken || (token && isApiUp))
+        .filter((link) => !link.needAuth || (isApiUp && authenticated))
         .map((link) => (
           <LinkItem
             key={link.href}

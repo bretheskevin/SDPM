@@ -2,6 +2,7 @@ export default {
   global: {
     button: {
       backToHome: "Zurück zur Startseite",
+      logout: "Ausloggen",
     },
   },
   landing: {
@@ -89,5 +90,11 @@ export default {
       copiedToClipboard: "In die Zwischenablage kopiert",
       discordDescription: "Discord-Benutzername in die Zwischenablage kopiert",
     },
+  },
+  authenticatedUser: {
+    title: "Willkommen zurück!",
+    description:
+      "Sie sind erfolgreich eingeloggt. Bereit, Ihre Playlists zu verwalten?",
+    dashboardButton: "Gehe zum Dashboard",
   },
 } as const;

@@ -7,19 +7,18 @@ import { useUserStore } from "@/stores/user.store";
 export const TokenValidManager: React.FC = () => {
   const setAuthenticated = useUserStore((state) => state.setAuthenticated);
 
+  const checkToken = async () => {
+    const authenticated = useUserStore.getState().authenticated;
+    if (!authenticated) return;
+
+    const isValid: boolean = await SoundcloudApiService.checkToken();
+    setAuthenticated(isValid);
+  };
+
   useEffect(() => {
-    const checkToken = async () => {
-      const authenticated = useUserStore.getState().authenticated;
-      if (!authenticated) return;
-
-      const isValid: boolean = await SoundcloudApiService.checkToken();
-      setAuthenticated(isValid);
-    };
-
     checkToken();
 
     const intervalId = setInterval(checkToken, 30000); // Check token every 30 seconds
-
     return () => clearInterval(intervalId);
   }, [setAuthenticated]);
 

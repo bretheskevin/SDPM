@@ -2,6 +2,7 @@ export default {
   global: {
     button: {
       backToHome: "Retour à l'accueil",
+      logout: "Se déconnecter",
     },
   },
   landing: {
@@ -91,5 +92,10 @@ export default {
       discordDescription:
         "Nom d'utilisateur Discord copié dans le presse-papier",
     },
+  },
+  authenticatedUser: {
+    title: "Bienvenue de nouveau !",
+    description: "Vous êtes connecté avec succès. Prêt à gérer vos playlists ?",
+    dashboardButton: "Aller au tableau de bord",
   },
 } as const;
