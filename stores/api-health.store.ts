@@ -8,16 +8,14 @@ interface ApiHealthStore {
 }
 
 export const useApiHealthStore = create<ApiHealthStore>((set) => ({
-  health: false,
+  health: true,
   setHealth: (health) => set({ health }),
   checkHealth: async () => {
     try {
       const data = await ApiService.get("health")
       set({ health: data.status === 'healthy' });
-    } catch (e) {
-      // console.log("==============================")
-      // console.log("| Failed to fetch API health |")
-      // console.log("==============================")
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_) {
       console.log(`==============================
 | Failed to fetch API health |
 ==============================`);

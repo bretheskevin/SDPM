@@ -6,6 +6,7 @@ import {Footer} from "@/components/Footer"
 import {Providers} from "@/providers/providers";
 import Favicon from "/public/favicon.ico"
 import {Toaster} from "@/components/ui/toaster";
+import {StoreManager} from "@/managers/StoreManager";
 
 const inter = Inter({subsets: ['latin']})
 
@@ -28,6 +29,7 @@ export default function RootLayout({
     <html lang="en">
     <body className={inter.className}>
     <Providers locale={params.locale}>
+      <StoreManager />
       <div className="flex flex-col min-h-screen bg-background pt-14">
         <Navbar />
         <div className={"h-full flex flex-col flex-1"}>
