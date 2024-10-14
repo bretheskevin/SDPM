@@ -24,9 +24,16 @@ export class Cookies {
     return undefined;
   }
 
-  static set(name: string, value: string, options?: SetCookieOptions, fromRemove = false): void {
+  static set(
+    name: string,
+    value: string,
+    options?: SetCookieOptions,
+    fromRemove = false
+  ): void {
     if (window === undefined) {
-      console.error("Cookies.set() can only be called in a browser environment");
+      console.error(
+        "Cookies.set() can only be called in a browser environment"
+      );
       return;
     }
 
@@ -46,14 +53,18 @@ export class Cookies {
 
   static remove(name: string | string[]): void {
     if (window === undefined) {
-      console.error("Cookies.remove() can only be called in a browser environment");
+      console.error(
+        "Cookies.remove() can only be called in a browser environment"
+      );
       return;
     }
 
     if (typeof name === "string") {
       this.set(name, "", { expires: new Date(Date.now() - 1) }, true);
     } else {
-      name.forEach((n) => this.set(n, "", { expires: new Date(Date.now() - 1) }, true));
+      name.forEach((n) =>
+        this.set(n, "", { expires: new Date(Date.now() - 1) }, true)
+      );
     }
   }
 }

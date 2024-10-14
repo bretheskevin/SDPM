@@ -1,11 +1,11 @@
-import Link from 'next/link'
-import {ArrowLeft, Headphones} from 'lucide-react'
-import {Button} from "@/components/ui/button"
-import {getI18n, getScopedI18n} from "@/locales/server";
+import Link from "next/link";
+import { ArrowLeft, Headphones } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { getI18n, getScopedI18n } from "@/locales/server";
 
 export default async function NotFound() {
-  const t = await getI18n()
-  const scopedT = await getScopedI18n('notFound')
+  const t = await getI18n();
+  const scopedT = await getScopedI18n("notFound");
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-background px-4 text-center">
@@ -21,5 +21,5 @@ export default async function NotFound() {
         </Link>
       </Button>
     </div>
-  )
+  );
 }

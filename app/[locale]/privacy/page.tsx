@@ -1,17 +1,18 @@
-import {Metadata} from "next"
-import {Shield} from "lucide-react"
-import {Button} from "@/components/ui/button"
-import Link from "next/link"
-import {getI18n, getScopedI18n} from "@/locales/server";
+import { Metadata } from "next";
+import { Shield } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { getI18n, getScopedI18n } from "@/locales/server";
 
 export const metadata: Metadata = {
   title: "SDPM | Privacy Policy",
-  description: "Privacy policy for DJ Playlist Manager - We do not collect any personal data.",
-}
+  description:
+    "Privacy policy for DJ Playlist Manager - We do not collect any personal data.",
+};
 
 export default async function PrivacyPage() {
-  const t = await getI18n()
-  const scopedT = await getScopedI18n('privacy')
+  const t = await getI18n();
+  const scopedT = await getScopedI18n("privacy");
 
   return (
     <div className="container mx-auto px-4 py-4">
@@ -24,27 +25,32 @@ export default async function PrivacyPage() {
           <p className="text-xl mb-6 text-gray-600 dark:text-gray-300">
             {scopedT("description")}
           </p>
-          <h2 className="text-3xl font-semibold mb-6">{scopedT("weDoNotCollectAnyData")}</h2>
+          <h2 className="text-3xl font-semibold mb-6">
+            {scopedT("weDoNotCollectAnyData")}
+          </h2>
           <div className="bg-primary/5 border border-primary/10 rounded-lg p-6 mb-8">
             <p className="mb-4">
               {scopedT("weDoNotCollectAnyDataDescription")}
             </p>
-            <p className="mb-4">
-              {scopedT("whenUsing")}
-            </p>
+            <p className="mb-4">{scopedT("whenUsing")}</p>
             <ul className="list-disc list-inside mb-4 text-left">
-              {["noPersonalInformation", "noUsageData", "noCookies", "noDataShared"].map((item, index) => (
+              {[
+                "noPersonalInformation",
+                "noUsageData",
+                "noCookies",
+                "noDataShared",
+              ].map((item, index) => (
                 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                 // @ts-expect-error
                 <li key={index}>{scopedT(item)}</li>
               ))}
             </ul>
-            <p>
-              {scopedT("tokenNeeded")}
-            </p>
+            <p>{scopedT("tokenNeeded")}</p>
           </div>
           <p className="text-sm text-gray-500 dark:text-gray-400 mb-8">
-            {scopedT("lastUpdated", {date: new Date("2024-10-13").toLocaleDateString()})}
+            {scopedT("lastUpdated", {
+              date: new Date("2024-10-13").toLocaleDateString(),
+            })}
           </p>
           <Button asChild>
             <Link href="/">{t("global.button.backToHome")}</Link>
@@ -52,5 +58,5 @@ export default async function PrivacyPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }

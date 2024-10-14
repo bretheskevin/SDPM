@@ -1,5 +1,5 @@
-import {create} from "zustand";
-import {SoundcloudApiService} from "@/services/soundcloud-api.service";
+import { create } from "zustand";
+import { SoundcloudApiService } from "@/services/soundcloud-api.service";
 
 interface ApiHealthStore {
   health: boolean;
@@ -13,5 +13,5 @@ export const useApiHealthStore = create<ApiHealthStore>((set) => ({
   checkHealth: async () => {
     const health: boolean = await SoundcloudApiService.checkHealth();
     set({ health });
-  }
+  },
 }));

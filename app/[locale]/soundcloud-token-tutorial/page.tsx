@@ -1,17 +1,18 @@
-import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card"
-import Image from "next/image"
-import {Code} from "@/components/Code";
-import {Metadata} from "next";
-import {getScopedI18n} from "@/locales/server";
-import {ExternalLink} from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Image from "next/image";
+import { Code } from "@/components/Code";
+import { Metadata } from "next";
+import { getScopedI18n } from "@/locales/server";
+import { ExternalLink } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "SDPM | Token Tutorial",
-  description: "Learn how to retrieve your SoundCloud token to manage your playlists.",
-}
+  description:
+    "Learn how to retrieve your SoundCloud token to manage your playlists.",
+};
 
 export default async function SoundCloudTokenTutorial() {
-  const scopedT = await getScopedI18n('tutorial')
+  const scopedT = await getScopedI18n("tutorial");
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-3xl">
@@ -25,12 +26,20 @@ export default async function SoundCloudTokenTutorial() {
           <CardContent>
             <p className="mb-4">
               {scopedT("step1.description", {
-                link: <span>
-                  <a href="https://soundcloud.com" target="_blank" rel="noopener noreferrer"
-                     className="text-blue-500 hover:underline">soundcloud.com</a>
-                  <ExternalLink className="inline h-4 w-4"/>
-                </span>,
-                code: <Code>{scopedT("step1.inspectElement")}</Code>
+                link: (
+                  <span>
+                    <a
+                      href="https://soundcloud.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-500 hover:underline"
+                    >
+                      soundcloud.com
+                    </a>
+                    <ExternalLink className="inline h-4 w-4" />
+                  </span>
+                ),
+                code: <Code>{scopedT("step1.inspectElement")}</Code>,
               })}
             </p>
             <div className="bg-gray-200 rounded-lg overflow-hidden">
@@ -52,7 +61,7 @@ export default async function SoundCloudTokenTutorial() {
           <CardContent>
             <p className="mb-4">
               {scopedT("step2.description", {
-                code: <Code>Application</Code>
+                code: <Code>Application</Code>,
               })}
             </p>
             <div className="bg-gray-200 rounded-lg overflow-hidden">
@@ -75,7 +84,7 @@ export default async function SoundCloudTokenTutorial() {
             <p className="mb-4">
               {scopedT("step3.description", {
                 cookies: <Code>Cookies</Code>,
-                key: <Code>oauth_token</Code>
+                key: <Code>oauth_token</Code>,
               })}
             </p>
             <div className="bg-gray-200 rounded-lg overflow-hidden">
@@ -93,10 +102,8 @@ export default async function SoundCloudTokenTutorial() {
 
       <div className="mt-6 p-4 bg-yellow-100 rounded-lg">
         <h2 className="text-xl font-semibold mb-2">{scopedT("note.title")}</h2>
-        <p>
-          {scopedT("note.description")}
-        </p>
+        <p>{scopedT("note.description")}</p>
       </div>
     </div>
-  )
+  );
 }

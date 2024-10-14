@@ -1,9 +1,9 @@
 "use client";
 
-import {PropsWithChildren} from "react";
-import {I18nProviderClient} from "@/locales/client";
+import { PropsWithChildren } from "react";
+import { I18nProviderClient } from "@/locales/client";
 
-export const Providers = (props: PropsWithChildren<{locale: string}>) => {
+export const Providers = (props: PropsWithChildren<{ locale: string }>) => {
   return (
     <I18nProviderClient locale={props.locale}>
       {props.children}

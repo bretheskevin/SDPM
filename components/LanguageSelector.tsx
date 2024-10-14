@@ -1,37 +1,42 @@
-"use client"
+"use client";
 
-import {useEffect, useState} from "react"
-import {Button} from "@/components/ui/button"
-import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger,} from "@/components/ui/dropdown-menu"
-import {Globe} from "lucide-react"
-import {usePathname} from "next/navigation";
+import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Globe } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 const languages = [
   { code: "en", name: "English", flag: "🇬🇧" },
   { code: "fr", name: "Français", flag: "🇫🇷" },
   { code: "es", name: "Español", flag: "🇪🇸" },
   { code: "de", name: "Deutsch", flag: "🇩🇪" },
-]
+];
 
 export function LanguageSelector() {
-  const [currentLanguage, setCurrentLanguage] = useState("en")
-  const pathName = usePathname()
+  const [currentLanguage, setCurrentLanguage] = useState("en");
+  const pathName = usePathname();
 
   const handleLanguageChange = (langCode: string) => {
-    setCurrentLanguage(langCode)
+    setCurrentLanguage(langCode);
 
-    const segments = pathName.split('/')
+    const segments = pathName.split("/");
     segments[1] = langCode;
-    const newPath = segments.join('/');
+    const newPath = segments.join("/");
     window.location.pathname = newPath;
-  }
+  };
 
   useEffect(() => {
-    const path = window.location.pathname.split("/")[1]
+    const path = window.location.pathname.split("/")[1];
     if (path) {
-      const langCode = languages.find((lang) => lang.code === path)?.code
+      const langCode = languages.find((lang) => lang.code === path)?.code;
       if (langCode) {
-        setCurrentLanguage(langCode)
+        setCurrentLanguage(langCode);
       }
     }
   }, []);
@@ -59,5 +64,5 @@ export function LanguageSelector() {
         ))}
       </DropdownMenuContent>
     </DropdownMenu>
-  )
+  );
 }

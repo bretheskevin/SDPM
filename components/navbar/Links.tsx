@@ -1,10 +1,10 @@
 "use client";
 
-import {useScopedI18n} from "@/locales/client";
-import {usePathname} from "next/navigation";
-import {useUserStore} from "@/stores/user.store";
-import {LinkItem} from "@/components/navbar/LinkItem";
-import {useApiHealthStore} from "@/stores/api-health.store";
+import { useScopedI18n } from "@/locales/client";
+import { usePathname } from "next/navigation";
+import { useUserStore } from "@/stores/user.store";
+import { LinkItem } from "@/components/navbar/LinkItem";
+import { useApiHealthStore } from "@/stores/api-health.store";
 
 interface Link {
   href: string;
@@ -36,7 +36,12 @@ export function Links() {
       {links
         .filter((link) => !link.needToken || (token && isApiUp))
         .map((link) => (
-          <LinkItem key={link.href} href={link.href} label={link.label} pathName={pathName} />
+          <LinkItem
+            key={link.href}
+            href={link.href}
+            label={link.label}
+            pathName={pathName}
+          />
         ))}
     </>
   );
