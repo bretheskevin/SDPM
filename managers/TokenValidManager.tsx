@@ -3,6 +3,7 @@
 import React, { useEffect } from "react";
 import { SoundcloudApiService } from "@/services/soundcloud-api.service";
 import { useUserStore } from "@/stores/user.store";
+import { Cookies } from "@/services/cookie.service";
 
 export const TokenValidManager: React.FC = () => {
   const setAuthenticated = useUserStore((state) => state.setAuthenticated);
@@ -13,6 +14,10 @@ export const TokenValidManager: React.FC = () => {
 
     const isValid: boolean = await SoundcloudApiService.checkToken();
     setAuthenticated(isValid);
+
+    if (!isValid) {
+      Cookies.remove("token");
+    }
   };
 
   useEffect(() => {
