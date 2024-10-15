@@ -4,6 +4,10 @@ import { Cookies } from "@/services/cookie.service";
 export class SoundcloudApiService extends ApiService {
   static BASE_URL = "https://ideological-flor-hikudo-790c3543.koyeb.app/";
 
+  static get<T>(path: string): Promise<T> {
+    return super.get(path + "?token=" + Cookies.get("token"));
+  }
+
   static async checkHealth(): Promise<boolean> {
     try {
       const data = await this.get("health");
@@ -30,6 +34,14 @@ export class SoundcloudApiService extends ApiService {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (_) {
       return false;
+    }
+  }
+
+  static async me(): Promise<SoundcloudProfile> {
+    try {
+      return await this.get<SoundcloudProfile>("me");
+    } catch (_) {
+      console.error("Failed to fetch Soundcloud profile");
     }
   }
 }
