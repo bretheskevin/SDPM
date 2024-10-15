@@ -1,14 +1,7 @@
-import { Metadata } from "next";
 import { Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { getI18n, getScopedI18n } from "@/locales/server";
-
-export const metadata: Metadata = {
-  title: "SDPM | Privacy Policy",
-  description:
-    "Privacy policy for DJ Playlist Manager - We do not collect any personal data.",
-};
 
 export default async function PrivacyPage() {
   const t = await getI18n();
