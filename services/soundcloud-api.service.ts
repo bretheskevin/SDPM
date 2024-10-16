@@ -4,8 +4,9 @@ import { Cookies } from "@/services/cookie.service";
 export class SoundcloudApiService extends ApiService {
   static BASE_URL = "https://ideological-flor-hikudo-790c3543.koyeb.app/";
 
-  static get<T>(path: string): Promise<T> {
-    return super.get(path + "?token=" + Cookies.get("token"));
+  static async get<T>(path: string): Promise<T> {
+    const token = await Cookies.get("token");
+    return super.get(path + "?token=" + token);
   }
 
   static async checkHealth(): Promise<boolean> {
@@ -22,14 +23,10 @@ export class SoundcloudApiService extends ApiService {
   static async checkToken(token: string = ""): Promise<boolean> {
     if (token) {
       Cookies.set("token", token);
-    } else {
-      token = (await Cookies.get("token")) || "";
     }
 
     try {
-      const data: { is_valid: boolean } = await this.get(
-        `check-token?token=${token}`
-      );
+      const data: { is_valid: boolean } = await this.get(`check-token`);
       return data.is_valid;
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (_) {

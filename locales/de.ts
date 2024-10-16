@@ -27,6 +27,7 @@ export default {
   navbar: {
     home: "Startseite",
     dashboard: "Dashboard",
+    profile: "Profil",
   },
   notFound: {
     title: "404 - Seite Nicht Gefunden",

@@ -29,6 +29,11 @@ export function Links() {
       label: scopedT("dashboard"),
       needAuth: true,
     },
+    {
+      href: "/profile",
+      label: scopedT("profile"),
+      needAuth: true,
+    },
   ];
 
   return (
