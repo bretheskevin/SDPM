@@ -11,17 +11,6 @@ export default async function ProfilePage() {
       <ProfileCard profileData={profileData} />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <Card className="col-span-2 bg-card text-card-foreground">
-          <CardHeader>
-            <CardTitle className="text-2xl text-primary">About</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-foreground">
-              {profileData.description || "No description available."}
-            </p>
-          </CardContent>
-        </Card>
-
         <Card className="bg-card text-card-foreground">
           <CardHeader>
             <CardTitle className="text-2xl text-primary">Stats</CardTitle>
