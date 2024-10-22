@@ -39,12 +39,9 @@ const Summary = ({ profileData }: ProfileCardProps) => {
   return (
     <BannerCard className={"ml-6 flex gap-4"}>
       <div>
-        <h1 className="text-3xl font-bold mb-2 text-foreground">
-          {profileData.full_name}
+        <h1 className="text-3xl font-bold text-foreground">
+          {profileData.username}
         </h1>
-        <p className="text-xl text-foreground/80 mb-2">
-          @{profileData.username}
-        </p>
         <div className="flex flex-wrap gap-2 mb-4">
           {profileData.badges.pro && <Badge variant="secondary">Pro</Badge>}
           {profileData.badges.pro_unlimited && (
@@ -66,17 +63,17 @@ const Stats = ({ profileData }: ProfileCardProps) => {
     <div className="flex flex-col space-y-2">
       <div className="flex items-center">
         <Music className="w-6 h-6 text-primary mr-2" />
-        <span className="text-lg font-semibold text-foreground">
+        <p className="text-lg font-semibold text-foreground">
           {profileData.track_count}
-        </span>
-        <span className="ml-2 text-muted-foreground">Tracks</span>
+        </p>
+        <p className="ml-2 text-muted-foreground">Tracks</p>
       </div>
       <div className="flex items-center">
         <Users className="w-6 h-6 text-secondary-foreground mr-2" />
-        <span className="text-lg font-semibold text-foreground">
+        <p className="text-lg font-semibold text-foreground">
           {profileData.followers_count}
-        </span>
-        <span className="ml-2 text-muted-foreground">Followers</span>
+        </p>
+        <p className="ml-2 text-muted-foreground">Followers</p>
       </div>
     </div>
   );
