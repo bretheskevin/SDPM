@@ -1,4 +1,5 @@
 import { getScopedI18n } from "@/locales/server";
+import Link from "next/link";
 
 export async function Footer() {
   const scopedT = await getScopedI18n("footer");
@@ -9,12 +10,12 @@ export async function Footer() {
         {scopedT("rights")}
       </p>
       <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-        <a
+        <Link
           className="text-xs hover:underline underline-offset-4"
           href="/privacy"
         >
           {scopedT("privacy")}
-        </a>
+        </Link>
       </nav>
     </footer>
   );

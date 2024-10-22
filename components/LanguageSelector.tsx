@@ -45,7 +45,7 @@ export function LanguageSelector() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="icon" className="w-9 px-0">
-          <Globe className="h-[1.2rem] w-[1.2rem]" />
+          <Globe className="h-5 w-5" />
           <span className="sr-only">Change language</span>
         </Button>
       </DropdownMenuTrigger>
