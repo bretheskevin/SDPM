@@ -7,7 +7,7 @@ export default async function ProfilePage() {
   const profileData: SoundcloudProfile = await SoundcloudApiService.me();
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container max-w-7xl mx-auto px-4 py-8">
       <ProfileCard profileData={profileData} />
 
       <div className="mt-8">
