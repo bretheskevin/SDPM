@@ -22,7 +22,9 @@ export class SoundcloudApiService extends ApiService {
 
   static async checkToken(token: string = ""): Promise<boolean> {
     if (token) {
-      Cookies.set("token", token);
+      Cookies.set("token", token, {
+        expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 365),
+      });
     }
 
     try {
