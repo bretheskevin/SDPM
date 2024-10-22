@@ -9,7 +9,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Globe } from "lucide-react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const languages = [
   { code: "en", name: "English", flag: "🇬🇧" },
@@ -21,6 +21,7 @@ const languages = [
 export function LanguageSelector() {
   const [currentLanguage, setCurrentLanguage] = useState("en");
   const pathName = usePathname();
+  const router = useRouter();
 
   const handleLanguageChange = (langCode: string) => {
     setCurrentLanguage(langCode);
@@ -28,7 +29,8 @@ export function LanguageSelector() {
     const segments = pathName.split("/");
     segments[1] = langCode;
     const newPath = segments.join("/");
-    window.location.pathname = newPath;
+
+    router.push(newPath);
   };
 
   useEffect(() => {
