@@ -27,8 +27,5 @@ export function LinkItem({ href, label, pathName }: LinkProps) {
 }
 
 const isActive = (pathName: string, path: string) => {
-  const parsedPath = pathName.split("/").slice(2).join("/");
-  path = path.slice(1);
-
-  return parsedPath === path;
+  return pathName === path;
 };

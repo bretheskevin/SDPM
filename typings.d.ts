@@ -54,3 +54,5 @@ interface SoundcloudProfile {
     }>;
   };
 }
+
+type locales = "en" | "fr" | "es" | "de";

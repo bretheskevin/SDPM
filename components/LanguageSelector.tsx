@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -11,41 +10,38 @@ import {
 import { Globe } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import { useNavbarStore } from "@/stores/navbar.store";
+import { useChangeLocale, useCurrentLocale } from "@/locales/client";
 
 const languages = [
   { code: "en", name: "English", flag: "🇬🇧" },
   { code: "fr", name: "Français", flag: "🇫🇷" },
   { code: "es", name: "Español", flag: "🇪🇸" },
   { code: "de", name: "Deutsch", flag: "🇩🇪" },
-];
+] as const;
 
 export function LanguageSelector() {
-  const [currentLanguage, setCurrentLanguage] = useState("en");
+  const currentLocale = useCurrentLocale();
+  const changeLocale = useChangeLocale();
   const pathName = usePathname();
   const router = useRouter();
   const close = useNavbarStore((state) => state.close);
 
-  const handleLanguageChange = (langCode: string) => {
-    setCurrentLanguage(langCode);
+  const handleLanguageChange = (langCode: locales) => {
+    try {
+      changeLocale(langCode);
+      router.refresh();
 
-    const segments = pathName.split("/");
-    segments[1] = langCode;
-    const newPath = segments.join("/");
+      const segments = pathName.split("/");
+      segments[1] = langCode;
+      const newPath = segments.join("/");
 
-    router.push(newPath);
+      router.push(newPath);
+    } catch (error) {
+      console.error("Error changing language:", error);
+    }
   };
 
-  useEffect(() => {
-    const path = window.location.pathname.split("/")[1];
-    if (path) {
-      const langCode = languages.find((lang) => lang.code === path)?.code;
-      if (langCode) {
-        setCurrentLanguage(langCode);
-      }
-    }
-  }, []);
-
-  const onSwitchLanguageClick = (code: string) => {
+  const onSwitchLanguageClick = async (code: locales) => {
     handleLanguageChange(code);
     close();
   };
@@ -63,7 +59,7 @@ export function LanguageSelector() {
           <DropdownMenuItem key={lang.code} onClick={() => onSwitchLanguageClick(lang.code)}>
             <span className="mr-2">{lang.flag}</span>
             {lang.name}
-            {currentLanguage === lang.code && <span className="ml-auto">✓</span>}
+            {currentLocale === lang.code && <span className="ml-auto">✓</span>}
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

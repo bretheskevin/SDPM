@@ -9,7 +9,8 @@ import { useNavbarStore } from "@/stores/navbar.store";
 import { Cookies } from "@/services/cookie.service";
 import { useI18n } from "@/locales/client";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetDescription, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Separator } from "@/components/ui/separator";
 
 export function Navbar() {
   const t = useI18n();
@@ -48,16 +49,25 @@ export function Navbar() {
             </Button>
           )}
         </div>
-        <Sheet open={isOpen} onOpenChange={toggle}>
+        <Sheet open={isOpen} onOpenChange={toggle} aria-describedby={"menu"}>
           <SheetTrigger asChild>
             <Button variant="ghost" size="icon" className="md:hidden" aria-label="Toggle menu">
               {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
           </SheetTrigger>
           <SheetContent side="right" className="w-[240px] sm:w-[300px]">
+            <SheetTitle aria-label="Menu" />
+            <SheetDescription />
+
             <div className="flex flex-col gap-4 py-4">
               <Links />
+
+              <Separator />
+
               <LanguageSelector />
+
+              <Separator />
+
               {isAuthenticated && (
                 <Button variant="ghost" size="auto" onClick={handleLogout} className="justify-start">
                   <LogOut className="mr-2 h-5 w-5" />
