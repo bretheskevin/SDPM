@@ -6,13 +6,11 @@ export default {
     },
   },
   landing: {
-    title:
-      "Connect your SoundCloud account to start managing your playlists effortlessly.",
+    title: "Connect your SoundCloud account to start managing your playlists effortlessly.",
   },
   tokenForm: {
     title: "Connect Your Account",
-    description:
-      "Enter your SoundCloud token to start managing your playlists.",
+    description: "Enter your SoundCloud token to start managing your playlists.",
     label: "SoundCloud Token",
     placeholder: "Enter your SoundCloud token",
     buttonLabel: "Connect to SoundCloud",
@@ -31,13 +29,11 @@ export default {
   },
   notFound: {
     title: "404 - Page Not Found",
-    description:
-      "Oops! The playlist you're looking for seems to have skipped a beat.",
+    description: "Oops! The playlist you're looking for seems to have skipped a beat.",
   },
   privacy: {
     title: "Privacy Policy",
-    description:
-      "At SCDJ Playlist Manager, we take your privacy seriously. Our policy is simple :",
+    description: "At SCDJ Playlist Manager, we take your privacy seriously. Our policy is simple :",
     weDoNotCollectAnyData: "We Do Not Collect Any Data",
     weDoNotCollectAnyDataDescription:
       "Our application does not collect, store, or process any personal information. We believe in providing a service that respects your privacy completely.",
@@ -54,8 +50,7 @@ export default {
     title: "How to Retrieve Your SoundCloud Token",
     step1: {
       title: "Step 1: Access SoundCloud",
-      description:
-        "Go to {link} and right-click anywhere on the page, then select {code}.",
+      description: "Go to {link} and right-click anywhere on the page, then select {code}.",
       inspectElement: "Inspect Element",
       imageAlt: "Screenshot of right-clicking on SoundCloud homepage",
     },
@@ -93,8 +88,19 @@ export default {
   },
   authenticatedUser: {
     title: "Welcome Back!",
-    description:
-      "You're successfully logged in. Ready to manage your playlists?",
+    description: "You're successfully logged in. Ready to manage your playlists?",
     dashboardButton: "Go to Dashboard",
+  },
+  profile: {
+    tracks: "Tracks",
+    followers: "Followers",
+    latestTracks: "Latest Tracks",
+    errors: {
+      profileFetch: {
+        title: "Unable to load profile",
+        description:
+          "There was a problem loading your profile information. Please refresh the page or try again later.",
+      },
+    },
   },
 } as const;

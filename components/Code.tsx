@@ -1,5 +1,3 @@
 export function Code({ children }: { children: React.ReactNode }) {
-  return (
-    <code className="bg-gray-100 p-1 rounded-sm text-nowrap">{children}</code>
-  );
+  return <code className="text-nowrap rounded-sm bg-gray-100 p-1">{children}</code>;
 }

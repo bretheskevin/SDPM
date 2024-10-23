@@ -6,13 +6,11 @@ export default {
     },
   },
   landing: {
-    title:
-      "Conecta tu cuenta de SoundCloud para comenzar a gestionar tus listas de reproducción sin esfuerzo.",
+    title: "Conecta tu cuenta de SoundCloud para comenzar a gestionar tus listas de reproducción sin esfuerzo.",
   },
   tokenForm: {
     title: "Conecta Tu Cuenta",
-    description:
-      "Ingresa tu token de SoundCloud para comenzar a gestionar tus listas de reproducción.",
+    description: "Ingresa tu token de SoundCloud para comenzar a gestionar tus listas de reproducción.",
     label: "Token de SoundCloud",
     placeholder: "Ingresa tu token de SoundCloud",
     buttonLabel: "Conectar a SoundCloud",
@@ -35,8 +33,7 @@ export default {
   },
   privacy: {
     title: "Política de Privacidad",
-    description:
-      "En SCDJ Playlist Manager, tomamos tu privacidad muy en serio. Nuestra política es simple:",
+    description: "En SCDJ Playlist Manager, tomamos tu privacidad muy en serio. Nuestra política es simple:",
     weDoNotCollectAnyData: "No Recopilamos Ningún Dato",
     weDoNotCollectAnyDataDescription:
       "Nuestra aplicación no recopila, almacena ni procesa información personal. Creemos en ofrecer un servicio que respete completamente tu privacidad.",
@@ -53,18 +50,15 @@ export default {
     title: "Cómo recuperar tu token de SoundCloud",
     step1: {
       title: "Paso 1: Acceder a SoundCloud",
-      description:
-        "Ve a {link} y haz clic derecho en cualquier parte de la página, luego selecciona {code}.",
+      description: "Ve a {link} y haz clic derecho en cualquier parte de la página, luego selecciona {code}.",
       inspectElement: "Inspeccionar elemento",
-      imageAlt:
-        "Captura de pantalla del clic derecho en la página de inicio de SoundCloud",
+      imageAlt: "Captura de pantalla del clic derecho en la página de inicio de SoundCloud",
     },
     step2: {
       title: "Paso 2: Navegar a la sección de Aplicación",
       description:
         "En las herramientas de desarrollo que aparecen, localiza y haz clic en la pestaña {code}. Aquí es donde encontrarás tus cookies.",
-      imageAlt:
-        "Captura de pantalla de la pestaña Aplicación en las herramientas de desarrollo",
+      imageAlt: "Captura de pantalla de la pestaña Aplicación en las herramientas de desarrollo",
     },
     step3: {
       title: "Paso 3: Localizar tu token OAuth",
@@ -85,19 +79,28 @@ export default {
     alertTitle: "¿Qué está pasando?",
     alertDescription:
       "La aplicación no está disponible actualmente debido a algunos problemas con nuestro servidor. Lamentamos cualquier inconveniente que esto pueda causar.",
-    needAppBackUp:
-      "¿Necesitas que la aplicación vuelva a funcionar rápidamente? ¡Házmelo saber!",
+    needAppBackUp: "¿Necesitas que la aplicación vuelva a funcionar rápidamente? ¡Házmelo saber!",
     contactInfo: "Información de contacto:",
     toast: {
       copiedToClipboard: "Copiado al portapapeles",
-      discordDescription:
-        "Nombre de usuario de Discord copiado al portapapeles",
+      discordDescription: "Nombre de usuario de Discord copiado al portapapeles",
     },
   },
   authenticatedUser: {
     title: "¡Bienvenido de nuevo!",
-    description:
-      "Has iniciado sesión correctamente. ¿Listo para gestionar tus listas de reproducción?",
+    description: "Has iniciado sesión correctamente. ¿Listo para gestionar tus listas de reproducción?",
     dashboardButton: "Ir al Dashboard",
+  },
+  profile: {
+    tracks: "Canciones",
+    followers: "Seguidores",
+    latestTracks: "Últimas canciones",
+    errors: {
+      profileFetch: {
+        title: "No se puede cargar el perfil",
+        description:
+          "Hubo un problema al cargar la información de tu perfil. Por favor, actualiza la página o inténtalo de nuevo más tarde.",
+      },
+    },
   },
 } as const;

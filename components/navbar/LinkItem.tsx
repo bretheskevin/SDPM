@@ -8,12 +8,9 @@ interface LinkProps {
 }
 
 export function LinkItem({ href, label, pathName }: LinkProps) {
-  const className = cn(
-    "text-sm font-medium hover:underline underline-offset-4",
-    {
-      underline: isActive(pathName, href),
-    }
-  );
+  const className = cn("text-sm font-medium hover:underline underline-offset-4", {
+    underline: isActive(pathName, href),
+  });
 
   return (
     <Link key={href} className={className} href={href}>

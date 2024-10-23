@@ -6,13 +6,11 @@ export default {
     },
   },
   landing: {
-    title:
-      "Verbinde dein SoundCloud-Konto, um deine Wiedergabelisten mühelos zu verwalten.",
+    title: "Verbinde dein SoundCloud-Konto, um deine Wiedergabelisten mühelos zu verwalten.",
   },
   tokenForm: {
     title: "Verbinde Dein Konto",
-    description:
-      "Gib deinen SoundCloud-Token ein, um deine Wiedergabelisten zu verwalten.",
+    description: "Gib deinen SoundCloud-Token ein, um deine Wiedergabelisten zu verwalten.",
     label: "SoundCloud-Token",
     placeholder: "Gib deinen SoundCloud-Token ein",
     buttonLabel: "Mit SoundCloud verbinden",
@@ -35,14 +33,12 @@ export default {
   },
   privacy: {
     title: "Datenschutzbestimmungen",
-    description:
-      "Bei SCDJ Playlist Manager nehmen wir deine Privatsphäre sehr ernst. Unsere Richtlinie ist klar:",
+    description: "Bei SCDJ Playlist Manager nehmen wir deine Privatsphäre sehr ernst. Unsere Richtlinie ist klar:",
     weDoNotCollectAnyData: "Wir Sammeln Keine Daten",
     weDoNotCollectAnyDataDescription:
       "Unsere Anwendung sammelt, speichert oder verarbeitet keine persönlichen Informationen. Wir glauben daran, einen Dienst anzubieten, der deine Privatsphäre vollständig respektiert.",
     whenUsing: "Wenn du SDPM nutzt:",
-    noPersonalInformation:
-      "Es werden keine persönlichen Informationen gesammelt",
+    noPersonalInformation: "Es werden keine persönlichen Informationen gesammelt",
     noUsageData: "Es werden keine Nutzungsdaten erfasst",
     noCookies: "Es werden keine Cookies verwendet",
     noDataShared: "Es werden keine Daten mit Dritten geteilt",
@@ -79,13 +75,11 @@ export default {
   },
   serviceUnavailable: {
     title: "Oops! Unser Dienst macht eine Pause",
-    description:
-      "Wir haben einige technische Probleme. Unser Team arbeitet daran, alles wieder in Ordnung zu bringen.",
+    description: "Wir haben einige technische Probleme. Unser Team arbeitet daran, alles wieder in Ordnung zu bringen.",
     alertTitle: "Was ist los?",
     alertDescription:
       "Die App ist derzeit aufgrund von Problemen mit unserem Server nicht verfügbar. Wir entschuldigen uns für etwaige Unannehmlichkeiten.",
-    needAppBackUp:
-      "Muss die App schnell wieder verfügbar sein? Lass es mich wissen!",
+    needAppBackUp: "Muss die App schnell wieder verfügbar sein? Lass es mich wissen!",
     contactInfo: "Kontaktinfo:",
     toast: {
       copiedToClipboard: "In die Zwischenablage kopiert",
@@ -94,8 +88,19 @@ export default {
   },
   authenticatedUser: {
     title: "Willkommen zurück!",
-    description:
-      "Sie sind erfolgreich eingeloggt. Bereit, Ihre Playlists zu verwalten?",
+    description: "Sie sind erfolgreich eingeloggt. Bereit, Ihre Playlists zu verwalten?",
     dashboardButton: "Gehe zum Dashboard",
+  },
+  profile: {
+    tracks: "Titel",
+    followers: "Follower",
+    latestTracks: "Neueste Titel",
+    errors: {
+      profileFetch: {
+        title: "Profil konnte nicht geladen werden",
+        description:
+          "Beim Laden Ihrer Profilinformationen ist ein Problem aufgetreten. Bitte aktualisieren Sie die Seite oder versuchen Sie es später erneut.",
+      },
+    },
   },
 } as const;

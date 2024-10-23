@@ -18,20 +18,18 @@ export function AuthenticatedUser() {
   };
 
   return (
-    <div className="max-w-md mx-auto text-center">
-      <div className="inline-block p-3 rounded-full bg-green-100 dark:bg-green-900 mb-4">
+    <div className="mx-auto max-w-md text-center">
+      <div className="mb-4 inline-block rounded-full bg-green-100 p-3 dark:bg-green-900">
         <SmileIcon className="h-10 w-10 text-green-500 dark:text-green-300" />
       </div>
-      <h2 className="text-2xl font-bold mb-4">{scopedT("title")}</h2>
-      <p className="text-gray-600 dark:text-gray-300 mb-6">
-        {scopedT("description")}
-      </p>
-      <Button asChild className="w-full mb-4">
+      <h2 className="mb-4 text-2xl font-bold">{scopedT("title")}</h2>
+      <p className="mb-6 text-gray-600 dark:text-gray-300">{scopedT("description")}</p>
+      <Button asChild className="mb-4 w-full">
         <Link href="/dashboard">{scopedT("dashboardButton")}</Link>
       </Button>
       <button
         onClick={handleLogout}
-        className="text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 underline"
+        className="text-sm text-gray-500 underline hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
       >
         {t("global.button.logout")}
       </button>

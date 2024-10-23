@@ -30,9 +30,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <Providers locale={params.locale}>
           <StoreManager />
-          <div className="flex flex-col min-h-screen bg-background pt-14">
+          <div className="flex min-h-screen flex-col bg-background pt-14">
             <Navbar />
-            <div className={"h-full flex flex-col flex-1"}>{children}</div>
+            <div className={"flex h-full flex-1 flex-col"}>{children}</div>
             <Footer />
           </div>
           <Toaster />

@@ -9,38 +9,27 @@ export default async function PrivacyPage() {
 
   return (
     <div className="container mx-auto px-4 py-4">
-      <div className="max-w-2xl mx-auto text-center">
-        <div className="inline-flex items-center justify-center w-20 h-20 mb-8 rounded-full bg-primary/10">
-          <Shield className="w-10 h-10 text-primary" />
+      <div className="mx-auto max-w-2xl text-center">
+        <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 sm:mb-8 sm:h-20 sm:w-20">
+          <Shield className="h-8 w-8 text-primary sm:h-10 sm:w-10" />
         </div>
-        <h1 className="text-4xl font-bold mb-6">{scopedT("title")}</h1>
+        <h1 className="mb-4 text-3xl font-bold sm:mb-6 sm:text-4xl">{scopedT("title")}</h1>
         <div className="prose dark:prose-invert mx-auto">
-          <p className="text-xl mb-6 text-gray-600 dark:text-gray-300">
-            {scopedT("description")}
-          </p>
-          <h2 className="text-3xl font-semibold mb-6">
-            {scopedT("weDoNotCollectAnyData")}
-          </h2>
-          <div className="bg-primary/5 border border-primary/10 rounded-lg p-6 mb-8">
-            <p className="mb-4">
-              {scopedT("weDoNotCollectAnyDataDescription")}
-            </p>
-            <p className="mb-4">{scopedT("whenUsing")}</p>
-            <ul className="list-disc list-inside mb-4 text-left">
-              {[
-                "noPersonalInformation",
-                "noUsageData",
-                "noCookies",
-                "noDataShared",
-              ].map((item, index) => (
+          <p className="mb-4 text-lg text-gray-600 dark:text-gray-300 sm:mb-6 sm:text-xl">{scopedT("description")}</p>
+          <h2 className="mb-4 text-2xl font-semibold sm:mb-6 sm:text-3xl">{scopedT("weDoNotCollectAnyData")}</h2>
+          <div className="mb-6 rounded-lg border border-primary/10 bg-primary/5 p-4 sm:mb-8 sm:p-6">
+            <p className="mb-3 text-base sm:mb-4 sm:text-lg">{scopedT("weDoNotCollectAnyDataDescription")}</p>
+            <p className="mb-3 text-base sm:mb-4 sm:text-lg">{scopedT("whenUsing")}</p>
+            <ul className="mb-3 list-inside list-disc text-left text-base sm:mb-4 sm:text-lg">
+              {["noPersonalInformation", "noUsageData", "noCookies", "noDataShared"].map((item, index) => (
                 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                 // @ts-expect-error
                 <li key={index}>{scopedT(item)}</li>
               ))}
             </ul>
-            <p>{scopedT("tokenNeeded")}</p>
+            <p className="text-base sm:text-lg">{scopedT("tokenNeeded")}</p>
           </div>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mb-8">
+          <p className="mb-6 text-xs text-gray-500 dark:text-gray-400 sm:mb-8 sm:text-sm">
             {scopedT("lastUpdated", {
               date: new Date("2024-10-13").toLocaleDateString(),
             })}

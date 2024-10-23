@@ -7,16 +7,15 @@ import { ExternalLink } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "SDPM | Token Tutorial",
-  description:
-    "Learn how to retrieve your SoundCloud token to manage your playlists.",
+  description: "Learn how to retrieve your SoundCloud token to manage your playlists.",
 };
 
 export default async function SoundCloudTokenTutorial() {
   const scopedT = await getScopedI18n("tutorial");
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-3xl">
-      <h1 className="text-3xl font-bold mb-6">{scopedT("title")}</h1>
+    <div className="container mx-auto max-w-3xl px-4 py-8">
+      <h1 className="mb-6 text-3xl font-bold">{scopedT("title")}</h1>
 
       <div className="space-y-6">
         <Card>
@@ -42,7 +41,7 @@ export default async function SoundCloudTokenTutorial() {
                 code: <Code>{scopedT("step1.inspectElement")}</Code>,
               })}
             </p>
-            <div className="bg-gray-200 rounded-lg overflow-hidden">
+            <div className="overflow-hidden rounded-lg bg-gray-200">
               <Image
                 src="/tutorial/1.png"
                 alt={scopedT("step1.imageAlt")}
@@ -64,7 +63,7 @@ export default async function SoundCloudTokenTutorial() {
                 code: <Code>Application</Code>,
               })}
             </p>
-            <div className="bg-gray-200 rounded-lg overflow-hidden">
+            <div className="overflow-hidden rounded-lg bg-gray-200">
               <Image
                 src="/tutorial/2.png"
                 alt={scopedT("step2.imageAlt")}
@@ -87,7 +86,7 @@ export default async function SoundCloudTokenTutorial() {
                 key: <Code>oauth_token</Code>,
               })}
             </p>
-            <div className="bg-gray-200 rounded-lg overflow-hidden">
+            <div className="overflow-hidden rounded-lg bg-gray-200">
               <Image
                 src="/tutorial/3.png"
                 alt={scopedT("step3.imageAlt")}
@@ -100,8 +99,8 @@ export default async function SoundCloudTokenTutorial() {
         </Card>
       </div>
 
-      <div className="mt-6 p-4 bg-yellow-100 rounded-lg">
-        <h2 className="text-xl font-semibold mb-2">{scopedT("note.title")}</h2>
+      <div className="mt-6 rounded-lg bg-yellow-100 p-4">
+        <h2 className="mb-2 text-xl font-semibold">{scopedT("note.title")}</h2>
         <p>{scopedT("note.description")}</p>
       </div>
     </div>

@@ -1,34 +1,44 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SoundcloudApiService } from "@/services/soundcloud-api.service";
-import { Music } from "lucide-react";
-import ProfileCard from "@/app/[locale]/profile/ProfileCard";
+import { AlertCircle, Music } from "lucide-react";
+import ProfileCard from "@/app/[locale]/profile/profile-card/ProfileCard";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { getScopedI18n } from "@/locales/server";
 
 export default async function ProfilePage() {
-  const profileData: SoundcloudProfile = await SoundcloudApiService.me();
+  const profileData: SoundcloudProfile | undefined = await SoundcloudApiService.me();
+  const scopedT = await getScopedI18n("profile");
+
+  if (!profileData) {
+    return (
+      <div className="container mx-auto max-w-7xl px-4 py-8">
+        <Alert variant="destructive">
+          <AlertCircle className="h-4 w-4" />
+          <AlertTitle>{scopedT("errors.profileFetch.title")}</AlertTitle>
+          <AlertDescription>{scopedT("errors.profileFetch.description")}</AlertDescription>
+        </Alert>
+      </div>
+    );
+  }
 
   return (
-    <div className="container max-w-7xl mx-auto px-4 py-8">
+    <div className="container mx-auto max-w-7xl px-4 py-8">
       <ProfileCard profileData={profileData} />
 
       <div className="mt-8">
         <Card className="bg-card text-card-foreground">
           <CardHeader>
-            <CardTitle className="text-2xl">Latest Tracks</CardTitle>
+            <CardTitle className="text-2xl">{scopedT("latestTracks")}</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
               {[1, 2, 3, 4, 5, 6].map((track) => (
-                <div
-                  key={track}
-                  className="flex items-center p-4 bg-muted rounded-lg"
-                >
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-md flex items-center justify-center mr-4">
-                    <Music className="w-6 h-6 text-primary-foreground" />
+                <div key={track} className="flex items-center rounded-lg bg-muted p-4">
+                  <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-md bg-gradient-to-br from-primary to-secondary">
+                    <Music className="h-6 w-6 text-primary-foreground" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground">
-                      Track Title {track}
-                    </h3>
+                    <h3 className="font-semibold text-foreground">Track Title {track}</h3>
                     <p className="text-sm text-muted-foreground">1,234 plays</p>
                   </div>
                 </div>
@@ -36,6 +46,13 @@ export default async function ProfilePage() {
             </div>
           </CardContent>
         </Card>
+      </div>
+      <div className="container mx-auto max-w-7xl px-4 py-8">
+        <Alert variant="destructive">
+          <AlertCircle className="h-4 w-4" />
+          <AlertTitle>{scopedT("errors.profileFetch.title")}</AlertTitle>
+          <AlertDescription>{scopedT("errors.profileFetch.description")}</AlertDescription>
+        </Alert>
       </div>
     </div>
   );

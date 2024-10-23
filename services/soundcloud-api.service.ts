@@ -11,7 +11,7 @@ export class SoundcloudApiService extends ApiService {
 
   static async checkHealth(): Promise<boolean> {
     try {
-      const data = await this.get("health");
+      const data = await this.get<{ status: string }>("health");
       return data.status === "healthy";
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (_) {
@@ -28,7 +28,7 @@ export class SoundcloudApiService extends ApiService {
     }
 
     try {
-      const data: { is_valid: boolean } = await this.get(`check-token`);
+      const data = await this.get<{ is_valid: boolean }>(`check-token`);
       return data.is_valid;
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (_) {
@@ -36,9 +36,10 @@ export class SoundcloudApiService extends ApiService {
     }
   }
 
-  static async me(): Promise<SoundcloudProfile> {
+  static async me(): Promise<SoundcloudProfile | undefined> {
     try {
       return await this.get<SoundcloudProfile>("me");
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (_) {
       console.error("Failed to fetch Soundcloud profile");
     }

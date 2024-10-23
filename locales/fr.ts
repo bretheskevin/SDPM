@@ -6,13 +6,11 @@ export default {
     },
   },
   landing: {
-    title:
-      "Connectez votre compte SoundCloud pour gérer vos playlists facilement.",
+    title: "Connectez votre compte SoundCloud pour gérer vos playlists facilement.",
   },
   tokenForm: {
     title: "Connectez Votre Compte",
-    description:
-      "Entrez votre token SoundCloud pour commencer à gérer vos playlists.",
+    description: "Entrez votre token SoundCloud pour commencer à gérer vos playlists.",
     label: "Token SoundCloud",
     placeholder: "Entrez votre token SoundCloud",
     buttonLabel: "Connecter à SoundCloud",
@@ -35,8 +33,7 @@ export default {
   },
   privacy: {
     title: "Politique de Confidentialité",
-    description:
-      "Chez SCDJ Playlist Manager, nous prenons votre vie privée très au sérieux. Voici notre politique :",
+    description: "Chez SCDJ Playlist Manager, nous prenons votre vie privée très au sérieux. Voici notre politique :",
     weDoNotCollectAnyData: "Nous ne collectons aucune donnée",
     weDoNotCollectAnyDataDescription:
       "Notre application ne collecte, ne stocke ni ne traite vos informations personnelles. Nous nous engageons à offrir un service qui respecte pleinement votre vie privée.",
@@ -53,18 +50,15 @@ export default {
     title: "Comment récupérer votre token SoundCloud",
     step1: {
       title: "Étape 1 : Accéder à SoundCloud",
-      description:
-        "Allez sur {link} et faites un clic droit n'importe où sur la page, puis sélectionnez {code}.",
+      description: "Allez sur {link} et faites un clic droit n'importe où sur la page, puis sélectionnez {code}.",
       inspectElement: "Inspecter l'élément",
-      imageAlt:
-        "Capture d'écran du clic droit sur la page d'accueil de SoundCloud",
+      imageAlt: "Capture d'écran du clic droit sur la page d'accueil de SoundCloud",
     },
     step2: {
       title: "Étape 2 : Naviguer vers la section Application",
       description:
         "Dans les outils de développement qui s'affichent, localisez et cliquez sur l'onglet {code}. C'est ici que vous trouverez vos cookies.",
-      imageAlt:
-        "Capture d'écran de l'onglet Application dans les outils de développement",
+      imageAlt: "Capture d'écran de l'onglet Application dans les outils de développement",
     },
     step3: {
       title: "Étape 3 : Localiser votre token OAuth",
@@ -80,23 +74,32 @@ export default {
   },
   serviceUnavailable: {
     title: "Oups ! Notre service fait une pause",
-    description:
-      "Nous rencontrons des difficultés techniques. Notre équipe travaille à rétablir la situation.",
+    description: "Nous rencontrons des difficultés techniques. Notre équipe travaille à rétablir la situation.",
     alertTitle: "Que se passe-t-il ?",
     alertDescription:
       "L'application est actuellement indisponible en raison de problèmes avec notre serveur. Nous nous excusons pour le désagrément.",
-    needAppBackUp:
-      "Besoin que l'application soit rapidement rétablie ? Faites-le moi savoir !",
+    needAppBackUp: "Besoin que l'application soit rapidement rétablie ? Faites-le moi savoir !",
     contactInfo: "Infos de contact :",
     toast: {
       copiedToClipboard: "Copié dans le presse-papier",
-      discordDescription:
-        "Nom d'utilisateur Discord copié dans le presse-papier",
+      discordDescription: "Nom d'utilisateur Discord copié dans le presse-papier",
     },
   },
   authenticatedUser: {
     title: "Bienvenue de nouveau !",
     description: "Vous êtes connecté avec succès. Prêt à gérer vos playlists ?",
-    dashboardButton: "Aller au tableau de bord",
+    dashboardButton: "Aller sur le tableau de bord",
+  },
+  profile: {
+    tracks: "Morceaux",
+    followers: "Abonnés",
+    latestTracks: "Derniers morceaux",
+    errors: {
+      profileFetch: {
+        title: "Impossible de charger le profil",
+        description:
+          "Un problème est survenu lors du chargement des informations de votre profil. Veuillez actualiser la page ou réessayer plus tard.",
+      },
+    },
   },
 } as const;

@@ -6,10 +6,6 @@ export const metadata: Metadata = {
   description: "Your soundcloud profile.",
 };
 
-export default function ProfileLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function ProfileLayout({ children }: { children: React.ReactNode }) {
   return <ProtectedRoute>{children}</ProtectedRoute>;
 }

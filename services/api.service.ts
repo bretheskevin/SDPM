@@ -8,11 +8,7 @@ export class ApiService {
     return response.json();
   }
 
-  static async post(
-    endpoint: string,
-    data: any,
-    options: RequestInit = {}
-  ): Promise<any> {
+  static async post(endpoint: string, data: any, options: RequestInit = {}): Promise<any> {
     const response = await this.fetch(endpoint, {
       ...options,
       method: "POST",
@@ -21,11 +17,7 @@ export class ApiService {
     return response.json();
   }
 
-  static async put(
-    endpoint: string,
-    data: any,
-    options: RequestInit = {}
-  ): Promise<any> {
+  static async put(endpoint: string, data: any, options: RequestInit = {}): Promise<any> {
     const response = await this.fetch(endpoint, {
       ...options,
       method: "PUT",
@@ -34,10 +26,7 @@ export class ApiService {
     return response.json();
   }
 
-  static async delete(
-    endpoint: string,
-    options: RequestInit = {}
-  ): Promise<any> {
+  static async delete(endpoint: string, options: RequestInit = {}): Promise<any> {
     const response = await this.fetch(endpoint, {
       ...options,
       method: "DELETE",
@@ -45,10 +34,7 @@ export class ApiService {
     return response.json();
   }
 
-  private static async fetch(
-    endpoint: string,
-    options: RequestInit = {}
-  ): Promise<Response> {
+  private static async fetch(endpoint: string, options: RequestInit = {}): Promise<Response> {
     const url = this.BASE_URL + endpoint;
     const mergedOptions: RequestInit = {
       ...options,

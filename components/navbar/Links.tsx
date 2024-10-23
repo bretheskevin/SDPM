@@ -41,12 +41,7 @@ export function Links() {
       {links
         .filter((link) => !link.needAuth || (isApiUp && authenticated))
         .map((link) => (
-          <LinkItem
-            key={link.href}
-            href={link.href}
-            label={link.label}
-            pathName={pathName}
-          />
+          <LinkItem key={link.href} href={link.href} label={link.label} pathName={pathName} />
         ))}
     </>
   );
