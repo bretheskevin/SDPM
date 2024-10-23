@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Globe } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
+import { useNavbarStore } from "@/stores/navbar.store";
 
 const languages = [
   { code: "en", name: "English", flag: "🇬🇧" },
@@ -22,6 +23,7 @@ export function LanguageSelector() {
   const [currentLanguage, setCurrentLanguage] = useState("en");
   const pathName = usePathname();
   const router = useRouter();
+  const close = useNavbarStore((state) => state.close);
 
   const handleLanguageChange = (langCode: string) => {
     setCurrentLanguage(langCode);
@@ -43,6 +45,11 @@ export function LanguageSelector() {
     }
   }, []);
 
+  const onSwitchLanguageClick = (code: string) => {
+    handleLanguageChange(code);
+    close();
+  };
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -53,7 +60,7 @@ export function LanguageSelector() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         {languages.map((lang) => (
-          <DropdownMenuItem key={lang.code} onClick={() => handleLanguageChange(lang.code)}>
+          <DropdownMenuItem key={lang.code} onClick={() => onSwitchLanguageClick(lang.code)}>
             <span className="mr-2">{lang.flag}</span>
             {lang.name}
             {currentLanguage === lang.code && <span className="ml-auto">✓</span>}
