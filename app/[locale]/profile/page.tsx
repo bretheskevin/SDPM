@@ -47,13 +47,6 @@ export default async function ProfilePage() {
           </CardContent>
         </Card>
       </div>
-      <div className="container mx-auto max-w-7xl px-4 py-8">
-        <Alert variant="destructive">
-          <AlertCircle className="h-4 w-4" />
-          <AlertTitle>{scopedT("errors.profileFetch.title")}</AlertTitle>
-          <AlertDescription>{scopedT("errors.profileFetch.description")}</AlertDescription>
-        </Alert>
-      </div>
     </div>
   );
 }
