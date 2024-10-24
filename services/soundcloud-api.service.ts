@@ -32,7 +32,8 @@ export class SoundcloudApiService extends ApiService {
       return data.is_valid;
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (_) {
-      return false;
+      console.error("Failed to check token validity");
+      return true;
     }
   }
 
