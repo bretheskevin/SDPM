@@ -37,7 +37,7 @@ const StatItem = ({ icon, label, value }: StatItemProps) => {
       <div>{icon}</div>
       <div>
         <p className="text-xs font-medium text-muted-foreground sm:text-sm">{label}</p>
-        <p className="text-sm font-semibold text-foreground sm:text-base">{value.toLocaleString()}</p>
+        <p className="text-sm font-semibold text-foreground sm:text-base">{value?.toLocaleString() || "-"}</p>
       </div>
     </div>
   );
