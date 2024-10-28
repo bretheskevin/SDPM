@@ -4,6 +4,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Music } from "lucide-react";
 import React from "react";
 import { useQueryState } from "nuqs";
+import Image from "next/image";
 
 interface ProfileTrackImageProps {
   url: string | null;
@@ -18,7 +19,16 @@ export const ProfileTrackImage = ({ url, alt }: ProfileTrackImageProps) => {
 };
 
 const HasImageComponent = ({ url, alt }: { url: string; alt: string }) => {
-  return <img src={url.replace("-large", "-t500x500")} alt={alt} className="h-full w-full rounded-md object-cover" />;
+  return (
+    <Image
+      src={url.replace("-large", "-t500x500")}
+      alt={alt}
+      className="h-full w-full rounded-md object-cover"
+      layout="responsive"
+      width={500}
+      height={500}
+    />
+  );
 };
 
 const NoImageComponent = () => {
