@@ -1,12 +1,10 @@
 import React from "react";
 import { ProfileTrack } from "@/app/[locale]/profile/profile-track/ProfileTrack";
+import { SoundcloudApiService } from "@/services/soundcloud-api.service";
 
-interface ProfileTracksProps {
-  tracks: Array<SoundcloudTrack>;
-  isLoading?: boolean;
-}
+export const ProfileTracks = async () => {
+  const tracks: SoundcloudTrack[] = await SoundcloudApiService.getMyTracks();
 
-export const ProfileTracks = ({ tracks }: ProfileTracksProps) => {
   if (!tracks || tracks.length === 0) {
     return <div className="text-center text-gray-500">No tracks found.</div>;
   }

@@ -5,14 +5,14 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { getScopedI18n } from "@/locales/server";
 import { ProfileTracks } from "@/app/[locale]/profile/ProfileTracks";
 import { ProfileTrackImagesToggle } from "@/app/[locale]/profile/ProfileTrackImagesToggle";
-import React from "react";
+import React, { Suspense } from "react";
+import { ProfileTracksSkeleton } from "@/app/[locale]/profile/skeletons/ProfileTracksSkeleton";
 
 export default async function ProfilePage() {
   const profileData: SoundcloudProfile | undefined = await SoundcloudApiService.me();
-  const profileTracks: SoundcloudTrack[] | undefined = await SoundcloudApiService.getMyTracks();
   const scopedT = await getScopedI18n("profile");
 
-  if (!profileData || !profileTracks) {
+  if (!profileData) {
     return (
       <div className="container mx-auto max-w-7xl px-4 py-8">
         <Alert variant="destructive">
@@ -29,7 +29,10 @@ export default async function ProfilePage() {
       <ProfileCard profileData={profileData} />
 
       <ProfileTrackImagesToggle />
-      <ProfileTracks tracks={profileTracks} />
+
+      <Suspense fallback={<ProfileTracksSkeleton />}>
+        <ProfileTracks />
+      </Suspense>
     </div>
   );
 }
