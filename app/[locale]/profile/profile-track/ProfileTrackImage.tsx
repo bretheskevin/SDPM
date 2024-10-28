@@ -1,6 +1,9 @@
+"use client";
+
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Music } from "lucide-react";
 import React from "react";
+import { useQueryState } from "nuqs";
 
 interface ProfileTrackImageProps {
   url: string | null;
@@ -8,6 +11,9 @@ interface ProfileTrackImageProps {
 }
 
 export const ProfileTrackImage = ({ url, alt }: ProfileTrackImageProps) => {
+  const [hideImages] = useQueryState("hideImages");
+  if (hideImages) return null;
+
   return <AspectRatio ratio={1}>{url ? <HasImageComponent url={url} alt={alt} /> : <NoImageComponent />}</AspectRatio>;
 };
 

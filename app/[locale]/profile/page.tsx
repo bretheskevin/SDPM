@@ -4,6 +4,8 @@ import ProfileCard from "@/app/[locale]/profile/profile-card/ProfileCard";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { getScopedI18n } from "@/locales/server";
 import { ProfileTracks } from "@/app/[locale]/profile/ProfileTracks";
+import { ProfileTrackImagesToggle } from "@/app/[locale]/profile/ProfileTrackImagesToggle";
+import React from "react";
 
 export default async function ProfilePage() {
   const profileData: SoundcloudProfile | undefined = await SoundcloudApiService.me();
@@ -26,6 +28,7 @@ export default async function ProfilePage() {
     <div className="container mx-auto max-w-7xl px-4 py-8">
       <ProfileCard profileData={profileData} />
 
+      <ProfileTrackImagesToggle />
       <ProfileTracks tracks={profileTracks} />
     </div>
   );

@@ -7,6 +7,7 @@ import { Providers } from "@/providers/providers";
 import Favicon from "/public/favicon.ico";
 import { Toaster } from "@/components/ui/toaster";
 import { StoreManager } from "@/managers/StoreManager";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,15 +29,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Providers locale={params.locale}>
-          <StoreManager />
-          <div className="flex min-h-screen flex-col bg-background bg-gray-50 pt-14">
-            <Navbar />
-            <div className={"flex h-full flex-1 flex-col"}>{children}</div>
-            <Footer />
-          </div>
-          <Toaster />
-        </Providers>
+        <NuqsAdapter>
+          <Providers locale={params.locale}>
+            <StoreManager />
+            <div className="flex min-h-screen flex-col bg-background bg-gray-50 pt-14">
+              <Navbar />
+              <div className={"flex h-full flex-1 flex-col"}>{children}</div>
+              <Footer />
+            </div>
+            <Toaster />
+          </Providers>
+        </NuqsAdapter>
       </body>
     </html>
   );

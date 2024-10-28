@@ -19,7 +19,7 @@ export default {
     howToGetTokenLink: "Comment obtenir votre token SoundCloud ?",
   },
   footer: {
-    rights: "© 2024 SoundCloud DJ. Tous droits réservés.",
+    rights: "© 2024 SoundCloud DJ Playlist Manager. Tous droits réservés.",
     privacy: "Politique de confidentialité",
   },
   navbar: {

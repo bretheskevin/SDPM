@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { ProfileTrack } from "@/app/[locale]/profile/profile-track/ProfileTrack";
 
