@@ -2,7 +2,7 @@
 
 import { Headphones, LogOut, Menu, X } from "lucide-react";
 import Link from "next/link";
-import { LanguageSelector } from "@/components/LanguageSelector";
+import { LanguageSelector } from "@/components/navbar/LanguageSelector";
 import { Links } from "@/components/navbar/Links";
 import { useUserStore } from "@/stores/user.store";
 import { useNavbarStore } from "@/stores/navbar.store";
