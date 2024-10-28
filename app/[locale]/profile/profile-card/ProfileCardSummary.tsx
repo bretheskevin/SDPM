@@ -15,8 +15,8 @@ export const ProfileCardSummary = ({ profileData }: ProfileCardSummaryProps) => 
         <div>
           <h1 className="text-3xl font-bold text-foreground">{profileData.username}</h1>
           <div className="mb-4 flex flex-wrap gap-2">
-            {profileData.badges.pro && <Badge variant="secondary">Pro</Badge>}
-            {profileData.badges.pro_unlimited && <Badge variant="destructive">Pro Unlimited</Badge>}
+            {profileData.badges.pro && <Badge variant="secondary">Next</Badge>}
+            {profileData.badges.pro_unlimited && <Badge variant="destructive">Next Pro</Badge>}
             {profileData.badges.verified && <Badge>Verified</Badge>}
           </div>
           <p className="text-sm text-foreground/80">

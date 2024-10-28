@@ -6,7 +6,7 @@ export default async function Home() {
 
   return (
     <main className={"flex flex-1 flex-col lg:flex-row"}>
-      <section className="flex w-full flex-1 items-center justify-center py-12 md:py-24">
+      <section className="flex w-full flex-1 items-center justify-center bg-white py-12 md:py-24">
         <div className="my-auto px-4 md:px-6">
           <div className="flex flex-col items-center space-y-4 text-center">
             <div className="space-y-2">

@@ -45,4 +45,13 @@ export class SoundcloudApiService extends ApiService {
       console.error("Failed to fetch Soundcloud profile");
     }
   }
+
+  static async getMyTracks(): Promise<SoundcloudTrack[] | undefined> {
+    try {
+      return await this.get<SoundcloudTrack[]>("my-tracks");
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_) {
+      console.error("Failed to fetch Soundcloud tracks");
+    }
+  }
 }
