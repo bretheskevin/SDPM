@@ -6,7 +6,7 @@ export default {
     },
   },
   landing: {
-    title: "Connectez votre compte SoundCloud pour gérer vos playlists facilement.",
+    title: "Connectez votre compte SoundCloud pour commencer à gérer vos playlists en toute simplicité.",
   },
   tokenForm: {
     title: "Connectez Votre Compte",
@@ -15,7 +15,7 @@ export default {
     placeholder: "Entrez votre token SoundCloud",
     buttonLabel: "Connecter à SoundCloud",
     buttonLabelLoading: "Connexion en cours...",
-    tokenInvalid: "Token invalide. Veuillez vérifier et réessayer.",
+    tokenInvalid: "Token invalide. Veuillez vérifier et essayer de nouveau.",
     howToGetTokenLink: "Comment obtenir votre token SoundCloud ?",
   },
   footer: {
@@ -36,7 +36,7 @@ export default {
     description: "Chez SCDJ Playlist Manager, nous prenons votre vie privée très au sérieux. Voici notre politique :",
     weDoNotCollectAnyData: "Nous ne collectons aucune donnée",
     weDoNotCollectAnyDataDescription:
-      "Notre application ne collecte, ne stocke ni ne traite vos informations personnelles. Nous nous engageons à offrir un service qui respecte pleinement votre vie privée.",
+      "Nous ne collectons, stockons ni ne traitons aucune de vos informations personnelles. Nous nous engageons à offrir un service totalement respectueux de votre vie privée.",
     whenUsing: "Lorsque vous utilisez SDPM :",
     noPersonalInformation: "Aucune information personnelle n'est collectée",
     noUsageData: "Aucune donnée d'utilisation n'est suivie",
@@ -78,7 +78,7 @@ export default {
     alertTitle: "Que se passe-t-il ?",
     alertDescription:
       "L'application est actuellement indisponible en raison de problèmes avec notre serveur. Nous nous excusons pour le désagrément.",
-    needAppBackUp: "Besoin que l'application soit rapidement rétablie ? Faites-le moi savoir !",
+    needAppBackUp: "Besoin d'un retour rapide de l'application ? Faites-le nous savoir !",
     contactInfo: "Infos de contact :",
     toast: {
       copiedToClipboard: "Copié dans le presse-papier",
@@ -101,5 +101,10 @@ export default {
           "Un problème est survenu lors du chargement des informations de votre profil. Veuillez actualiser la page ou réessayer plus tard.",
       },
     },
+    hideImages: "Masquer les images",
+    noTracksFound: "Aucun morceau trouvé.",
+    playbackCount: "Nombre de lectures",
+    likesCount: "Nombre de likes",
+    duration: "Durée",
   },
 } as const;

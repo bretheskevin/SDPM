@@ -102,5 +102,10 @@ export default {
           "There was a problem loading your profile information. Please refresh the page or try again later.",
       },
     },
+    hideImages: "Hide Images",
+    noTracksFound: "No tracks found.",
+    playbackCount: "Playback Count",
+    likesCount: "Likes Count",
+    duration: "Duration",
   },
 } as const;

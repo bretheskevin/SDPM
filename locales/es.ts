@@ -6,7 +6,7 @@ export default {
     },
   },
   landing: {
-    title: "Conecta tu cuenta de SoundCloud para comenzar a gestionar tus listas de reproducción sin esfuerzo.",
+    title: "Conecta tu cuenta de SoundCloud para gestionar tus listas de reproducción fácilmente.",
   },
   tokenForm: {
     title: "Conecta Tu Cuenta",
@@ -15,7 +15,7 @@ export default {
     placeholder: "Ingresa tu token de SoundCloud",
     buttonLabel: "Conectar a SoundCloud",
     buttonLabelLoading: "Conectando...",
-    tokenInvalid: "Token inválido. Por favor verifica e intenta de nuevo.",
+    tokenInvalid: "Token inválido. Por favor, verifícalo e inténtalo de nuevo.",
     howToGetTokenLink: "¿Cómo obtener tu token de SoundCloud?",
   },
   footer: {
@@ -102,5 +102,10 @@ export default {
           "Hubo un problema al cargar la información de tu perfil. Por favor, actualiza la página o inténtalo de nuevo más tarde.",
       },
     },
+    hideImages: "Ocultar imágenes",
+    noTracksFound: "No se encontraron pistas.",
+    playbackCount: "Recuento de reproducciones",
+    likesCount: "Recuento de likes",
+    duration: "Duración",
   },
 } as const;

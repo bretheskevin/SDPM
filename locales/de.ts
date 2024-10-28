@@ -2,7 +2,7 @@ export default {
   global: {
     button: {
       backToHome: "Zurück zur Startseite",
-      logout: "Ausloggen",
+      logout: "Abmelden",
     },
   },
   landing: {
@@ -88,7 +88,7 @@ export default {
   },
   authenticatedUser: {
     title: "Willkommen zurück!",
-    description: "Sie sind erfolgreich eingeloggt. Bereit, Ihre Playlists zu verwalten?",
+    description: "Du bist erfolgreich eingeloggt. Bereit, deine Playlists zu verwalten?",
     dashboardButton: "Gehe zum Dashboard",
   },
   profile: {
@@ -102,5 +102,10 @@ export default {
           "Beim Laden Ihrer Profilinformationen ist ein Problem aufgetreten. Bitte aktualisieren Sie die Seite oder versuchen Sie es später erneut.",
       },
     },
+    hideImages: "Bilder ausblenden",
+    noTracksFound: "Keine Titel gefunden.",
+    playbackCount: "Wiedergabeanzahl",
+    likesCount: "Likes",
+    duration: "Dauer",
   },
 } as const;
