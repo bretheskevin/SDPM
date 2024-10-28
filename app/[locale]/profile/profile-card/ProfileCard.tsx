@@ -1,8 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import React from "react";
-import { ProfileCardAvatar } from "@/app/[locale]/profile/profile-card/ProfileCardAvatar";
-import { ProfileCardDescription } from "@/app/[locale]/profile/profile-card/ProfileCardDescription";
-import { ProfileCardSummary } from "@/app/[locale]/profile/profile-card/ProfileCardSummary";
+import { ProfileCardAvatar } from "@profile/profile-card/ProfileCardAvatar";
+import { ProfileCardSummary } from "@profile/profile-card/ProfileCardSummary";
+import { ProfileCardDescription } from "@profile/profile-card/ProfileCardDescription";
 
 interface ProfileCardProps {
   profileData: SoundcloudProfile;

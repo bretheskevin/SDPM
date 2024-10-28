@@ -2,9 +2,9 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Heart, Play } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-import { ProfileTrackDescription } from "@/app/[locale]/profile/profile-track/ProfileTrackDescription";
-import { ProfileTrackImage } from "@/app/[locale]/profile/profile-track/ProfileTrackImage";
-import { ProfileTrackBadge } from "@/app/[locale]/profile/profile-track/ProfileTrackBadge";
+import { ProfileTrackImage } from "@profile/profile-track/ProfileTrackImage";
+import { ProfileTrackDescription } from "@profile/profile-track/ProfileTrackDescription";
+import { ProfileTrackBadge } from "@profile/profile-track/ProfileTrackBadge";
 
 interface ProfileTrackProps {
   track: SoundcloudTrack;

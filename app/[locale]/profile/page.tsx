@@ -1,12 +1,12 @@
 import { SoundcloudApiService } from "@/services/soundcloud-api.service";
 import { AlertCircle } from "lucide-react";
-import ProfileCard from "@/app/[locale]/profile/profile-card/ProfileCard";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { getScopedI18n } from "@/locales/server";
-import { ProfileTracks } from "@/app/[locale]/profile/ProfileTracks";
-import { ProfileTrackImagesToggle } from "@/app/[locale]/profile/ProfileTrackImagesToggle";
 import React, { Suspense } from "react";
-import { ProfileTracksSkeleton } from "@/app/[locale]/profile/skeletons/ProfileTracksSkeleton";
+import { ProfileTracksSkeleton } from "@profile/skeletons/ProfileTracksSkeleton";
+import { ProfileTracks } from "@profile/ProfileTracks";
+import ProfileCard from "@profile/profile-card/ProfileCard";
+import { ProfileTrackImagesToggle } from "@profile/ProfileTrackImagesToggle";
 
 export default async function ProfilePage() {
   const profileData: SoundcloudProfile | undefined = await SoundcloudApiService.me();

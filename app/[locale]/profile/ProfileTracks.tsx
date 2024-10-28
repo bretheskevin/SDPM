@@ -1,6 +1,6 @@
 import React from "react";
-import { ProfileTrack } from "@/app/[locale]/profile/profile-track/ProfileTrack";
 import { SoundcloudApiService } from "@/services/soundcloud-api.service";
+import { ProfileTrack } from "@profile/profile-track/ProfileTrack";
 
 export const ProfileTracks = async () => {
   const tracks: SoundcloudTrack[] = await SoundcloudApiService.getMyTracks();

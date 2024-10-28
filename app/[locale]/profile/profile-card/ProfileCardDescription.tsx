@@ -1,5 +1,5 @@
-import { ProfileCardBannerCard } from "@/app/[locale]/profile/profile-card/ProfileCardBannerCard";
 import React from "react";
+import { ProfileCardBannerCard } from "@profile/profile-card/ProfileCardBannerCard";
 
 interface ProfileCardProps {
   profileData: SoundcloudProfile;

@@ -1,8 +1,8 @@
 import { Badge } from "@/components/ui/badge";
-import { ProfileCardStats } from "@/app/[locale]/profile/profile-card/ProfileCardStats";
 import React from "react";
-import { ProfileCardBannerCard } from "@/app/[locale]/profile/profile-card/ProfileCardBannerCard";
-import { ProfileCardAvatar } from "@/app/[locale]/profile/profile-card/ProfileCardAvatar";
+import { ProfileCardBannerCard } from "@profile/profile-card/ProfileCardBannerCard";
+import { ProfileCardAvatar } from "@profile/profile-card/ProfileCardAvatar";
+import { ProfileCardStats } from "@profile/profile-card/ProfileCardStats";
 
 interface ProfileCardSummaryProps {
   profileData: SoundcloudProfile;
