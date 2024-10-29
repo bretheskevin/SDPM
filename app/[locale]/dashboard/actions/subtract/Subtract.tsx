@@ -47,11 +47,21 @@ export const Subtract = () => {
     <form onSubmit={handleCreatePlaylist} className="space-y-4">
       <div className="space-y-2">
         <Label htmlFor="base-playlist">Base Playlist</Label>
-        <Combobox options={mockPlaylists} value={basePlaylist} onChange={setBasePlaylist} />
+        <Combobox
+          options={mockPlaylists}
+          value={basePlaylist}
+          onChange={setBasePlaylist}
+          placeholder="Select base playlist"
+        />
       </div>
       <div className="space-y-2">
         <Label htmlFor="playlists-to-subtract">Playlists to Subtract</Label>
-        <Combobox options={mockPlaylists} value={playlistsToSubtract} onChange={setPlaylistsToSubtract} />
+        <Combobox
+          options={mockPlaylists}
+          value={playlistsToSubtract}
+          onChange={setPlaylistsToSubtract}
+          placeholder={"Select playlists to subtract"}
+        />
       </div>
       <div className="space-y-2">
         <Label htmlFor="new-playlist-title">New Playlist Title</Label>
