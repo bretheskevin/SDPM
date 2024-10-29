@@ -15,8 +15,8 @@ export type ComboboxOption = {
 
 type ComboboxProps = {
   options: ComboboxOption[];
-  value: string;
   onChange: (value: string) => void;
+  value?: string;
   placeholder?: string;
   searchPlaceholder?: string;
   emptyMessage?: string;
