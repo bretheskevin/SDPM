@@ -1,14 +1,13 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
 import { NewPlaylistTitleInput } from "../NewPlaylistTitleInput";
 import { Form } from "@/components/ui/form";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { BasePlaylistSelector } from "@dashboard/actions/BasePlaylistSelector";
-import { PlaylistsToSubtractSelector } from "@dashboard/actions/subtract/PlaylistsToSubtractSelector";
+import { MultiPlaylistSelector } from "@dashboard/actions/MultiPlaylistSelector";
 import { SubtractPlaylistInputs, subtractPlaylistSchema } from "@dashboard/actions/subtract/schema";
 import { closeModal } from "@/hooks/use-modal";
+import { useTransition } from "react";
+import { SubtractSubmitButton } from "@dashboard/actions/subtract/SubtractSubmitButton";
 
 const mockPlaylists = [
   { value: "1", label: "Summer Hits" },
@@ -27,33 +26,23 @@ export const Subtract = () => {
     },
   });
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [isPending, startTransition] = useTransition();
 
   const onSubmit = async (values: SubtractPlaylistInputs) => {
-    setIsLoading(true);
-
-    console.log(values);
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-
-    closeModal();
+    startTransition(async () => {
+      console.log(values);
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+      closeModal();
+    });
   };
 
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-        <BasePlaylistSelector form={form} options={mockPlaylists} />
-        <PlaylistsToSubtractSelector form={form} options={mockPlaylists} />
         <NewPlaylistTitleInput form={form} />
-        <Button type="submit" className="w-full" disabled={isLoading}>
-          {isLoading ? (
-            <>
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              Creating...
-            </>
-          ) : (
-            "Create Playlist"
-          )}
-        </Button>
+        <BasePlaylistSelector form={form} options={mockPlaylists} />
+        <MultiPlaylistSelector form={form} options={mockPlaylists} name={"playlistToSubtractIds"} />
+        <SubtractSubmitButton isLoading={isPending} />
       </form>
     </Form>
   );

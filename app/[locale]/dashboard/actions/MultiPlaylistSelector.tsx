@@ -2,35 +2,35 @@ import { Combobox } from "@/components/ui/combobox";
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import React from "react";
 import { UseFormReturn } from "react-hook-form";
-import { SubtractPlaylistInputs } from "@dashboard/actions/subtract/schema";
 import { PlaylistToSubtractBadgeGrid } from "@dashboard/actions/subtract/playlist-to-subtract-badge-grid/PlaylistToSubtractBadgeGrid";
 
 interface PlaylistsToSubtractSelectorProps {
-  form: UseFormReturn<SubtractPlaylistInputs>;
+  form: UseFormReturn<any>;
   options: OptionLabel<string>[];
+  name: string;
 }
 
-export const PlaylistsToSubtractSelector: React.FC<PlaylistsToSubtractSelectorProps> = ({ options, form }) => {
-  const values: Array<string> = form.watch("playlistToSubtractIds");
+export const MultiPlaylistSelector: React.FC<PlaylistsToSubtractSelectorProps> = ({ options, form, name }) => {
+  const values: Array<string> = form.watch(name);
 
   const addValue = (value: string) => {
-    form.clearErrors("playlistToSubtractIds");
+    form.clearErrors(name);
     if (values.includes(value)) return;
 
     const newValues = [...values, value];
-    form.setValue("playlistToSubtractIds", newValues);
+    form.setValue(name, newValues);
   };
 
   const handleDeleteAll = () => {
-    form.clearErrors("playlistToSubtractIds");
-    form.setValue("playlistToSubtractIds", []);
+    form.clearErrors(name);
+    form.setValue(name, []);
   };
 
   return (
     <div className="space-y-2">
       <FormField
         control={form.control}
-        name="playlistToSubtractIds"
+        name={name}
         render={() => (
           <FormItem>
             <FormLabel htmlFor="playlists-to-subtract">Playlists to Subtract</FormLabel>
