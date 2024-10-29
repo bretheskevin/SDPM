@@ -27,3 +27,7 @@ export const useModal = create<ModalStore>((set) => ({
 export const openModal = (title: string, description: string, children: React.ReactNode) => {
   useModal.getState().openModal(title, description, children);
 };
+
+export const closeModal = () => {
+  useModal.getState().closeModal();
+};

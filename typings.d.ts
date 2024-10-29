@@ -143,3 +143,8 @@ interface Badges {
 }
 
 type locales = "en" | "fr" | "es" | "de";
+
+interface OptionLabel<T> {
+  label: string;
+  value: T;
+}

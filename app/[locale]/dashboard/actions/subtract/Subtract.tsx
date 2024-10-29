@@ -8,6 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { BasePlaylistSelector } from "@dashboard/actions/BasePlaylistSelector";
 import { PlaylistsToSubtractSelector } from "@dashboard/actions/subtract/PlaylistsToSubtractSelector";
 import { SubtractPlaylistInputs, subtractPlaylistSchema } from "@dashboard/actions/subtract/schema";
+import { closeModal } from "@/hooks/use-modal";
 
 const mockPlaylists = [
   { value: "1", label: "Summer Hits" },
@@ -34,7 +35,7 @@ export const Subtract = () => {
     console.log(values);
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
-    setIsLoading(false);
+    closeModal();
   };
 
   return (

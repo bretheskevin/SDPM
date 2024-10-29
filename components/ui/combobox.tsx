@@ -32,7 +32,7 @@ export const Combobox = React.forwardRef<HTMLButtonElement, ComboboxProps>(funct
     options,
     value,
     onChange,
-    placeholder = "Select option...",
+    placeholder = "",
     searchPlaceholder = "Search...",
     emptyMessage = "No option found.",
     className,

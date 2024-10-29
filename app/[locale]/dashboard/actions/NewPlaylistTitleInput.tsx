@@ -15,10 +15,13 @@ export const NewPlaylistTitleInput = ({ form }: NewPlaylistTitleInputProps) => (
       render={({ field }) => (
         <FormItem>
           <FormLabel htmlFor="new-playlist-title">New Playlist Title</FormLabel>
-          <FormControl>
-            <Input id="new-playlist-title" {...field} />
-          </FormControl>
-          <FormMessage />
+
+          <div className={"space-y-1"}>
+            <FormControl>
+              <Input id="new-playlist-title" {...field} />
+            </FormControl>
+            <FormMessage />
+          </div>
         </FormItem>
       )}
     />

@@ -16,10 +16,13 @@ export const BasePlaylistSelector = ({ options, form }: BasePlaylistSelectorProp
       render={({ field }) => (
         <FormItem>
           <FormLabel htmlFor="base-playlist">Base Playlist</FormLabel>
-          <FormControl>
-            <Combobox options={options} placeholder="Select base playlist" {...field} form={form} />
-          </FormControl>
-          <FormMessage />
+
+          <div className={"space-y-1"}>
+            <FormControl>
+              <Combobox options={options} {...field} form={form} />
+            </FormControl>
+            <FormMessage />
+          </div>
         </FormItem>
       )}
     />
