@@ -37,18 +37,18 @@ export const PlaylistsToSubtractSelector: React.FC<PlaylistsToSubtractSelectorPr
 
             <div className={"space-y-1"}>
               <FormControl>
-                <Combobox options={options} onChange={addValue} />
+                <Combobox options={options} onChange={addValue} placeholder={"Select playlists to subtract"} />
               </FormControl>
               <FormMessage />
             </div>
 
             <PlaylistToSubtractBadgeGrid options={options} values={values} form={form} />
             {values.length > 0 && (
-              <p className="w-full text-end text-xs text-muted-foreground">
+              <div className={"w-full text-end text-xs text-muted-foreground"}>
                 <button className="text-normal hover:underline" onClick={handleDeleteAll}>
                   Reset
                 </button>
-              </p>
+              </div>
             )}
           </FormItem>
         )}

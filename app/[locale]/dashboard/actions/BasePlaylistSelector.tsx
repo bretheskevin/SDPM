@@ -19,7 +19,7 @@ export const BasePlaylistSelector = ({ options, form }: BasePlaylistSelectorProp
 
           <div className={"space-y-1"}>
             <FormControl>
-              <Combobox options={options} {...field} form={form} />
+              <Combobox options={options} {...field} form={form} placeholder={"Select base playlist"} />
             </FormControl>
             <FormMessage />
           </div>

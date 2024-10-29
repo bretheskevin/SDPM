@@ -18,7 +18,7 @@ export const NewPlaylistTitleInput = ({ form }: NewPlaylistTitleInputProps) => (
 
           <div className={"space-y-1"}>
             <FormControl>
-              <Input id="new-playlist-title" {...field} />
+              <Input id="new-playlist-title" {...field} placeholder={"Enter new playlist title"} />
             </FormControl>
             <FormMessage />
           </div>
