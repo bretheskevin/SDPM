@@ -8,6 +8,7 @@ import Favicon from "/public/favicon.ico";
 import { Toaster } from "@/components/ui/toaster";
 import { StoreManager } from "@/managers/StoreManager";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
+import { Modal } from "@/components/Modal";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <NuqsAdapter>
           <Providers locale={params.locale}>
+            <Modal />
             <StoreManager />
             <div className="flex min-h-screen flex-col bg-background bg-gray-50 pt-14">
               <Navbar />
