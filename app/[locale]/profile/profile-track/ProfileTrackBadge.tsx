@@ -1,20 +1,27 @@
 import { Badge } from "@/components/ui/badge";
 import React from "react";
 
+type Variant = "default" | "secondary" | "outline";
+
 interface ProfileTrackBadgeProps {
-  type: "count" | "duration";
-  value: number;
+  type: "count" | "duration" | "label";
+  value: number | string;
   srText: string;
   icon?: React.ReactNode;
+  variant?: Variant;
 }
 
-export const ProfileTrackBadge = ({ type, value, srText, icon }: ProfileTrackBadgeProps) => {
+export const ProfileTrackBadge = ({ type, value, srText, icon, variant }: ProfileTrackBadgeProps) => {
   if (type === "count") {
-    return <CountBadge value={value} srText={srText} icon={icon} />;
+    return <CountBadge value={value as number} srText={srText} icon={icon} />;
   }
 
   if (type === "duration") {
-    return <DurationBadge value={value} srText={srText} />;
+    return <DurationBadge value={value as number} srText={srText} />;
+  }
+
+  if (type === "label") {
+    return <LabelBadge value={value as string} srText={srText} variant={variant} icon={icon} />;
   }
 };
 
@@ -43,6 +50,28 @@ const DurationBadge = ({ value, srText }: { value: number; srText: string }) => 
     <Badge variant="outline">
       <span className="sr-only">{srText}:</span>
       {formatDuration(value)}
+    </Badge>
+  );
+};
+
+const LabelBadge = ({
+  value,
+  srText,
+  variant,
+  icon,
+}: {
+  value: string;
+  srText: string;
+  variant?: Variant;
+  icon?: React.ReactNode;
+}) => {
+  if (!variant) variant = "default";
+
+  return (
+    <Badge variant={variant}>
+      <span className="sr-only">{srText}:</span>
+      {icon}
+      {value}
     </Badge>
   );
 };
