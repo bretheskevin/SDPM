@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { Code } from "@/components/Code";
 import { Metadata } from "next";
 import { getScopedI18n } from "@/locales/server";
@@ -14,9 +14,8 @@ export default async function SoundCloudTokenTutorial() {
   const scopedT = await getScopedI18n("tutorial");
 
   return (
-    <div className="container mx-auto max-w-3xl px-4 py-8">
+    (<div className="container mx-auto max-w-3xl px-4 py-8">
       <h1 className="mb-6 text-3xl font-bold">{scopedT("title")}</h1>
-
       <div className="space-y-6">
         <Card>
           <CardHeader>
@@ -48,7 +47,10 @@ export default async function SoundCloudTokenTutorial() {
                 width={400}
                 height={200}
                 className="w-full"
-              />
+                style={{
+                  maxWidth: "100%",
+                  height: "auto"
+                }} />
             </div>
           </CardContent>
         </Card>
@@ -70,7 +72,10 @@ export default async function SoundCloudTokenTutorial() {
                 width={400}
                 height={200}
                 className="w-full"
-              />
+                style={{
+                  maxWidth: "100%",
+                  height: "auto"
+                }} />
             </div>
           </CardContent>
         </Card>
@@ -93,16 +98,18 @@ export default async function SoundCloudTokenTutorial() {
                 width={400}
                 height={200}
                 className="w-full"
-              />
+                style={{
+                  maxWidth: "100%",
+                  height: "auto"
+                }} />
             </div>
           </CardContent>
         </Card>
       </div>
-
       <div className="mt-6 rounded-lg bg-yellow-100 p-4">
         <h2 className="mb-2 text-xl font-semibold">{scopedT("note.title")}</h2>
         <p>{scopedT("note.description")}</p>
       </div>
-    </div>
+    </div>)
   );
 }
