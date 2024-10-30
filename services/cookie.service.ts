@@ -10,7 +10,7 @@ export class Cookies {
     if (typeof window === "undefined") {
       const cookies = await import("next/headers").then((mod) => mod.cookies);
 
-      const cookieStore = cookies();
+      const cookieStore = await cookies();
       return cookieStore.get(name)?.value;
     }
 
@@ -37,8 +37,7 @@ export class Cookies {
     const expires = options.expires;
 
     if (expires) {
-      const updatedCookie = `${name}=${value}; expires=${expires.toUTCString()}`;
-      document.cookie = updatedCookie;
+      document.cookie = `${name}=${value}; expires=${expires.toUTCString()}`;
     } else {
       document.cookie = `${name}=${value}`;
     }

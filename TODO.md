@@ -1,3 +1,2 @@
 - [ ] Contact page
-- [ ] Migrate to next 15
 - [ ] Once using next 15, convert ProfileTrack.tsx to server component

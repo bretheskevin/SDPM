@@ -4,7 +4,6 @@ import "./globals.css";
 import { Navbar } from "@/components/navbar/Navbar";
 import { Footer } from "@/components/Footer";
 import { Providers } from "@/providers/providers";
-import Favicon from "/public/favicon.ico";
 import { Toaster } from "@/components/ui/toaster";
 import { StoreManager } from "@/managers/StoreManager";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
@@ -15,18 +14,21 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "SDPM",
   description: "Manage and create SoundCloud playlists effortlessly",
-  icons: [{ rel: "icon", url: Favicon.src }],
+  icons: [{ rel: "icon", url: "/public/favicon.ico" }],
 };
 
-export default function RootLayout({
-  children,
-  params,
-}: Readonly<{
-  children: React.ReactNode;
-  params: {
-    locale: string;
-  };
-}>) {
+export default async function RootLayout(
+  props: Readonly<{
+    children: React.ReactNode;
+    params: {
+      locale: string;
+    };
+  }>
+) {
+  const params = await props.params;
+
+  const { children } = props;
+
   return (
     <html lang="en">
       <body className={inter.className}>
