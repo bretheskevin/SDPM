@@ -1,3 +1,5 @@
+"use client";
+
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Globe, Heart, Lock, Play } from "lucide-react";
 import Link from "next/link";
@@ -5,12 +7,26 @@ import React from "react";
 import { ProfileTrackImage } from "@profile/profile-track/ProfileTrackImage";
 import { ProfileTrackDescription } from "@profile/profile-track/ProfileTrackDescription";
 import { ProfileTrackBadge } from "@profile/profile-track/ProfileTrackBadge";
+import { useQueryState } from "nuqs";
 
 interface ProfileTrackProps {
   track: SoundcloudTrack;
 }
 
 export const ProfileTrack = ({ track }: ProfileTrackProps) => {
+  const [filter] = useQueryState("filter");
+
+  switch (filter) {
+    case "public":
+      if (!track.public) return null;
+      break;
+    case "private":
+      if (track.public) return null;
+      break;
+    default:
+      break;
+  }
+
   return (
     <Card key={track.permalink_url}>
       <CardHeader>

@@ -6,7 +6,6 @@ import React, { Suspense } from "react";
 import { ProfileTracksSkeleton } from "@profile/skeletons/ProfileTracksSkeleton";
 import { ProfileTracks } from "@profile/ProfileTracks";
 import ProfileCard from "@profile/profile-card/ProfileCard";
-import { ProfileTrackImagesToggle } from "@profile/ProfileTrackImagesToggle";
 
 export default async function ProfilePage() {
   const profileData: SoundcloudProfile | undefined = await SoundcloudApiService.me();
@@ -27,8 +26,6 @@ export default async function ProfilePage() {
   return (
     <div className="container mx-auto max-w-7xl px-4 py-8">
       <ProfileCard profileData={profileData} />
-
-      <ProfileTrackImagesToggle />
 
       <Suspense fallback={<ProfileTracksSkeleton />}>
         <ProfileTracks />
