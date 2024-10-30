@@ -107,6 +107,12 @@ export default {
     playbackCount: "Playback Count",
     likesCount: "Likes Count",
     duration: "Duration",
+    filter: {
+      title: "Filter Tracks",
+      all: "All",
+      public: "Public",
+      private: "Private",
+    },
   },
   dashboard: {
     title: "Dashboard",

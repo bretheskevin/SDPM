@@ -11,17 +11,6 @@ export const ProfileTracks = async () => {
     return <div className="text-center text-gray-500">No tracks found.</div>;
   }
 
-  const getTracks = (filter: string) => {
-    switch (filter) {
-      case "public":
-        return tracks.filter((track) => track.public);
-      case "private":
-        return tracks.filter((track) => !track.public);
-      default:
-        return tracks;
-    }
-  };
-
   return (
     <div>
       <div className={"flex justify-between"}>

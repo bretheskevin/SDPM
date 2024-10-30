@@ -1,4 +1,3 @@
 - [ ] Contact page
-- [ ] Profile page : public or private track. (+ filter ?)
 - [ ] Migrate to next 15
 - [ ] Once using next 15, convert ProfileTrack.tsx to server component
