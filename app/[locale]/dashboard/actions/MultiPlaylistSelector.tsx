@@ -3,6 +3,7 @@ import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/comp
 import React from "react";
 import { UseFormReturn } from "react-hook-form";
 import { PlaylistToSubtractBadgeGrid } from "@dashboard/actions/subtract/playlist-to-subtract-badge-grid/PlaylistToSubtractBadgeGrid";
+import { useScopedI18n } from "@/locales/client";
 
 interface PlaylistsToSubtractSelectorProps {
   form: UseFormReturn<any>;
@@ -12,6 +13,7 @@ interface PlaylistsToSubtractSelectorProps {
 
 export const MultiPlaylistSelector: React.FC<PlaylistsToSubtractSelectorProps> = ({ options, form, name }) => {
   const values: Array<string> = form.watch(name);
+  const scopedT = useScopedI18n("dashboard.actions.subtract.form.playlistsToSubtract");
 
   const addValue = (value: string) => {
     form.clearErrors(name);
@@ -33,11 +35,11 @@ export const MultiPlaylistSelector: React.FC<PlaylistsToSubtractSelectorProps> =
         name={name}
         render={() => (
           <FormItem>
-            <FormLabel htmlFor="playlists-to-subtract">Playlists to Subtract</FormLabel>
+            <FormLabel htmlFor="playlists-to-subtract">{scopedT("title")}</FormLabel>
 
             <div className={"space-y-1"}>
               <FormControl>
-                <Combobox options={options} onChange={addValue} placeholder={"Select playlists to subtract"} />
+                <Combobox options={options} onChange={addValue} placeholder={scopedT("placeholder")} form={form} />
               </FormControl>
               <FormMessage />
             </div>
@@ -46,7 +48,7 @@ export const MultiPlaylistSelector: React.FC<PlaylistsToSubtractSelectorProps> =
             {values.length > 0 && (
               <div className={"w-full text-end text-xs text-muted-foreground"}>
                 <button className="text-normal hover:underline" onClick={handleDeleteAll}>
-                  Reset
+                  {scopedT("reset")}
                 </button>
               </div>
             )}

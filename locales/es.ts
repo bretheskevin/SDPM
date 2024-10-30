@@ -108,4 +108,66 @@ export default {
     likesCount: "Recuento de likes",
     duration: "Duración",
   },
+  dashboard: {
+    title: "Tablero",
+    noticeTitle: "Aviso Importante",
+    noticeDescription: "No se eliminarán ni modificarán las listas de reproducción existentes.",
+    loadingPlaylists: "Cargando listas de reproducción...",
+    actions: {
+      global: {
+        form: {
+          title: {
+            title: "Nombre de la Lista de Reproducción",
+            placeholder: "Introduce el nombre de la nueva lista de reproducción",
+          },
+          basePlaylist: {
+            title: "Lista de Reproducción Base",
+            placeholder: "Elige una lista de reproducción base",
+          },
+          button: {
+            createPlaylist: "Crear Lista de Reproducción",
+            createPlaylistLoading: "Creando...",
+          },
+        },
+      },
+      subtract: {
+        title: "Restar de las Listas de Reproducción",
+        description: "Crea una nueva lista de reproducción restando pistas de la lista de reproducción base.",
+        buttonText: "Crear Lista de Reproducción",
+        modal: {
+          title: "Restar de las Listas de Reproducción",
+          description:
+            "Selecciona las listas de reproducción de las que deseas eliminar pistas de tu lista de reproducción base.",
+        },
+        form: {
+          playlistsToSubtract: {
+            title: "Listas de Reproducción a Restar",
+            placeholder: "Selecciona las listas de reproducción a restar",
+            reset: "Borrar selección",
+          },
+        },
+      },
+    },
+    playlists: {
+      title: "Listas de Reproducción",
+      description: "Consulta tus listas de reproducción aquí.",
+      alertTitle: "En Desarrollo",
+      alertDescription:
+        "Esta función está actualmente en desarrollo. ¡Estamos trabajando arduamente para traértela pronto!",
+    },
+    tabs: {
+      actions: "Acciones",
+      playlists: "Listas de Reproducción",
+    },
+    toasters: {
+      playlistCreated: {
+        title: "Lista de Reproducción Creada Exitosamente",
+        description: "Consulta tus listas de reproducción :)",
+      },
+      playlistCreatedError: {
+        title: "Error al Crear la Lista de Reproducción",
+        description: "Por favor, consulta la página de contacto o intenta de nuevo más tarde.",
+      },
+    },
+  },
 } as const;

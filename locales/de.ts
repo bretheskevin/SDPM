@@ -108,4 +108,66 @@ export default {
     likesCount: "Likes",
     duration: "Dauer",
   },
+  dashboard: {
+    title: "Dashboard",
+    noticeTitle: "Wichtiger Hinweis",
+    noticeDescription: "Es werden keine vorhandenen Wiedergabelisten gelöscht oder geändert.",
+    loadingPlaylists: "Wiedergabelisten werden geladen...",
+    actions: {
+      global: {
+        form: {
+          title: {
+            title: "Wiedergabelistenname",
+            placeholder: "Geben Sie den Namen der neuen Wiedergabeliste ein",
+          },
+          basePlaylist: {
+            title: "Basis-Wiedergabeliste",
+            placeholder: "Wählen Sie eine Basis-Wiedergabeliste",
+          },
+          button: {
+            createPlaylist: "Wiedergabeliste erstellen",
+            createPlaylistLoading: "Wird erstellt...",
+          },
+        },
+      },
+      subtract: {
+        title: "Von Wiedergabelisten abziehen",
+        description: "Erstellen Sie eine neue Wiedergabeliste, indem Sie Titel von der Basis-Wiedergabeliste abziehen.",
+        buttonText: "Wiedergabeliste erstellen",
+        modal: {
+          title: "Von Wiedergabelisten abziehen",
+          description:
+            "Wählen Sie die Wiedergabelisten aus, aus denen Sie Titel von Ihrer Basis-Wiedergabeliste entfernen möchten.",
+        },
+        form: {
+          playlistsToSubtract: {
+            title: "Wiedergabelisten zum Abziehen",
+            placeholder: "Wählen Sie die Wiedergabelisten zum Abziehen aus",
+            reset: "Auswahl löschen",
+          },
+        },
+      },
+    },
+    playlists: {
+      title: "Wiedergabelisten",
+      description: "Sehen Sie hier Ihre Wiedergabelisten.",
+      alertTitle: "In Entwicklung",
+      alertDescription:
+        "Diese Funktion befindet sich derzeit in der Entwicklung. Wir arbeiten hart daran, sie Ihnen bald zur Verfügung zu stellen!",
+    },
+    tabs: {
+      actions: "Aktionen",
+      playlists: "Wiedergabelisten",
+    },
+    toasters: {
+      playlistCreated: {
+        title: "Wiedergabeliste erfolgreich erstellt",
+        description: "Überprüfen Sie Ihre Wiedergabelisten :)",
+      },
+      playlistCreatedError: {
+        title: "Fehler beim Erstellen der Wiedergabeliste",
+        description: "Bitte besuchen Sie die Kontaktseite oder versuchen Sie es später erneut.",
+      },
+    },
+  },
 } as const;

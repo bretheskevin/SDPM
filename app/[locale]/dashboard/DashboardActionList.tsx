@@ -1,12 +1,15 @@
 "use client";
 
 import { DashboardActionCard } from "@dashboard/DashboardActionCard";
-import { actions } from "@dashboard/action-list";
+import { useScopedI18n } from "@/locales/client";
+import { createActions } from "@dashboard/action-list";
 
 export const DashboardActionList = () => {
+  const actionsT = useScopedI18n("dashboard.actions");
+
   return (
     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      {actions.map((action) => (
+      {createActions(actionsT).map((action) => (
         <DashboardActionCard key={action.key} action={action} />
       ))}
     </div>

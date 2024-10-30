@@ -1,4 +1,3 @@
-- [ ] Translations
 - [ ] Refacto Subtract
 - [ ] Better looking toast
 - [ ] Type Api Response

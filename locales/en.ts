@@ -108,4 +108,64 @@ export default {
     likesCount: "Likes Count",
     duration: "Duration",
   },
+  dashboard: {
+    title: "Dashboard",
+    noticeTitle: "Important Notice",
+    noticeDescription: "No existing playlists will be deleted or modified.",
+    loadingPlaylists: "Loading playlists...",
+    actions: {
+      global: {
+        form: {
+          title: {
+            title: "Playlist Name",
+            placeholder: "Enter the name of the new playlist",
+          },
+          basePlaylist: {
+            title: "Base Playlist",
+            placeholder: "Choose a base playlist",
+          },
+          button: {
+            createPlaylist: "Create Playlist",
+            createPlaylistLoading: "Creating...",
+          },
+        },
+      },
+      subtract: {
+        title: "Subtract from Playlists",
+        description: "Create a new playlist by subtracting tracks from the base playlist.",
+        buttonText: "Create Playlist",
+        modal: {
+          title: "Subtract from Playlists",
+          description: "Select the playlists from which you want to remove tracks from your base playlist.",
+        },
+        form: {
+          playlistsToSubtract: {
+            title: "Playlists to Subtract",
+            placeholder: "Select playlists to subtract",
+            reset: "Clear selection",
+          },
+        },
+      },
+    },
+    playlists: {
+      title: "Playlists",
+      description: "View your playlists here.",
+      alertTitle: "In Development",
+      alertDescription: "This feature is currently in development. We're working hard to bring it to you soon!",
+    },
+    tabs: {
+      actions: "Actions",
+      playlists: "Playlists",
+    },
+    toasters: {
+      playlistCreated: {
+        title: "Playlist Created Successfully",
+        description: "Check out your playlists :)",
+      },
+      playlistCreatedError: {
+        title: "Error Creating Playlist",
+        description: "Please check the contact page or try again later.",
+      },
+    },
+  },
 } as const;

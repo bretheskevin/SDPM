@@ -9,10 +9,12 @@ import { MultiPlaylistSelector } from "@dashboard/actions/MultiPlaylistSelector"
 import { SubtractPlaylistInputs, subtractPlaylistSchema } from "@dashboard/actions/subtract/schema";
 import { closeModal } from "@/hooks/use-modal";
 import { useEffect, useState, useTransition } from "react";
-import { SubtractSubmitButton } from "@dashboard/actions/subtract/SubtractSubmitButton";
+import { SubmitButton } from "@dashboard/actions/SubmitButton";
 import { transformPlaylistsToOptions } from "@/components/option_wrapper/playlist.option";
 import { SoundcloudApiService } from "@/services/soundcloud-api.service";
 import { useToast } from "@/hooks/use-toast";
+import { Loader } from "@/components/Loader";
+import { useScopedI18n } from "@/locales/client";
 
 export const Subtract = () => {
   const form = useForm<SubtractPlaylistInputs>({
@@ -30,6 +32,11 @@ export const Subtract = () => {
   const [optionPlaylists, setOptionPlaylists] = useState<Array<OptionLabel<string>>>([]);
 
   const { toast } = useToast();
+  const scopedT = useScopedI18n("dashboard");
+
+  const a = () => {
+    console.log(scopedT("toasters.playlistCreated.title"));
+  };
 
   const onSubmit = async (values: SubtractPlaylistInputs) => {
     startSubmitTransition(async () => {
@@ -45,20 +52,20 @@ export const Subtract = () => {
         if (isCreated) {
           closeModal();
           toast({
-            title: "Playlist created successfully",
-            description: "Check your playlists :)",
+            title: scopedT("toasters.playlistCreated.title"),
+            description: scopedT("toasters.playlistCreated.description"),
             duration: 3000,
           });
         } else {
           toast({
-            title: "Failed to create playlist",
+            title: scopedT("toasters.playlistCreatedError.title"),
             duration: 3000,
             variant: "destructive",
           });
         }
-      } catch (error) {
+      } catch (_) {
         toast({
-          title: "Failed to create playlist",
+          title: scopedT("toasters.playlistCreatedError.title"),
           duration: 3000,
           variant: "destructive",
         });
@@ -74,24 +81,15 @@ export const Subtract = () => {
   }, []);
 
   return isLoadingPlaylists ? (
-    <FormLoader />
+    <Loader text={scopedT("loadingPlaylists")} />
   ) : (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
         <NewPlaylistTitleInput form={form} />
         <BasePlaylistSelector form={form} options={optionPlaylists} />
         <MultiPlaylistSelector form={form} options={optionPlaylists} name={"playlistToSubtractIds"} />
-        <SubtractSubmitButton isLoading={isSubmitPending} />
+        <SubmitButton isLoading={isSubmitPending} />
       </form>
     </Form>
-  );
-};
-
-const FormLoader = () => {
-  return (
-    <div className="flex items-center justify-center space-x-2 p-8">
-      <div className="h-4 w-4 animate-spin rounded-full border-2 border-primary border-t-transparent" />
-      <span className="text-gray-600">Loading playlists...</span>
-    </div>
   );
 };

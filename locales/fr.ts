@@ -107,4 +107,65 @@ export default {
     likesCount: "Nombre de likes",
     duration: "Durée",
   },
+  dashboard: {
+    title: "Tableau de bord",
+    noticeTitle: "Avis Important",
+    noticeDescription: "Aucune playlist existante ne sera supprimée ou modifiée.",
+    loadingPlaylists: "Chargement des playlists...",
+    actions: {
+      global: {
+        form: {
+          title: {
+            title: "Nom de la Playlist",
+            placeholder: "Entrez le nom de la nouvelle playlist",
+          },
+          basePlaylist: {
+            title: "Playlist de Base",
+            placeholder: "Choisissez une playlist de base",
+          },
+          button: {
+            createPlaylist: "Créer la Playlist",
+            createPlaylistLoading: "Création...",
+          },
+        },
+      },
+      subtract: {
+        title: "Soustraire des Playlists",
+        description: "Créez une nouvelle playlist en soustrayant des titres de la playlist de base.",
+        buttonText: "Créer la Playlist",
+        modal: {
+          title: "Soustraire des Playlists",
+          description: "Sélectionnez les playlists dont vous souhaitez retirer les titres de votre playlist de base.",
+        },
+        form: {
+          playlistsToSubtract: {
+            title: "Playlists à Soustraire",
+            placeholder: "Sélectionnez les playlists à soustraire",
+            reset: "Effacer la sélection",
+          },
+        },
+      },
+    },
+    playlists: {
+      title: "Playlists",
+      description: "Consultez vos playlists ici.",
+      alertTitle: "En cours de développement",
+      alertDescription:
+        "Cette fonctionnalité est actuellement en cours de développement. Nous travaillons dur pour vous l'apporter bientôt !",
+    },
+    tabs: {
+      actions: "Actions",
+      playlists: "Playlists",
+    },
+    toasters: {
+      playlistCreated: {
+        title: "Playlist créée avec succès",
+        description: "Consultez vos playlists :)",
+      },
+      playlistCreatedError: {
+        title: "Erreur lors de la création de la playlist",
+        description: "Veuillez consulter la page de contact ou réessayer plus tard.",
+      },
+    },
+  },
 } as const;

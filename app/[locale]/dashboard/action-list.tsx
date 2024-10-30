@@ -13,18 +13,13 @@ export interface DashboardAction {
   modalMethod: () => void;
 }
 
-export const actions: DashboardAction[] = [
+export const createActions = (t: unknown): DashboardAction[] => [
   {
     key: "subtract",
-    title: "Subtract Playlists",
-    description: "Create a new playlist by subtracting tracks from other playlists.",
-    buttonText: "Create Playlist",
+    title: t("subtract.title"),
+    description: t("subtract.description"),
+    buttonText: t("subtract.buttonText"),
     buttonIcon: <Minus className={iconClasses} />,
-    modalMethod: () =>
-      openModal(
-        "Subtract Playlists",
-        "Create a new playlist by subtracting tracks from other playlists.",
-        <Subtract />
-      ),
+    modalMethod: () => openModal(t("subtract.modal.title"), t("subtract.modal.description"), <Subtract />),
   },
 ];
