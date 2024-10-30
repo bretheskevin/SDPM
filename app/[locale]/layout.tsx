@@ -25,7 +25,7 @@ export default async function RootLayout(
     };
   }>
 ) {
-  const params = props.params;
+  const params = (await props.params);
 
   const { children } = props;
 
