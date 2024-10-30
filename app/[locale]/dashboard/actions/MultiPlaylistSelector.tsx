@@ -39,7 +39,13 @@ export const MultiPlaylistSelector: React.FC<PlaylistsToSubtractSelectorProps> =
 
             <div className={"space-y-1"}>
               <FormControl>
-                <Combobox options={options} onChange={addValue} placeholder={scopedT("placeholder")} form={form} />
+                <Combobox
+                  options={options}
+                  onChange={addValue}
+                  placeholder={scopedT("placeholder")}
+                  form={form}
+                  keySuffix={"multiple"}
+                />
               </FormControl>
               <FormMessage />
             </div>

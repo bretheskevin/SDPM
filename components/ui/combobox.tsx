@@ -25,6 +25,7 @@ type ComboboxProps = {
   buttonClassName?: string;
   form?: UseFormReturn<any>;
   name?: string;
+  keySuffix?: string;
 };
 
 export const Combobox = React.forwardRef<HTMLButtonElement, ComboboxProps>(function Combobox(
@@ -39,6 +40,7 @@ export const Combobox = React.forwardRef<HTMLButtonElement, ComboboxProps>(funct
     buttonClassName,
     name,
     form,
+    keySuffix,
   },
   ref
 ) {
@@ -80,7 +82,7 @@ export const Combobox = React.forwardRef<HTMLButtonElement, ComboboxProps>(funct
               <CommandEmpty>{emptyMessage}</CommandEmpty>
               {options.map((option) => (
                 <CommandItem
-                  key={option.value}
+                  key={`${option.value}${keySuffix || ""}`}
                   value={option.label}
                   onSelect={() => handleSelect(option.value)}
                   className="cursor-pointer"
