@@ -4,7 +4,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Music } from "lucide-react";
 import React from "react";
 import { useQueryState } from "nuqs";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 interface ProfileTrackImageProps {
   url: string | null;

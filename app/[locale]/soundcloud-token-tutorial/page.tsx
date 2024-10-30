@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { Code } from "@/components/Code";
 import { Metadata } from "next";
 import { getScopedI18n } from "@/locales/server";
