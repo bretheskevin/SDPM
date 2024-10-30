@@ -40,10 +40,14 @@ export default async function DashboardPage() {
               <CardDescription>{scopedT("playlists.description")}</CardDescription>
             </CardHeader>
             <CardContent className="pl-2">
-              <Alert>
-                <AlertCircle className="h-4 w-4" />
-                <AlertTitle>{scopedT("playlists.alertTitle")}</AlertTitle>
-                <AlertDescription>{scopedT("playlists.alertDescription")}</AlertDescription>
+              <Alert className="flex">
+                <div className="mr-3 flex">
+                  <AlertCircle className="my-auto h-4 w-4" />
+                </div>
+                <div>
+                  <AlertTitle>{scopedT("playlists.alertTitle")}</AlertTitle>
+                  <AlertDescription>{scopedT("playlists.alertDescription")}</AlertDescription>
+                </div>
               </Alert>
             </CardContent>
           </Card>

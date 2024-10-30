@@ -4,20 +4,20 @@ import { Cookies } from "@/services/cookie.service";
 export class SoundcloudApiService extends ApiService {
   static BASE_URL = "https://ideological-flor-hikudo-790c3543.koyeb.app/";
 
-  static async get<T>(path: string): Promise<T> {
+  static async get<T>(path: string): Promise<ApiResponse<T>> {
     const token = await Cookies.get("token");
     return super.get(path + "?token=" + token);
   }
 
-  static async post<T>(path: string, data: any): Promise<T> {
+  static async post<T>(path: string, data: any): Promise<ApiResponse<T>> {
     const token = await Cookies.get("token");
     return super.post(path + "?token=" + token, data);
   }
 
   static async checkHealth(): Promise<boolean> {
     try {
-      const data = await this.get<{ status: string }>("health");
-      return data.status === "healthy";
+      const response = await this.get<{ status: string }>("health");
+      return response.data.status === "healthy";
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (_) {
       console.error("Failed to fetch API health");
@@ -33,8 +33,8 @@ export class SoundcloudApiService extends ApiService {
     }
 
     try {
-      const data = await this.get<{ is_valid: boolean }>(`check-token`);
-      return data.is_valid;
+      const response = await this.get<{ is_valid: boolean }>(`check-token`);
+      return response.data.is_valid;
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (_) {
       console.error("Failed to check token validity");
@@ -44,7 +44,8 @@ export class SoundcloudApiService extends ApiService {
 
   static async me(): Promise<SoundcloudProfile | undefined> {
     try {
-      return await this.get<SoundcloudProfile>("me");
+      const response = await this.get<SoundcloudProfile>("me");
+      return response.data;
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (_) {
       console.error("Failed to fetch Soundcloud profile");
@@ -53,7 +54,8 @@ export class SoundcloudApiService extends ApiService {
 
   static async getMyTracks(): Promise<SoundcloudTrack[]> {
     try {
-      return await this.get<SoundcloudTrack[]>("my-tracks");
+      const response = await this.get<SoundcloudTrack[]>("my-tracks");
+      return response.data;
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (_) {
       console.error("Failed to fetch Soundcloud tracks");
@@ -63,7 +65,8 @@ export class SoundcloudApiService extends ApiService {
 
   static async getMyPlaylists(): Promise<SoundcloudPlaylist[]> {
     try {
-      const playlists = await this.get<SoundcloudPlaylist[]>("my-playlists");
+      const response = await this.get<SoundcloudPlaylist[]>("my-playlists");
+      const playlists = response.data;
       return playlists.sort((a, b) => a.title.localeCompare(b.title));
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (_) {

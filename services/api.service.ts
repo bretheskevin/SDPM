@@ -3,20 +3,27 @@ import nodeFetch from "node-fetch";
 export class ApiService {
   static BASE_URL = "";
 
-  static async get(endpoint: string, options: RequestInit = {}): Promise<any> {
+  static async get<T>(endpoint: string, options: RequestInit = {}): Promise<ApiResponse<T>> {
     const response = await this.fetch(endpoint, { ...options, method: "GET" });
-    return response.json();
+    const json = await response.json();
+
+    return {
+      status: response.status,
+      data: json as T,
+    };
   }
 
-  static async post(endpoint: string, data: any, options: RequestInit = {}): Promise<any> {
+  static async post<T>(endpoint: string, data: any, options: RequestInit = {}): Promise<ApiResponse<T>> {
     const response = await this.fetch(endpoint, {
       ...options,
       method: "POST",
       body: JSON.stringify(data),
     });
+    const json = await response.json();
+
     return {
       status: response.status,
-      data: response.json(),
+      data: json as T,
     };
   }
 

@@ -184,3 +184,8 @@ interface SoundcloudPlaylist {
   tracks: SoundcloudTrack[];
   user: SimpleSoundcloudProfile;
 }
+
+interface ApiResponse<T> {
+  status: number;
+  data: T;
+}

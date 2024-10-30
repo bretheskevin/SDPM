@@ -40,30 +40,22 @@ export const Subtract = () => {
 
   const onSubmit = async (values: SubtractPlaylistInputs) => {
     startSubmitTransition(async () => {
-      try {
-        const { basePlaylistId, playlistToSubtractIds, newPlaylistTitle } = values;
+      const { basePlaylistId, playlistToSubtractIds, newPlaylistTitle } = values;
 
-        const isCreated = await SoundcloudApiService.subtractPlaylists(
-          basePlaylistId,
-          playlistToSubtractIds,
-          newPlaylistTitle
-        );
+      const isCreated = await SoundcloudApiService.subtractPlaylists(
+        basePlaylistId,
+        playlistToSubtractIds,
+        newPlaylistTitle
+      );
 
-        if (isCreated) {
-          closeModal();
-          toast({
-            title: scopedT("toasters.playlistCreated.title"),
-            description: scopedT("toasters.playlistCreated.description"),
-            duration: 3000,
-          });
-        } else {
-          toast({
-            title: scopedT("toasters.playlistCreatedError.title"),
-            duration: 3000,
-            variant: "destructive",
-          });
-        }
-      } catch (_) {
+      if (isCreated) {
+        closeModal();
+        toast({
+          title: scopedT("toasters.playlistCreated.title"),
+          description: scopedT("toasters.playlistCreated.description"),
+          duration: 3000,
+        });
+      } else {
         toast({
           title: scopedT("toasters.playlistCreatedError.title"),
           duration: 3000,
