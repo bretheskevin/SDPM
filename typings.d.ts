@@ -148,3 +148,39 @@ interface OptionLabel<T> {
   label: string;
   value: T;
 }
+
+interface SoundcloudPlaylist {
+  artwork_url: string | null;
+  created_at: string;
+  description: string | null;
+  duration: number;
+  embeddable_by: string;
+  genre: string;
+  id: number;
+  kind: string;
+  label_name: string | null;
+  last_modified: string;
+  licence: string | null;
+  likes_count: number;
+  permalink: string;
+  permalink_url: string;
+  public: boolean;
+  purchase_title: string | null;
+  purchase_url: string | null;
+  release_date: string | null;
+  reposts_count: number;
+  secret_token: string;
+  sharing: string;
+  tag_list: string;
+  title: string;
+  uri: string;
+  user_id: number;
+  display_date: string;
+  managed_by_feeds: boolean;
+  set_type: string;
+  is_album: boolean;
+  published_at: string | null;
+  track_count: number;
+  tracks: SoundcloudTrack[];
+  user: SimpleSoundcloudProfile;
+}

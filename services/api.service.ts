@@ -14,7 +14,10 @@ export class ApiService {
       method: "POST",
       body: JSON.stringify(data),
     });
-    return response.json();
+    return {
+      status: response.status,
+      data: response.json(),
+    };
   }
 
   static async put(endpoint: string, data: any, options: RequestInit = {}): Promise<any> {

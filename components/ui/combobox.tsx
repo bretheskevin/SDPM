@@ -4,10 +4,10 @@ import * as React from "react";
 import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
+import { Command, CommandEmpty, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { FormItem } from "@/components/ui/form";
-import { UseFormReturn } from "react-hook-form"; // Import FormItem
+import { UseFormReturn } from "react-hook-form";
 
 export type ComboboxOption = {
   value: string;
@@ -53,7 +53,7 @@ export const Combobox = React.forwardRef<HTMLButtonElement, ComboboxProps>(funct
 
   return (
     <FormItem>
-      <Popover open={open} onOpenChange={setOpen}>
+      <Popover modal={true} open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
           <Button
             ref={ref} // Attach the ref to the button
@@ -76,18 +76,19 @@ export const Combobox = React.forwardRef<HTMLButtonElement, ComboboxProps>(funct
             ) : (
               <CommandInput placeholder={searchPlaceholder} className="h-9" />
             )}
-            <CommandList>
+            <CommandList className="h-72">
               <CommandEmpty>{emptyMessage}</CommandEmpty>
-              <CommandGroup>
-                {options.map((option) => (
-                  <CommandItem key={option.value} value={option.label} onSelect={() => handleSelect(option.value)}>
-                    {option.label}
-                    <CheckIcon
-                      className={cn("ml-auto h-4 w-4", value === option.value ? "opacity-100" : "opacity-0")}
-                    />
-                  </CommandItem>
-                ))}
-              </CommandGroup>
+              {options.map((option) => (
+                <CommandItem
+                  key={option.value}
+                  value={option.label}
+                  onSelect={() => handleSelect(option.value)}
+                  className="cursor-pointer"
+                >
+                  {option.label}
+                  <CheckIcon className={cn("ml-auto h-4 w-4", value === option.value ? "opacity-100" : "opacity-0")} />
+                </CommandItem>
+              ))}
             </CommandList>
           </Command>
         </PopoverContent>

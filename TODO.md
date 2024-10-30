@@ -1,0 +1,6 @@
+- [ ] Translations
+- [ ] Refacto Subtract
+- [ ] Better looking toast
+- [ ] Type Api Response
+- [ ] Add cache for my-playlists (+ button to refresh)
+- [ ] Contact page

@@ -9,6 +9,11 @@ export class SoundcloudApiService extends ApiService {
     return super.get(path + "?token=" + token);
   }
 
+  static async post<T>(path: string, data: any): Promise<T> {
+    const token = await Cookies.get("token");
+    return super.post(path + "?token=" + token, data);
+  }
+
   static async checkHealth(): Promise<boolean> {
     try {
       const data = await this.get<{ status: string }>("health");
@@ -53,6 +58,37 @@ export class SoundcloudApiService extends ApiService {
     } catch (_) {
       console.error("Failed to fetch Soundcloud tracks");
       return [];
+    }
+  }
+
+  static async getMyPlaylists(): Promise<SoundcloudPlaylist[]> {
+    try {
+      const playlists = await this.get<SoundcloudPlaylist[]>("my-playlists");
+      return playlists.sort((a, b) => a.title.localeCompare(b.title));
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_) {
+      console.error("Failed to fetch Soundcloud playlists");
+      return [];
+    }
+  }
+
+  static async subtractPlaylists(
+    basePlaylistId: string,
+    playlistToSubtractIds: string[],
+    title?: string
+  ): Promise<boolean> {
+    try {
+      const response = await this.post("create-unplayed-tracks", {
+        base_playlist_id: basePlaylistId,
+        played_playlist_ids: playlistToSubtractIds,
+        title,
+      });
+
+      return response.status === 200;
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_) {
+      console.error("Failed to subtract playlists");
+      return false;
     }
   }
 }
