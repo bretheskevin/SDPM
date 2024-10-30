@@ -113,6 +113,7 @@ export default {
     noticeTitle: "Important Notice",
     noticeDescription: "No existing playlists will be deleted or modified.",
     loadingPlaylists: "Loading playlists...",
+    refreshPlaylists: "Refresh Playlists",
     actions: {
       global: {
         form: {

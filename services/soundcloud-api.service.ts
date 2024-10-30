@@ -63,9 +63,9 @@ export class SoundcloudApiService extends ApiService {
     }
   }
 
-  static async getMyPlaylists(): Promise<SoundcloudPlaylist[]> {
+  static async getMyPlaylists(): Promise<SoundCloudPlaylist[]> {
     try {
-      const response = await this.get<SoundcloudPlaylist[]>("my-playlists");
+      const response = await this.get<SoundCloudPlaylist[]>("my-playlists");
       const playlists = response.data;
       return playlists.sort((a, b) => a.title.localeCompare(b.title));
       // eslint-disable-next-line @typescript-eslint/no-unused-vars

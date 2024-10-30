@@ -1,4 +1,2 @@
-- [ ] Refacto Subtract
-- [ ] Add cache for my-playlists (+ button to refresh)
 - [ ] Contact page
 - [ ] Profile page : public or private track. (+ filter ?)

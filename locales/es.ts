@@ -113,6 +113,7 @@ export default {
     noticeTitle: "Aviso Importante",
     noticeDescription: "No se eliminarán ni modificarán las listas de reproducción existentes.",
     loadingPlaylists: "Cargando listas de reproducción...",
+    refreshPlaylists: "Actualizar listas de reproducción",
     actions: {
       global: {
         form: {

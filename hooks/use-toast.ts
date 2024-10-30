@@ -166,6 +166,15 @@ function toast({ ...props }: Toast) {
   };
 }
 
+const emitToast = (title: string, description: string = "", variant: "default" | "destructive" = "default") => {
+  toast({
+    title,
+    description,
+    variant,
+    duration: 5000,
+  });
+};
+
 function useToast() {
   const [state, setState] = React.useState<State>(memoryState);
 
@@ -182,8 +191,9 @@ function useToast() {
   return {
     ...state,
     toast,
+    emitToast,
     dismiss: (toastId?: string) => dispatch({ type: "DISMISS_TOAST", toastId }),
   };
 }
 
-export { useToast, toast };
+export { useToast };

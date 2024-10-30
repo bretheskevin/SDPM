@@ -112,6 +112,7 @@ export default {
     noticeTitle: "Avis Important",
     noticeDescription: "Aucune playlist existante ne sera supprimée ou modifiée.",
     loadingPlaylists: "Chargement des playlists...",
+    refreshPlaylists: "Actualiser les playlists",
     actions: {
       global: {
         form: {

@@ -1,10 +1,10 @@
-export const transformPlaylistToOption = (playlist: SoundcloudPlaylist): OptionLabel<string> => {
+export const transformPlaylistToOption = (playlist: SoundCloudPlaylist): OptionLabel<string> => {
   return {
     label: playlist.title,
     value: playlist.id.toString(),
   };
 };
 
-export const transformPlaylistsToOptions = (playlists: Array<SoundcloudPlaylist>): Array<OptionLabel<string>> => {
+export const transformPlaylistsToOptions = (playlists: Array<SoundCloudPlaylist>): Array<OptionLabel<string>> => {
   return playlists.map(transformPlaylistToOption);
 };

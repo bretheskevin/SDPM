@@ -149,7 +149,7 @@ interface OptionLabel<T> {
   value: T;
 }
 
-interface SoundcloudPlaylist {
+interface SoundCloudPlaylist {
   artwork_url: string | null;
   created_at: string;
   description: string | null;

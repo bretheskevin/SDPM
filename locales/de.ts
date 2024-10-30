@@ -113,6 +113,7 @@ export default {
     noticeTitle: "Wichtiger Hinweis",
     noticeDescription: "Es werden keine vorhandenen Wiedergabelisten gelöscht oder geändert.",
     loadingPlaylists: "Wiedergabelisten werden geladen...",
+    refreshPlaylists: "Wiedergabelisten aktualisieren",
     actions: {
       global: {
         form: {
