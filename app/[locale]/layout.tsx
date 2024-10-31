@@ -14,7 +14,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "SDPM",
   description: "Manage and create SoundCloud playlists effortlessly",
-  icons: [{ rel: "icon", url: "/public/favicon.icon" }],
+  icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
 interface RootLayoutProps {
