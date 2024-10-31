@@ -8,7 +8,7 @@ export default async function PrivacyPage() {
   const scopedT = await getScopedI18n("privacy");
 
   return (
-    (<div className="container mx-auto px-4 py-4">
+    <div className="container mx-auto px-4 py-4">
       <div className="mx-auto max-w-2xl text-center">
         <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 sm:mb-8 sm:h-20 sm:w-20">
           <Shield className="h-8 w-8 text-primary sm:h-10 sm:w-10" />
@@ -24,7 +24,7 @@ export default async function PrivacyPage() {
               {["noPersonalInformation", "noUsageData", "noCookies", "noDataShared"].map((item, index) => (
                 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                 // @ts-expect-error
-                (<li key={index}>{scopedT(item)}</li>)
+                <li key={index}>{scopedT(item)}</li>
               ))}
             </ul>
             <p className="text-base sm:text-lg">{scopedT("tokenNeeded")}</p>
@@ -39,6 +39,6 @@ export default async function PrivacyPage() {
           </Button>
         </div>
       </div>
-    </div>)
+    </div>
   );
 }

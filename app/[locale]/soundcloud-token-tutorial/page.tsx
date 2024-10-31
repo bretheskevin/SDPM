@@ -14,7 +14,7 @@ export default async function SoundCloudTokenTutorial() {
   const scopedT = await getScopedI18n("tutorial");
 
   return (
-    (<div className="container mx-auto max-w-3xl px-4 py-8">
+    <div className="container mx-auto max-w-3xl px-4 py-8">
       <h1 className="mb-6 text-3xl font-bold">{scopedT("title")}</h1>
       <div className="space-y-6">
         <Card>
@@ -49,8 +49,9 @@ export default async function SoundCloudTokenTutorial() {
                 className="w-full"
                 style={{
                   maxWidth: "100%",
-                  height: "auto"
-                }} />
+                  height: "auto",
+                }}
+              />
             </div>
           </CardContent>
         </Card>
@@ -74,8 +75,9 @@ export default async function SoundCloudTokenTutorial() {
                 className="w-full"
                 style={{
                   maxWidth: "100%",
-                  height: "auto"
-                }} />
+                  height: "auto",
+                }}
+              />
             </div>
           </CardContent>
         </Card>
@@ -100,8 +102,9 @@ export default async function SoundCloudTokenTutorial() {
                 className="w-full"
                 style={{
                   maxWidth: "100%",
-                  height: "auto"
-                }} />
+                  height: "auto",
+                }}
+              />
             </div>
           </CardContent>
         </Card>
@@ -110,6 +113,6 @@ export default async function SoundCloudTokenTutorial() {
         <h2 className="mb-2 text-xl font-semibold">{scopedT("note.title")}</h2>
         <p>{scopedT("note.description")}</p>
       </div>
-    </div>)
+    </div>
   );
 }

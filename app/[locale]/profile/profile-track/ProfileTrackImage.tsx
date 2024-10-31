@@ -29,8 +29,9 @@ const HasImageComponent = ({ url, alt }: { url: string; alt: string }) => {
       sizes="100vw"
       style={{
         width: "100%",
-        height: "auto"
-      }} />
+        height: "auto",
+      }}
+    />
   );
 };
 

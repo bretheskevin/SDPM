@@ -21,6 +21,7 @@ export default {
   footer: {
     rights: "© 2024 SoundCloud DJ Playlist Manager. All rights reserved.",
     privacy: "Privacy",
+    contact: "Contact",
   },
   navbar: {
     home: "Home",
@@ -173,6 +174,24 @@ export default {
         title: "Error Creating Playlist",
         description: "Please check the contact page or try again later.",
       },
+    },
+  },
+  contact: {
+    title: "Contact Us",
+    description: "We'd love to hear from you. Send us a message!",
+    contactForm: "Contact Form",
+    namePlaceholder: "Your Name",
+    emailPlaceholder: "Your Email",
+    messagePlaceholder: "Your Message",
+    sendMessage: "Send Message",
+    socialMedia: "Connect With Us",
+    directContact: "Direct Contact Information",
+    contactInfo: "You can also reach us directly via:",
+    toast: {
+      messageSent: "Message Sent",
+      messageDescription: "We've received your message and will get back to you soon.",
+      copiedToClipboard: "Copied to Clipboard",
+      discordDescription: "Discord username copied to clipboard",
     },
   },
 } as const;

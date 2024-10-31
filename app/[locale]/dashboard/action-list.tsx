@@ -13,7 +13,7 @@ export interface DashboardAction {
   modalMethod: () => void;
 }
 
-export const createActions = (t: unknown): DashboardAction[] => [
+export const createActions = (t: any): DashboardAction[] => [
   {
     key: "subtract",
     title: t("subtract.title"),
