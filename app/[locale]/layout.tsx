@@ -17,23 +17,19 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/public/favicon.icon" }],
 };
 
-export default async function RootLayout(
-  props: Readonly<{
-    children: React.ReactNode;
-    params: {
-      locale: string;
-    };
-  }>
-) {
-  const params = (await props.params);
+interface RootLayoutProps {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}
 
-  const { children } = props;
+export default async function RootLayout({ params, children }: Readonly<RootLayoutProps>) {
+  const { locale } = await params;
 
   return (
     <html lang="en">
       <body className={inter.className}>
         <NuqsAdapter>
-          <Providers locale={params.locale}>
+          <Providers locale={locale}>
             <Modal />
             <StoreManager />
             <div className="flex min-h-screen flex-col bg-background bg-gray-50 pt-14">
