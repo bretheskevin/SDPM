@@ -3,15 +3,14 @@
 import { DashboardActionCard } from "@dashboard/DashboardActionCard";
 import { useScopedI18n } from "@/locales/client";
 import { createActions } from "@dashboard/action-list";
-import { usePlaylistsStore } from "@/stores/playlists.store";
+import { refreshPlaylists } from "@/stores/playlists.store";
 import { useEffect } from "react";
 
 export const DashboardActionList = () => {
   const actionsT = useScopedI18n("dashboard.actions");
-  const { loadPlaylists } = usePlaylistsStore();
 
   useEffect(() => {
-    loadPlaylists();
+    refreshPlaylists();
   }, []);
 
   return (
