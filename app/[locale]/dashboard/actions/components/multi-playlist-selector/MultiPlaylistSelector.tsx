@@ -2,7 +2,7 @@ import { Combobox } from "@/components/ui/combobox";
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import React from "react";
 import { UseFormReturn } from "react-hook-form";
-import { PlaylistToSubtractBadgeGrid } from "@dashboard/actions/subtract/playlist-to-subtract-badge-grid/PlaylistToSubtractBadgeGrid";
+import { MultiPlaylistBadgeGrid } from "@dashboard/actions/components/multi-playlist-selector/MultiPlaylistBadgeGrid";
 import { useScopedI18n } from "@/locales/client";
 
 interface PlaylistsToSubtractSelectorProps {
@@ -50,7 +50,7 @@ export const MultiPlaylistSelector: React.FC<PlaylistsToSubtractSelectorProps> =
               <FormMessage />
             </div>
 
-            <PlaylistToSubtractBadgeGrid options={options} values={values} form={form} />
+            <MultiPlaylistBadgeGrid options={options} values={values} form={form} name={name} />
             {values.length > 0 && (
               <div className={"w-full text-end text-xs text-muted-foreground"}>
                 <button className="text-normal hover:underline" onClick={handleDeleteAll}>

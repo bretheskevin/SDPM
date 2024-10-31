@@ -2,12 +2,12 @@ import { Badge } from "@/components/ui/badge";
 import { X } from "lucide-react";
 import React from "react";
 
-interface PlaylistBadgeProps {
+interface BadgeRemovableProps {
   onChange: (value: string) => void;
   option: OptionLabel<string>;
 }
 
-export const PlaylistToSubtractBadge: React.FC<PlaylistBadgeProps> = ({ onChange, option }) => {
+export const BadgeRemovable: React.FC<BadgeRemovableProps> = ({ onChange, option }) => {
   return (
     <Badge variant="secondary" className="px-2 py-1">
       {option.label}

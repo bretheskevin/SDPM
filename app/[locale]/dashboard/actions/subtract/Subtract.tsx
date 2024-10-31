@@ -3,7 +3,7 @@
 import { NewPlaylistTitleInput } from "../NewPlaylistTitleInput";
 import { Form } from "@/components/ui/form";
 import { BasePlaylistSelector } from "@dashboard/actions/BasePlaylistSelector";
-import { MultiPlaylistSelector } from "@dashboard/actions/MultiPlaylistSelector";
+import { MultiPlaylistSelector } from "@dashboard/actions/components/multi-playlist-selector/MultiPlaylistSelector";
 import { SubmitButton } from "@dashboard/actions/SubmitButton";
 import { BaseAction } from "@dashboard/actions/BaseAction";
 import { useSubtract } from "@dashboard/actions/subtract/use-subtract.hook";

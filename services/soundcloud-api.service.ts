@@ -97,4 +97,19 @@ export class SoundcloudApiService extends ApiService {
       return false;
     }
   }
+
+  static async addPlaylists(playlistToAddIds: string[], title?: string): Promise<boolean> {
+    try {
+      const response = await this.post("merge-playlists", {
+        playlist_ids: playlistToAddIds,
+        title,
+      });
+
+      return response.status === 200;
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_) {
+      console.error("Failed to add playlists");
+      return false;
+    }
+  }
 }
