@@ -35,7 +35,12 @@ export const ProfileTrack = ({ track }: ProfileTrackProps) => {
       <CardContent className="overflow-hidden">
         <div className="mb-2 flex items-center justify-between">
           <CardTitle className="mr-2 line-clamp-2">
-            <Link href={track.permalink_url} target="_blank" rel="noopener noreferrer" className="hover:underline">
+            <Link
+              href={track.permalink_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="leading-tight hover:underline"
+            >
               {track.title}
             </Link>
           </CardTitle>

@@ -21,7 +21,7 @@ const languages = [
 
 export function LanguageSelector() {
   const currentLocale = useCurrentLocale();
-  const changeLocale = useChangeLocale();
+  const changeLocale = useChangeLocale({ preserveSearchParams: true });
   const pathName = usePathname();
   const router = useRouter();
   const close = useNavbarStore((state) => state.close);
