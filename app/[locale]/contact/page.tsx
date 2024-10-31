@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Github, Instagram, Linkedin, MessageSquare } from "lucide-react";
+import { Github, Instagram, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -9,6 +9,7 @@ import Link from "next/link";
 import { useToast } from "@/hooks/use-toast";
 import { useScopedI18n } from "@/locales/client";
 import { ContactService } from "@/services/contact/contact.service";
+import { DiscordLogoIcon } from "@radix-ui/react-icons";
 
 export default function ContactPage() {
   const scopedT = useScopedI18n("contact");
@@ -55,7 +56,7 @@ export default function ContactPage() {
               emitToast(scopedT("toast.copiedToClipboard"), scopedT("toast.discordDescription"));
             }}
           >
-            <MessageSquare className="mr-2 h-4 w-4 text-primary" />
+            <DiscordLogoIcon className="mr-2 h-4 w-4 text-primary" />
             {discord.label}
           </Button>
           <Link href={github.link} passHref target="_blank">

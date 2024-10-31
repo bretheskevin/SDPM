@@ -1,12 +1,13 @@
 "use client";
 
 import React from "react";
-import { AlertTriangle, Instagram, MessageSquare } from "lucide-react";
+import { AlertTriangle, Instagram } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useToast } from "@/hooks/use-toast";
 import { useScopedI18n } from "@/locales/client";
+import { DiscordLogoIcon } from "@radix-ui/react-icons";
 
 export default function ApiDownNotice() {
   const scopedT = useScopedI18n("serviceUnavailable");
@@ -48,7 +49,7 @@ export default function ApiDownNotice() {
               });
             }}
           >
-            <MessageSquare className="mr-2 h-4 w-4 text-primary" />
+            <DiscordLogoIcon className="mr-2 h-4 w-4 text-primary" />
             Discord
           </Button>
         </div>
