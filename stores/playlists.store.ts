@@ -1,6 +1,5 @@
 import { create } from "zustand";
-import { SoundcloudApiService } from "@/services/soundcloud-api.service";
-import { transformPlaylistsToOptions } from "@/components/option_wrapper/playlist.option";
+import { PlaylistsController } from "@/controllers/playlists.controller";
 
 interface PlaylistsStore {
   playlists: SoundCloudPlaylist[];
@@ -14,9 +13,17 @@ export const usePlaylistsStore = create<PlaylistsStore>((set) => ({
   optionPlaylists: [],
   loadPlaylists: async () => {
     set({ isLoading: true });
-    const playlists = await SoundcloudApiService.getMyPlaylists();
-    const optionPlaylists = transformPlaylistsToOptions(playlists);
-    set({ playlists, optionPlaylists, isLoading: false });
+
+    try {
+      const result = await PlaylistsController.fetchPlaylists();
+      set({ ...result, isLoading: false });
+    } catch (error) {
+      set({ isLoading: false });
+
+      if (!PlaylistsController.isAbortError(error)) {
+        throw error;
+      }
+    }
   },
   isLoading: false,
 }));
