@@ -8,17 +8,25 @@ interface PlaylistsStore {
   isLoading: boolean;
 }
 
+let currentRequestId = 0;
+
 export const usePlaylistsStore = create<PlaylistsStore>((set) => ({
   playlists: [],
   optionPlaylists: [],
   loadPlaylists: async () => {
+    const requestId = ++currentRequestId;
     set({ isLoading: true });
 
     try {
       const result = await PlaylistsController.fetchPlaylists();
-      set({ ...result, isLoading: false });
+
+      if (requestId === currentRequestId) {
+        set({ ...result, isLoading: false });
+      }
     } catch (error) {
-      set({ isLoading: false });
+      if (requestId === currentRequestId) {
+        set({ isLoading: false });
+      }
 
       if (!PlaylistsController.isAbortError(error)) {
         throw error;

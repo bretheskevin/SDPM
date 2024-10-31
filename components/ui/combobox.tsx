@@ -59,11 +59,11 @@ export const Combobox = React.forwardRef<HTMLButtonElement, ComboboxProps>(funct
         <PopoverTrigger asChild>
           <Button
             ref={ref} // Attach the ref to the button
-            variant="outline"
+            variant="white"
             role="combobox"
             aria-expanded={open}
             className={cn(
-              "flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2 text-sm font-normal shadow-sm ring-offset-background focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1",
+              "flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border border-input px-3 py-2 text-sm font-normal shadow-sm ring-offset-background focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1",
               buttonClassName
             )}
           >

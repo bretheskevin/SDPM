@@ -1,5 +1,6 @@
 import { ApiService } from "@/services/api.service";
 import { Cookies } from "@/services/cookie.service";
+import { BaseRequestController } from "@/controllers/base-request.controller";
 
 export class SoundcloudApiService extends ApiService {
   static BASE_URL = "https://ideological-flor-hikudo-790c3543.koyeb.app/";
@@ -69,8 +70,10 @@ export class SoundcloudApiService extends ApiService {
       const playlists = response.data;
       return playlists.sort((a, b) => a.title.localeCompare(b.title));
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    } catch (_) {
-      console.error("Failed to fetch Soundcloud playlists");
+    } catch (error) {
+      if (!BaseRequestController.isAbortError(error)) {
+        throw error;
+      }
       return [];
     }
   }
