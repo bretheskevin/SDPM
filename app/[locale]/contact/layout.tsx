@@ -1,10 +1,13 @@
-import { Metadata } from "next";
+import { getScopedI18n } from "@/locales/server";
 
-export const metadata: Metadata = {
-  title: "SDPM | Contact",
-  description: "Contact page of SDPM",
-};
+export async function generateMetadata() {
+  const t = await getScopedI18n("metadata.contact");
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
 
-export default function ProfileLayout({ children }: { children: React.ReactNode }) {
+export default function ContactLayout({ children }: { children: React.ReactNode }) {
   return children;
 }

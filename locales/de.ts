@@ -195,5 +195,26 @@ export default {
       copiedToClipboard: "In die Zwischenablage kopiert",
       discordDescription: "Discord-Benutzername kopiert",
     },
+    metadata: {
+      title: "SDPM",
+      description: "SoundCloud-Playlists mühelos verwalten und erstellen",
+      dashboard: {
+        title: "SDPM | Dashboard",
+        description: "Dashboard für DJ Playlist Manager - SoundCloud-Playlists mühelos verwalten und erstellen.",
+      },
+      privacy: {
+        title: "SDPM | Datenschutzrichtlinie",
+        description:
+          "Datenschutzrichtlinie für DJ Playlist Manager - SoundCloud-Playlists mühelos verwalten und erstellen.",
+      },
+      contact: {
+        title: "SDPM | Kontakt",
+        description: "Kontaktseite für DJ Playlist Manager - SoundCloud-Playlists mühelos verwalten und erstellen.",
+      },
+      profile: {
+        title: "SDPM | Profil",
+        description: "Profilseite für DJ Playlist Manager - SoundCloud-Playlists mühelos verwalten und erstellen.",
+      },
+    },
   },
 } as const;

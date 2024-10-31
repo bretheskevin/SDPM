@@ -1,10 +1,13 @@
-import { Metadata } from "next";
 import ProtectedRoute from "@/helpers/ProtectedRoute";
+import { getScopedI18n } from "@/locales/server";
 
-export const metadata: Metadata = {
-  title: "SDPM | Profile",
-  description: "Your soundcloud profile.",
-};
+export async function generateMetadata() {
+  const t = await getScopedI18n("metadata.profile");
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
 
 export default function ProfileLayout({ children }: { children: React.ReactNode }) {
   return <ProtectedRoute>{children}</ProtectedRoute>;

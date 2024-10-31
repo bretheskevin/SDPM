@@ -1,10 +1,14 @@
-import type { Metadata } from "next";
 import ProtectedRoute from "@/helpers/ProtectedRoute";
+import { getScopedI18n } from "@/locales/server";
 
-export const metadata: Metadata = {
-  title: "SDPM | Dashboard",
-  description: "Dashboard for DJ Playlist Manager - Manage and create SoundCloud playlists effortlessly.",
-};
+export async function generateMetadata() {
+  const t = await getScopedI18n("metadata.dashboard");
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
+
 export default function DashboardLayout({
   children,
 }: Readonly<{

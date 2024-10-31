@@ -196,4 +196,25 @@ export default {
       discordDescription: "Nombre de usuario de Discord copiado",
     },
   },
+  metadata: {
+    title: "SDPM",
+    description: "Gestiona y crea playlists de SoundCloud fácilmente",
+    dashboard: {
+      title: "SDPM | Panel de control",
+      description: "Panel de control de DJ Playlist Manager - Gestiona y crea playlists de SoundCloud fácilmente.",
+    },
+    privacy: {
+      title: "SDPM | Política de privacidad",
+      description:
+        "Política de privacidad de DJ Playlist Manager - Gestiona y crea playlists de SoundCloud fácilmente.",
+    },
+    contact: {
+      title: "SDPM | Contacto",
+      description: "Página de contacto para DJ Playlist Manager - Gestiona y crea playlists de SoundCloud fácilmente.",
+    },
+    profile: {
+      title: "SDPM | Perfil",
+      description: "Página de perfil para DJ Playlist Manager - Gestiona y crea playlists de SoundCloud fácilmente.",
+    },
+  },
 } as const;

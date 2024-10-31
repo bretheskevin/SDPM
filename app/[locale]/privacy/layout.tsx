@@ -1,9 +1,12 @@
-import { Metadata } from "next";
+import { getScopedI18n } from "@/locales/server";
 
-export const metadata: Metadata = {
-  title: "SDPM | Privacy Policy",
-  description: "Privacy policy for DJ Playlist Manager - We do not collect any personal data.",
-};
+export async function generateMetadata() {
+  const t = await getScopedI18n("metadata.privacy");
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
 
 export default function PrivacyLayout({ children }: { children: React.ReactNode }) {
   return children;

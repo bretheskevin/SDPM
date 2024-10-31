@@ -194,4 +194,24 @@ export default {
       discordDescription: "Discord username copied to clipboard",
     },
   },
+  metadata: {
+    title: "SDPM",
+    description: "Manage and create SoundCloud playlists effortlessly",
+    dashboard: {
+      title: "SDPM | Dashboard",
+      description: "Dashboard for DJ Playlist Manager - Manage and create SoundCloud playlists effortlessly.",
+    },
+    privacy: {
+      title: "SDPM | Privacy Policy",
+      description: "Privacy Policy for DJ Playlist Manager - Manage and create SoundCloud playlists effortlessly.",
+    },
+    contact: {
+      title: "SDPM | Contact",
+      description: "Contact page for DJ Playlist Manager - Manage and create SoundCloud playlists effortlessly.",
+    },
+    profile: {
+      title: "SDPM | Profile",
+      description: "Profile page for DJ Playlist Manager - Manage and create SoundCloud playlists effortlessly.",
+    },
+  },
 } as const;
