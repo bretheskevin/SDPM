@@ -8,6 +8,7 @@ import { Command, CommandEmpty, CommandInput, CommandItem, CommandList } from "@
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { FormItem } from "@/components/ui/form";
 import { UseFormReturn } from "react-hook-form";
+import { useI18n } from "@/locales/client";
 
 export type ComboboxOption = {
   value: string;
@@ -45,6 +46,8 @@ export const Combobox = React.forwardRef<HTMLButtonElement, ComboboxProps>(funct
   ref
 ) {
   const [open, setOpen] = React.useState(false);
+  const t = useI18n();
+  searchPlaceholder = t("global.search") + "...";
 
   const handleSelect = (currentValue: string) => {
     onChange(currentValue === value ? "" : currentValue);

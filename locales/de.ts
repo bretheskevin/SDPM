@@ -4,6 +4,7 @@ export default {
       backToHome: "Zurück zur Startseite",
       logout: "Abmelden",
     },
+    search: "Suche",
   },
   landing: {
     title: "Verbinde dein SoundCloud-Konto, um deine Wiedergabelisten mühelos zu verwalten.",

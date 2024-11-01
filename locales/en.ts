@@ -4,6 +4,7 @@ export default {
       backToHome: "Back to Home",
       logout: "Log out",
     },
+    search: "Search",
   },
   landing: {
     title: "Connect your SoundCloud account to start managing your playlists effortlessly.",
