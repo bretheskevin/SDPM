@@ -9,9 +9,17 @@ interface PlaylistsToSubtractSelectorProps {
   form: UseFormReturn<any>;
   options: OptionLabel<string>[];
   name: string;
+  placeholder?: string;
+  title?: string;
 }
 
-export const MultiPlaylistSelector: React.FC<PlaylistsToSubtractSelectorProps> = ({ options, form, name }) => {
+export const MultiPlaylistSelector: React.FC<PlaylistsToSubtractSelectorProps> = ({
+  options,
+  form,
+  name,
+  placeholder,
+  title,
+}) => {
   const values: Array<string> = form.watch(name);
   const scopedT = useScopedI18n("dashboard.actions.subtract.form.playlistsToSubtract");
 
@@ -35,14 +43,14 @@ export const MultiPlaylistSelector: React.FC<PlaylistsToSubtractSelectorProps> =
         name={name}
         render={() => (
           <FormItem>
-            <FormLabel htmlFor="playlists-to-subtract">{scopedT("title")}</FormLabel>
+            <FormLabel htmlFor="playlists-to-subtract">{title}</FormLabel>
 
             <div className={"space-y-1"}>
               <FormControl>
                 <Combobox
                   options={options}
                   onChange={addValue}
-                  placeholder={scopedT("placeholder")}
+                  placeholder={placeholder}
                   form={form}
                   keySuffix={"multiple"}
                 />
