@@ -28,12 +28,12 @@ export default async function DashboardPage() {
       <Tabs defaultValue="actions" className="space-y-4">
         <TabsList>
           <TabsTrigger value="actions">{scopedT("tabs.actions")}</TabsTrigger>
-          <TabsTrigger value="analytics">{scopedT("tabs.playlists")}</TabsTrigger>
+          <TabsTrigger value="playlists">{scopedT("tabs.playlists")}</TabsTrigger>
         </TabsList>
         <TabsContent value="actions" className="space-y-4">
           <DashboardActionList />
         </TabsContent>
-        <TabsContent value="analytics">
+        <TabsContent value="playlists">
           <Card>
             <CardHeader>
               <CardTitle>{scopedT("playlists.title")}</CardTitle>

@@ -155,6 +155,22 @@ export default {
           },
         },
       },
+      add: {
+        title: "Merge Playlists",
+        description: "Create a new playlist by merging tracks from other playlists.",
+        buttonText: "Create Playlist",
+        modal: {
+          title: "Merge Playlists",
+          description: "Select the playlists from which you want to merge tracks from your base playlist.",
+        },
+        form: {
+          playlistToAddIds: {
+            title: "Playlists to Merge",
+            placeholder: "Select playlists to merge",
+            reset: "Clear selection",
+          },
+        },
+      },
     },
     playlists: {
       title: "Playlists",

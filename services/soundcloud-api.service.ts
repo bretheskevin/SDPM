@@ -98,18 +98,20 @@ export class SoundcloudApiService extends ApiService {
     }
   }
 
-  static async addPlaylists(playlistToAddIds: string[], title?: string): Promise<boolean> {
+  static async addPlaylists(playlistToAddIds: string[], title?: string): Promise<SoundcloudApiResponse> {
     try {
-      const response = await this.post("merge-playlists", {
+      const response = await this.post<SoundcloudApiResponse>("merge-playlists", {
         playlist_ids: playlistToAddIds,
         title,
       });
 
-      return response.status === 200;
+      return response.data;
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (_) {
-      console.error("Failed to add playlists");
-      return false;
+      return {
+        success: false,
+        message: "Failed to add playlists",
+      };
     }
   }
 }

@@ -1,6 +1,7 @@
 import { openModal } from "@/hooks/use-modal";
 import { Minus } from "lucide-react";
 import { Subtract } from "@dashboard/actions/subtract/Subtract";
+import { Add } from "@dashboard/actions/add/Add";
 
 const iconClasses = "mr-2 h-4 w-4";
 
@@ -21,5 +22,13 @@ export const createActions = (t: any): DashboardAction[] => [
     buttonText: t("subtract.buttonText"),
     buttonIcon: <Minus className={iconClasses} />,
     modalMethod: () => openModal(t("subtract.modal.title"), t("subtract.modal.description"), <Subtract />),
+  },
+  {
+    key: "add",
+    title: t("add.title"),
+    description: t("add.description"),
+    buttonText: t("add.buttonText"),
+    buttonIcon: <Minus className={iconClasses} />,
+    modalMethod: () => openModal(t("add.modal.title"), t("add.modal.description"), <Add />),
   },
 ];

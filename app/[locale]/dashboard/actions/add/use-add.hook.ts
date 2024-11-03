@@ -1,19 +1,19 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { SubtractPlaylistInputs, subtractPlaylistSchema } from "@dashboard/actions/subtract/schema";
 import { usePlaylistsStore } from "@/stores/playlists.store";
 import { SoundcloudApiService } from "@/services/soundcloud-api.service";
 import { useI18n } from "@/locales/client";
 import { useTransition } from "react";
 import { closeModal } from "@/hooks/use-modal";
+import { AddPlaylistInputs, addPlaylistSchema } from "@dashboard/actions/add/schema";
+import { emitToast } from "@/hooks/use-toast";
 import { ToastService } from "@/services/toast.service";
 
-export const useSubtract = () => {
-  const form = useForm<SubtractPlaylistInputs>({
-    resolver: zodResolver(subtractPlaylistSchema),
+export const useAdd = () => {
+  const form = useForm<AddPlaylistInputs>({
+    resolver: zodResolver(addPlaylistSchema),
     defaultValues: {
-      basePlaylistId: "",
-      playlistToSubtractIds: [],
+      playlistToAddIds: [],
       newPlaylistTitle: "",
     },
   });
@@ -23,21 +23,22 @@ export const useSubtract = () => {
 
   const t = useI18n();
 
-  const onSubmit = async (values: SubtractPlaylistInputs) => {
+  const onSubmit = async (values: AddPlaylistInputs) => {
     startSubmitTransition(async () => {
-      const { basePlaylistId, playlistToSubtractIds, newPlaylistTitle } = values;
+      const { playlistToAddIds, newPlaylistTitle } = values;
 
-      const isCreated = await SoundcloudApiService.subtractPlaylists(
-        basePlaylistId,
-        playlistToSubtractIds,
+      const response: SoundcloudApiResponse = await SoundcloudApiService.addPlaylists(
+        playlistToAddIds,
         newPlaylistTitle
       );
 
-      if (isCreated) {
+      if (response.success) {
         closeModal();
+        ToastService.emitPlaylistCreatedToast(true, t);
+      } else {
+        console.log(response);
+        emitToast(t("dashboard.toasters.playlistCreatedError.title"), response.message, "destructive");
       }
-
-      ToastService.emitPlaylistCreatedToast(isCreated, t);
     });
   };
 

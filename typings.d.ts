@@ -189,3 +189,8 @@ interface ApiResponse<T> {
   status: number;
   data: T;
 }
+
+interface SoundcloudApiResponse {
+  success: boolean;
+  message: string;
+}
