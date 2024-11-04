@@ -24,16 +24,18 @@ export const ProfileTrackFilter = () => {
       <Label htmlFor="track-filter" className="mb-2 block text-sm font-medium">
         {scopedT("title")}
       </Label>
-      <Select value={filter} onValueChange={handleFilterChange}>
-        <SelectTrigger id="track-filter" className="w-[180px]">
-          <SelectValue placeholder="Select filter" />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="all">{scopedT("all")}</SelectItem>
-          <SelectItem value="public">{scopedT("public")}</SelectItem>
-          <SelectItem value="private">{scopedT("private")}</SelectItem>
-        </SelectContent>
-      </Select>
+      <div className={"bg-white"}>
+        <Select value={filter} onValueChange={handleFilterChange}>
+          <SelectTrigger id="track-filter" className="w-[180px]">
+            <SelectValue placeholder="Select filter" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">{scopedT("all")}</SelectItem>
+            <SelectItem value="public">{scopedT("public")}</SelectItem>
+            <SelectItem value="private">{scopedT("private")}</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
     </div>
   );
 };
