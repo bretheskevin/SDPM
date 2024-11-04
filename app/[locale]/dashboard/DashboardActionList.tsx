@@ -12,7 +12,7 @@ export const DashboardActionList = () => {
 
   useEffect(() => {
     loadPlaylists();
-  }, []);
+  }, [loadPlaylists]);
 
   return (
     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

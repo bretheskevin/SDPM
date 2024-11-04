@@ -36,7 +36,6 @@ export const useAdd = () => {
         closeModal();
         ToastService.emitPlaylistCreatedToast(true, t);
       } else {
-        console.log(response);
         emitToast(t("dashboard.toasters.playlistCreatedError.title"), response.message, "destructive");
       }
     });

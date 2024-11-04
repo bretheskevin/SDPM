@@ -7,7 +7,7 @@ import { ProfileTrackFilter } from "@profile/profile-track/ProfileTrackFilter";
 export const ProfileTracks = async () => {
   const tracks: SoundcloudTrack[] = await SoundcloudApiService.getMyTracks();
 
-  if (!tracks || tracks.length === 0) {
+  if (!Array.isArray(tracks) || tracks.length === 0) {
     return <div className="text-center text-gray-500">No tracks found.</div>;
   }
 
