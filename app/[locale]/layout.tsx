@@ -8,6 +8,7 @@ import { StoreManager } from "@/managers/StoreManager";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { Modal } from "@/components/Modal";
 import { getScopedI18n } from "@/locales/server";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +17,6 @@ export async function generateMetadata() {
   return {
     title: t("title"),
     description: t("description"),
-    icons: [{ rel: "icon", url: "/public/favicon.ico" }],
     keywords:
       "SDPM, SoundCloud, Playlists, Music, Streaming, Free, Open-Source, Musique, DJ, Audio Management," +
       " Music Creation, Playlist Manager, SoundCloud Tools, SoundCloud Management, Playlist Creation, " +
@@ -36,6 +36,9 @@ export default async function RootLayout({ params, children }: Readonly<RootLayo
 
   return (
     <html lang="en">
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <body className={inter.className}>
         <NuqsAdapter>
           <Providers locale={locale}>
