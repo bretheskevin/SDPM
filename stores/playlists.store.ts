@@ -4,7 +4,7 @@ import { PlaylistsController } from "@/controllers/playlists.controller";
 interface PlaylistsStore {
   playlists: SoundCloudPlaylist[];
   optionPlaylists: Array<OptionLabel<string>>;
-  loadPlaylists: () => Promise<void>;
+  loadPlaylists: (force?: boolean) => Promise<void>;
   isLoading: boolean;
 }
 
@@ -13,7 +13,13 @@ let currentRequestId = 0;
 export const usePlaylistsStore = create<PlaylistsStore>((set) => ({
   playlists: [],
   optionPlaylists: [],
-  loadPlaylists: async () => {
+  loadPlaylists: async (force: boolean = false) => {
+    const playlists = usePlaylistsStore.getState().playlists;
+    console.log(playlists);
+    if (!force && playlists.length > 0) {
+      return;
+    }
+
     const requestId = ++currentRequestId;
     set({ isLoading: true });
 
@@ -35,7 +41,3 @@ export const usePlaylistsStore = create<PlaylistsStore>((set) => ({
   },
   isLoading: false,
 }));
-
-export const refreshPlaylists = () => {
-  usePlaylistsStore.getState().loadPlaylists();
-};

@@ -20,7 +20,7 @@ export function LinkItem({ href, label, pathName }: LinkProps) {
   };
 
   return (
-    <Link key={href} className={className} href={href} onClick={handleClick}>
+    <Link key={href} className={className} href={href} onClick={handleClick} prefetch>
       {label}
     </Link>
   );
