@@ -194,3 +194,5 @@ interface SoundcloudApiResponse {
   success: boolean;
   message: string;
 }
+
+type ApiErrorKey = "playlistTrackLimitExceeded";

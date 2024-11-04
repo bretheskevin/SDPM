@@ -11,6 +11,7 @@ interface PlaylistsToSubtractSelectorProps {
   name: string;
   placeholder?: string;
   title?: string;
+  required?: boolean;
 }
 
 export const MultiPlaylistSelector: React.FC<PlaylistsToSubtractSelectorProps> = ({

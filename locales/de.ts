@@ -190,8 +190,9 @@ export default {
         description: "Überprüfen Sie Ihre Wiedergabelisten :)",
       },
       playlistCreatedError: {
-        title: "Fehler beim Erstellen der Wiedergabeliste",
-        description: "Bitte besuchen Sie die Kontaktseite oder versuchen Sie es später erneut.",
+        title: "Playlist konnte nicht erstellt werden",
+        playlistTrackLimitExceeded:
+          "Du hast die maximale Anzahl an Titeln erreicht. SoundCloud erlaubt bis zu 500 Titel pro Playlist.",
       },
     },
   },

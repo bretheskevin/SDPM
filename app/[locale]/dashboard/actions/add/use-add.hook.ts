@@ -6,7 +6,6 @@ import { useI18n } from "@/locales/client";
 import { useTransition } from "react";
 import { closeModal } from "@/hooks/use-modal";
 import { AddPlaylistInputs, addPlaylistSchema } from "@dashboard/actions/add/schema";
-import { emitToast } from "@/hooks/use-toast";
 import { ToastService } from "@/services/toast.service";
 
 export const useAdd = () => {
@@ -36,7 +35,7 @@ export const useAdd = () => {
         closeModal();
         ToastService.emitPlaylistCreatedToast(true, t);
       } else {
-        emitToast(t("dashboard.toasters.playlistCreatedError.title"), response.message, "destructive");
+        ToastService.emitPlaylistCreatedToast(false, t, response.message as ApiErrorKey);
       }
     });
   };

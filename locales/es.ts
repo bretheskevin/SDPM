@@ -189,8 +189,9 @@ export default {
         description: "Consulta tus listas de reproducción :)",
       },
       playlistCreatedError: {
-        title: "Error al Crear la Playlist",
-        description: "Por favor, consulta la página de contacto o intenta de nuevo más tarde.",
+        title: "No se pudo crear la lista de reproducción",
+        playlistTrackLimitExceeded:
+          "Has alcanzado el límite de pistas permitido. SoundCloud permite hasta 500 pistas por lista de reproducción.",
       },
     },
   },

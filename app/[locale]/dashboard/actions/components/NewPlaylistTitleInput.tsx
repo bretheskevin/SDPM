@@ -22,7 +22,7 @@ export const NewPlaylistTitleInput = ({ form }: NewPlaylistTitleInputProps) => {
 
             <div className={"space-y-1"}>
               <FormControl>
-                <Input id="new-playlist-title" {...field} placeholder={scopedT("placeholder")} />
+                <Input id="new-playlist-title" {...field} placeholder={scopedT("placeholder")} required />
               </FormControl>
               <FormMessage />
             </div>

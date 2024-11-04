@@ -189,7 +189,8 @@ export default {
       },
       playlistCreatedError: {
         title: "Error Creating Playlist",
-        description: "Please check the contact page or try again later.",
+        playlistTrackLimitExceeded:
+          "You've reached the maximum track limit for playlists. SoundCloud allows up to 500 tracks per playlist.",
       },
     },
   },
