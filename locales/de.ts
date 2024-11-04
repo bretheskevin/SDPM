@@ -156,6 +156,22 @@ export default {
           },
         },
       },
+      add: {
+        title: "Playlists zusammenführen",
+        description: "Erstellen Sie eine neue Playlist, indem Sie Titel aus anderen Playlists zusammenführen.",
+        buttonText: "Playlist erstellen",
+        modal: {
+          title: "Playlists zusammenführen",
+          description: "Wählen Sie die Playlists, aus denen Sie Titel mit Ihrer Basis-Playlist zusammenführen möchten.",
+        },
+        form: {
+          playlistToAddIds: {
+            title: "Playlists zum Zusammenführen",
+            placeholder: "Wählen Sie die Playlists zum Zusammenführen",
+            reset: "Auswahl löschen",
+          },
+        },
+      },
     },
     playlists: {
       title: "Wiedergabelisten",

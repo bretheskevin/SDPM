@@ -126,39 +126,54 @@ export default {
       global: {
         form: {
           title: {
-            title: "Nombre de la Lista de Reproducción",
-            placeholder: "Introduce el nombre de la nueva lista de reproducción",
+            title: "Nombre de la Playlist",
+            placeholder: "Introduce el nombre de la nueva playlist",
           },
           basePlaylist: {
-            title: "Lista de Reproducción Base",
-            placeholder: "Elige una lista de reproducción base",
+            title: "Playlist Base",
+            placeholder: "Elige una playlist base",
           },
           button: {
-            createPlaylist: "Crear Lista de Reproducción",
+            createPlaylist: "Crear Playlist",
             createPlaylistLoading: "Creando...",
           },
         },
       },
       subtract: {
-        title: "Restar de las Listas de Reproducción",
-        description: "Crea una nueva lista de reproducción restando pistas de la lista de reproducción base.",
-        buttonText: "Crear Lista de Reproducción",
+        title: "Restar de las Playlists",
+        description: "Crea una nueva playlist restando pistas de la playlist base.",
+        buttonText: "Crear Playlist",
         modal: {
-          title: "Restar de las Listas de Reproducción",
-          description:
-            "Selecciona las listas de reproducción de las que deseas eliminar pistas de tu lista de reproducción base.",
+          title: "Restar de las Playlists",
+          description: "Selecciona las listas de reproducción de las que deseas eliminar pistas de tu playlist base.",
         },
         form: {
           playlistsToSubtract: {
-            title: "Listas de Reproducción a Restar",
+            title: "Playlists a Restar",
             placeholder: "Selecciona las listas de reproducción a restar",
+            reset: "Borrar selección",
+          },
+        },
+      },
+      add: {
+        title: "Fusionar Playlists",
+        description: "Crea una nueva playlist fusionando canciones de otras playlists.",
+        buttonText: "Crear Playlist",
+        modal: {
+          title: "Fusionar Playlists",
+          description: "Selecciona las playlists de las que deseas fusionar canciones con tu playlist base.",
+        },
+        form: {
+          playlistToAddIds: {
+            title: "Playlists a Fusionar",
+            placeholder: "Selecciona las playlists a fusionar",
             reset: "Borrar selección",
           },
         },
       },
     },
     playlists: {
-      title: "Listas de Reproducción",
+      title: "Playlists",
       description: "Consulta tus listas de reproducción aquí.",
       alertTitle: "En Desarrollo",
       alertDescription:
@@ -166,15 +181,15 @@ export default {
     },
     tabs: {
       actions: "Acciones",
-      playlists: "Listas de Reproducción",
+      playlists: "Playlists",
     },
     toasters: {
       playlistCreated: {
-        title: "Lista de Reproducción Creada Exitosamente",
+        title: "Playlist Creada Exitosamente",
         description: "Consulta tus listas de reproducción :)",
       },
       playlistCreatedError: {
-        title: "Error al Crear la Lista de Reproducción",
+        title: "Error al Crear la Playlist",
         description: "Por favor, consulta la página de contacto o intenta de nuevo más tarde.",
       },
     },
