@@ -3,7 +3,7 @@ import { Cookies } from "@/services/cookie.service";
 import { BaseRequestController } from "@/controllers/base-request.controller";
 
 export class SoundcloudApiService extends ApiService {
-  static BASE_URL = "https://ideological-flor-hikudo-790c3543.koyeb.app/";
+  static BASE_URL = "https://ideological-flor-hikudo-790c3543.koyeb.app/api/v1/sdpm/";
 
   static async get<T>(path: string, options: RequestInit = {}): Promise<ApiResponse<T>> {
     const token = await Cookies.get("token");
@@ -12,7 +12,7 @@ export class SoundcloudApiService extends ApiService {
 
   static async post<T>(path: string, data: any): Promise<ApiResponse<T>> {
     const token = await Cookies.get("token");
-    return super.post(path + "?token=" + token, data);
+    return await super.post<T>(path + "?token=" + token, data);
   }
 
   static async checkHealth(): Promise<boolean> {
@@ -34,8 +34,8 @@ export class SoundcloudApiService extends ApiService {
     }
 
     try {
-      const response = await this.get<{ is_valid: boolean }>(`check-token`);
-      return response.data.is_valid;
+      const response = await this.get<SoundcloudApiResponse>("token/validate");
+      return response.data.success;
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (_) {
       console.error("Failed to check token validity");
@@ -45,7 +45,7 @@ export class SoundcloudApiService extends ApiService {
 
   static async me(): Promise<SoundcloudProfile | undefined> {
     try {
-      const response = await this.get<SoundcloudProfile>("me");
+      const response = await this.get<SoundcloudProfile>("users/me");
       return response.data;
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (_) {
@@ -55,7 +55,7 @@ export class SoundcloudApiService extends ApiService {
 
   static async getMyTracks(): Promise<SoundcloudTrack[]> {
     try {
-      const response = await this.get<SoundcloudTrack[]>("my-tracks");
+      const response = await this.get<SoundcloudTrack[]>("tracks");
       return response.data;
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (_) {
@@ -66,7 +66,7 @@ export class SoundcloudApiService extends ApiService {
 
   static async getMyPlaylists(signal?: AbortSignal): Promise<SoundCloudPlaylist[]> {
     try {
-      const response = await this.get<SoundCloudPlaylist[]>("my-playlists", { signal });
+      const response = await this.get<SoundCloudPlaylist[]>("playlists", { signal });
       const playlists = response.data;
       return playlists.sort((a, b) => a.title.localeCompare(b.title));
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -84,13 +84,13 @@ export class SoundcloudApiService extends ApiService {
     title?: string
   ): Promise<boolean> {
     try {
-      const response = await this.post("create-unplayed-tracks", {
+      const response = await this.post<SoundcloudApiResponse>("playlists/unplayed", {
         base_playlist_id: basePlaylistId,
         played_playlist_ids: playlistToSubtractIds,
         title,
       });
 
-      return response.status === 200;
+      return response.data.success;
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (_) {
       console.error("Failed to subtract playlists");
@@ -100,7 +100,7 @@ export class SoundcloudApiService extends ApiService {
 
   static async addPlaylists(playlistToAddIds: string[], title?: string): Promise<SoundcloudApiResponse> {
     try {
-      const response = await this.post<SoundcloudApiResponse>("merge-playlists", {
+      const response = await this.post<SoundcloudApiResponse>("playlists/merge", {
         playlist_ids: playlistToAddIds,
         title,
       });
