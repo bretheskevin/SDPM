@@ -1,4 +1,14 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Soundcloud DJ Playlist Manager
+
+This is a tool for enhanced SoundCloud playlist management, offering features like merging multiple playlists into new ones and simplifying the organization of DJ sets.
+
+## Table of Contents
+
+- [Getting Started](#getting-started)
+- [Starting the App with Docker](#starting-the-app-with-docker)
+  - [Development Mode](#development-mode)
+  - [Production Mode](#production-mode)
+- [Accessing the App](#accessing-the-app)
 
 ## Getting Started
 
@@ -16,21 +26,34 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Starting the App with Docker
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To start the app using Docker, you can use the provided `start-dev.sh` and `start-prod.sh` scripts.
 
-## Learn More
+### Development Mode
 
-To learn more about Next.js, take a look at the following resources:
+To start the app in development mode with Docker:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+./start-dev.sh --build
+# or if you don't want to rebuild the images
+./start-dev.sh
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This will start the development server using Docker.
 
-## Deploy on Vercel
+### Production Mode
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+To start the app in production mode with Docker:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+./start-prod.sh --logs
+# or if you don't want to see the logs
+./start-prod.sh
+```
+
+This will start the production server using Docker.
+
+## Accessing the App
+
+The app is accessible at [https://www.soundcloud-dj-playlist-manager.com/](https://www.soundcloud-dj-playlist-manager.com/)
