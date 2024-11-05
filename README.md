@@ -56,5 +56,4 @@ This will start the production server using Docker.
 
 ## Accessing the App
 
-The app is accessible at [https://www.soundcloud-dj-playlist-manager.com/](https://www.soundcloud-dj-playlist-manager.com/){:target="_blank"}
-
+The app is accessible at [https://www.soundcloud-dj-playlist-manager.com/](https://www.soundcloud-dj-playlist-manager.com/)
