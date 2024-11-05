@@ -8,6 +8,7 @@ import { StoreManager } from "@/managers/StoreManager";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { Modal } from "@/components/Modal";
 import { getScopedI18n } from "@/locales/server";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -48,6 +49,7 @@ export default async function RootLayout({ params, children }: Readonly<RootLayo
             <Toaster />
           </Providers>
         </NuqsAdapter>
+        <SpeedInsights />
       </body>
     </html>
   );
