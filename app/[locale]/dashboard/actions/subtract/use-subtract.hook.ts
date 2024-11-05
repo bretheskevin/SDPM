@@ -19,7 +19,7 @@ export const useSubtract = () => {
   });
 
   const [isSubmitPending, startSubmitTransition] = useTransition();
-  const { optionPlaylists } = usePlaylistsStore();
+  const { optionPlaylists, loadPlaylists } = usePlaylistsStore();
 
   const t = useI18n();
 
@@ -35,6 +35,7 @@ export const useSubtract = () => {
 
       if (isCreated) {
         closeModal();
+        loadPlaylists(true);
       }
 
       ToastService.emitPlaylistCreatedToast(isCreated, t);

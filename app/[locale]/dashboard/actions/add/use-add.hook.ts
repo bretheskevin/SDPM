@@ -18,7 +18,7 @@ export const useAdd = () => {
   });
 
   const [isSubmitPending, startSubmitTransition] = useTransition();
-  const { optionPlaylists } = usePlaylistsStore();
+  const { optionPlaylists, loadPlaylists } = usePlaylistsStore();
 
   const t = useI18n();
 
@@ -34,6 +34,7 @@ export const useAdd = () => {
       if (response.success) {
         closeModal();
         ToastService.emitPlaylistCreatedToast(true, t);
+        loadPlaylists(true);
       } else {
         ToastService.emitPlaylistCreatedToast(false, t, response.message as ApiErrorKey);
       }
