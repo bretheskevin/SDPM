@@ -38,6 +38,7 @@ export default async function RootLayout({ params, children }: Readonly<RootLayo
   return (
     <html lang="en">
       <body className={inter.className}>
+        <SpeedInsights />
         <NuqsAdapter>
           <Providers locale={locale}>
             <Modal />
@@ -50,7 +51,6 @@ export default async function RootLayout({ params, children }: Readonly<RootLayo
             <Toaster />
           </Providers>
         </NuqsAdapter>
-        <SpeedInsights />
         <Analytics />
       </body>
     </html>
