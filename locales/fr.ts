@@ -155,11 +155,11 @@ export default {
         },
       },
       add: {
-        title: "Fusionner les Playlists",
+        title: "Fusionner des Playlists",
         description: "Créez une nouvelle playlist en fusionnant des titres d'autres playlists.",
         buttonText: "Créer la Playlist",
         modal: {
-          title: "Fusionner les Playlists",
+          title: "Fusionner des Playlists",
           description:
             "Sélectionnez les playlists dont vous souhaitez fusionner les titres avec votre playlist de base.",
         },
